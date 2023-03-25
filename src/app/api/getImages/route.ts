@@ -8,5 +8,6 @@ export async function GET(request: Request) {
   const data = JSON.parse(textData);
   return new Response(JSON.stringify(data), {
     status: 200,
+    headers: { "Cache-Control": "no-store" },
   });
 }
