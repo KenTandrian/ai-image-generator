@@ -61,7 +61,7 @@ const PromptInput = () => {
         <textarea
           name="prompt"
           id="prompt"
-          className="flex-1 p-4 outline-none rounded-md"
+          className="flex-1 p-4 outline-none rounded-md resize-none"
           placeholder={
             (loading && "ChatGPT is thinking of a suggestion...") ||
             suggestion ||
@@ -69,6 +69,7 @@ const PromptInput = () => {
           }
           onChange={(e) => setInput(e.target.value)}
           value={input}
+          rows={2}
         />
         <button
           className={`p-4 font-bold transition-colors duration-200 ${
