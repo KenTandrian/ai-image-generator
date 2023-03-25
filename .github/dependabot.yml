@@ -1,11 +1,21 @@
 version: 2
 updates:
   # Maintain dependencies for npm/yarn
-  - package-ecosystem: npm # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: npm
+    directory: "/"
     schedule:
       interval: daily
     open-pull-requests-limit: 20
     labels:
       - javascript
+      - dependencies
+
+  # Maintain dependencies for Cloud Functions
+  - package-ecosystem: npm
+    directory: "/cloud/functions"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 20
+    labels:
+      - functions
       - dependencies
