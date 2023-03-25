@@ -4,6 +4,7 @@ import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
 import { useState } from "react";
 import useSWR from "swr";
+import toast from "react-hot-toast";
 
 const PromptInput = () => {
   const [input, setInput] = useState("");
@@ -28,13 +29,20 @@ const PromptInput = () => {
     // p is the prompt to send to API
     const p = useSuggestion ? suggestion : inputPrompt;
 
-    await fetch("/api/generateImage", {
+    const notifPrompt = p.slice(0, 40);
+    const notification = toast.loading(`DALL·E is creating: ${notifPrompt}...`);
+
+    const resp = await fetch("/api/generateImage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ prompt: p }),
     });
+    const data = await resp.json();
+
+    if (data.error) toast.error(data.error, { id: notification });
+    else toast.success("Your AI Art has been generated!", { id: notification });
     refreshImages();
   };
 
