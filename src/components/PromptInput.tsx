@@ -1,5 +1,6 @@
 "use client";
 
+import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
 import { useState } from "react";
 import useSWR from "swr";
@@ -16,6 +17,10 @@ const PromptInput = () => {
   });
   const loading = isLoading || isValidating;
 
+  const { mutate: refreshImages } = useSWR("/api/getImages", fetchImages, {
+    revalidateOnFocus: false,
+  });
+
   const submitPrompt = async (useSuggestion?: boolean) => {
     const inputPrompt = input;
     setInput("");
@@ -23,15 +28,14 @@ const PromptInput = () => {
     // p is the prompt to send to API
     const p = useSuggestion ? suggestion : inputPrompt;
 
-    const res = await fetch("/api/generateImage", {
+    await fetch("/api/generateImage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ prompt: p }),
     });
-    const data = await res.json();
-    console.log(data);
+    refreshImages();
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["links.papareact.com"],
+    domains: ["firebasestorage.googleapis.com", "links.papareact.com"],
   },
 };
 
