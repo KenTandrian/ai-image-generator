@@ -7,7 +7,6 @@ import { storage } from "./firebase";
  * @param {string} folderName - Name of the bucket.
  * @param {Buffer} file - Image file in Buffer format.
  * @param {string} fileName - File name.
- * @param {boolean} returnDownloadURL - If true, returns download url.
  * @return {Promise<string>} - File path or download url of stored image.
  */
 export async function storeImage(
@@ -35,16 +34,16 @@ export async function storeImage(
 
 /**
  * Create a persistent download URL for the given file path
- * @param bucketName Name of the bucket
- * @param pathToFile Path to the file to be accessed
- * @param downloadToken The Firebase Storage Download Tokens
- * @returns A URL.
+ * @param {string} bucketName Name of the bucket
+ * @param {string} pathToFile Path to the file to be accessed
+ * @param {string} downloadToken The Firebase Storage Download Tokens
+ * @return {string} A URL.
  */
 export function createPersistentDownloadUrl(
   bucketName: string,
   pathToFile: string,
   downloadToken: string
-) {
+): string {
   return `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/${encodeURIComponent(
     pathToFile
   )}?alt=media&token=${downloadToken}`;

@@ -2,10 +2,11 @@ import * as functions from "firebase-functions";
 import { storage } from "../lib/firebase";
 import { IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
+import { File } from "@google-cloud/storage";
 
 const log = functions.logger;
 
-const sortByTimeCreated = (a: any, b: any) => {
+const sortByTimeCreated = (a: File, b: File) => {
   const dateA = new Date(a.metadata.timeCreated);
   const dateB = new Date(b.metadata.timeCreated);
   return dateB.getTime() - dateA.getTime(); // descending

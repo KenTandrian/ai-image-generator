@@ -25,8 +25,8 @@ export const generateImage = functions
       });
       log.info("Image generated!");
 
-      const image_url = resp.data.data[0].url!;
-      const res = await axios.get(image_url, { responseType: "arraybuffer" });
+      const imageUrl = resp.data.data[0].url ?? "";
+      const res = await axios.get(imageUrl, { responseType: "arraybuffer" });
       const arrayBuffer = res.data;
       log.info("Image file fetched!");
 
