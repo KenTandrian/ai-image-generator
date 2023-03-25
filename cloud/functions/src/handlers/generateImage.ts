@@ -31,7 +31,7 @@ export const generateImage = functions
       log.info("Image file fetched!");
 
       const timeStamp = new Date().getTime();
-      const fileName = `${prompt}-${timeStamp}.png`;
+      const fileName = `${prompt}_${timeStamp}.png`;
       await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, arrayBuffer, fileName);
       log.info("Image stored!");
 
