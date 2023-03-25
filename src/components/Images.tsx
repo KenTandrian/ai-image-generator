@@ -20,7 +20,7 @@ const Images = () => {
   });
 
   return (
-    <div className="my-10">
+    <div>
       <button
         disabled={!isLoading && isValidating}
         onClick={() => refreshImages(images)}
@@ -36,13 +36,13 @@ const Images = () => {
           Images...
         </p>
       )}
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 px-0 md:px-10">
+      <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-6 md:m-10">
         {images?.imageUrls?.map((image: ImageType, i: number) => (
           <div
             key={image.name}
             className={`relative cursor-help ${
-              i === 0 && "md:col-span-2 md:row-span-2"
-            } hover:scale-[103%] transition-transform duration-200 ease-in-out`}
+              i === 0 && "col-span-2 row-span-2"
+            } hover:scale-[102%] transition-transform duration-200 ease-in-out`}
           >
             <div
               className="absolute flex justify-center items-center w-full h-full bg-white opacity-0 

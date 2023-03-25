@@ -29,7 +29,7 @@ const PromptInput = () => {
     // p is the prompt to send to API
     const p = useSuggestion ? suggestion : inputPrompt;
 
-    const notifPrompt = p.slice(0, 40);
+    const notifPrompt = p.slice(0, 50);
     const notification = toast.loading(`DALL·E is creating: ${notifPrompt}...`);
 
     const resp = await fetch("/api/generateImage", {
@@ -52,7 +52,7 @@ const PromptInput = () => {
   };
 
   return (
-    <div className="m-10">
+    <div className="m-6 md:m-10">
       <form
         className="flex flex-col lg:flex-row shadow-md 
         shadow-slate-400/10 border rounded-md lg:divide-x"
