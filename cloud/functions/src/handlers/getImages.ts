@@ -8,7 +8,7 @@ const log = functions.logger;
 const sortByTimeCreated = (a: any, b: any) => {
   const dateA = new Date(a.metadata.timeCreated);
   const dateB = new Date(b.metadata.timeCreated);
-  return dateA.getTime() - dateB.getTime();
+  return dateB.getTime() - dateA.getTime(); // descending
 };
 
 export const getImages = functions.https.onRequest(async (req, res) => {
