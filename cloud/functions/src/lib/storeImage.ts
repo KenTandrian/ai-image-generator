@@ -14,23 +14,22 @@ export async function storeImage(
   projectName: string,
   folderName: string,
   file: Buffer,
-  fileName: string,
-  returnDownloadURL?: boolean
+  fileName: string
 ): Promise<string> {
   const filePath = `${projectName}/${folderName}/${fileName}`;
   const uuid = randomUUID();
 
-  const opts: Record<string, unknown> = { resumable: false };
-  if (returnDownloadURL) {
-    opts.metadata = { metadata: { firebaseStorageDownloadTokens: uuid } };
-  }
+  const opts: Record<string, unknown> = {
+    resumable: false,
+    metadata: {
+      metadata: {
+        firebaseStorageDownloadTokens: uuid,
+      },
+    },
+  };
 
   const bucket = storage.bucket();
   await bucket.file(filePath).save(file, opts);
-
-  if (returnDownloadURL) {
-    return createPersistentDownloadUrl(bucket.name, filePath, uuid);
-  }
   return filePath;
 }
 
@@ -41,7 +40,7 @@ export async function storeImage(
  * @param downloadToken The Firebase Storage Download Tokens
  * @returns A URL.
  */
-function createPersistentDownloadUrl(
+export function createPersistentDownloadUrl(
   bucketName: string,
   pathToFile: string,
   downloadToken: string
