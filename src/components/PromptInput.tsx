@@ -1,6 +1,6 @@
 "use client";
 
-import fetchSuggestionFromChatGPT from "@/services/fetchSuggestionFromChatGPT";
+import fetchSuggestion from "@/services/fetchSuggestion";
 import { useState } from "react";
 import useSWR from "swr";
 
@@ -11,16 +11,40 @@ const PromptInput = () => {
     isLoading,
     mutate,
     isValidating,
-  } = useSWR("/api/suggestion", fetchSuggestionFromChatGPT, {
+  } = useSWR("/api/suggestion", fetchSuggestion, {
     revalidateOnFocus: false,
   });
   const loading = isLoading || isValidating;
+
+  const submitPrompt = async (useSuggestion?: boolean) => {
+    const inputPrompt = input;
+    setInput("");
+
+    // p is the prompt to send to API
+    const p = useSuggestion ? suggestion : inputPrompt;
+
+    const res = await fetch("/api/generateImage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt: p }),
+    });
+    const data = await res.json();
+    console.log(data);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await submitPrompt();
+  };
 
   return (
     <div className="m-10">
       <form
         className="flex flex-col lg:flex-row shadow-md 
         shadow-slate-400/10 border rounded-md lg:divide-x"
+        onSubmit={handleSubmit}
       >
         <textarea
           name="prompt"
@@ -50,6 +74,7 @@ const PromptInput = () => {
           className="p-4 bg-violet-400 text-white transition-colors 
             duration-200 font-bold disabled:text-gray-300 
             disabled:cursor-not-allowed disabled:bg-gray-400"
+          onClick={() => submitPrompt(true)}
         >
           Use Suggestion
         </button>

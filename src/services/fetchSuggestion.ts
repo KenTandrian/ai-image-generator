@@ -1,6 +1,6 @@
-const fetchSuggestionFromChatGPT = () =>
+const fetchSuggestion = () =>
   fetch("api/suggestion", {
     cache: "no-store",
   }).then((res) => res.json());
 
-export default fetchSuggestionFromChatGPT;
+export default fetchSuggestion;
