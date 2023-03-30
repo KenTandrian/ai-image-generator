@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
-    "next": "^13.2.5-canary.19",
+    "next": "^13.2.5-canary.20",
     "openai": "^3.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -21,10 +21,10 @@
   },
   "devDependencies": {
     "@types/node": "18.15.11",
-    "@types/react": "18.0.29",
+    "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.3.0"
   }
 }
