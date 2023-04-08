@@ -17,7 +17,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
     "swr": "^2.1.2",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   },
   "devDependencies": {
     "@types/node": "18.15.11",
