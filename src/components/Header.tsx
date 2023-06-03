@@ -1,3 +1,4 @@
+import { VERSION } from "@/common";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -17,6 +18,9 @@ const Header = () => {
           <h1 className="font-bold">
             The <span className="text-violet-500 dark:text-violet-400">AI</span>{" "}
             Image Generator
+            <span className="ml-1 rounded bg-violet-100 px-1 py-0.5 align-middle text-[0.625rem] font-medium text-violet-800 dark:bg-violet-900 dark:text-violet-300">
+              {VERSION}
+            </span>
           </h1>
           <h2 className="text-xs">
             Powered by DALL·E 2.0, ChatGPT & Google Cloud Functions!
