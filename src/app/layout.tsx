@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PromptInput from "@/components/PromptInput";
 import ToastProvider from "@/components/ToastProvider";
 import "../styles/globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "AI Art Gallery",
@@ -20,6 +21,7 @@ export default function RootLayout({
           <Header />
           <PromptInput />
           {children}
+          <Footer />
         </ToastProvider>
       </body>
     </html>
