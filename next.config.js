@@ -12,7 +12,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["firebasestorage.googleapis.com", "links.papareact.com"],
+    domains: ["firebasestorage.googleapis.com"],
   },
   async headers() {
     return [
