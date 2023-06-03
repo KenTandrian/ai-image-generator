@@ -54,14 +54,14 @@ const PromptInput = () => {
   return (
     <div className="m-6 md:m-10">
       <form
-        className="flex flex-col lg:flex-row shadow-md 
-        shadow-slate-400/10 border rounded-md lg:divide-x dark:border-zinc-500 dark:divide-zinc-500"
+        className="flex flex-col rounded-md border 
+        shadow-md shadow-slate-400/10 dark:divide-zinc-500 dark:border-zinc-500 lg:flex-row lg:divide-x"
         onSubmit={handleSubmit}
       >
         <textarea
           name="prompt"
           id="prompt"
-          className="flex-1 p-4 outline-none rounded-md resize-none dark:bg-transparent dark:text-zinc-200"
+          className="flex-1 resize-none rounded-md p-4 outline-none dark:bg-transparent dark:text-zinc-200"
           placeholder={
             (loading && "ChatGPT is thinking of a suggestion...") ||
             suggestion ||
@@ -74,8 +74,8 @@ const PromptInput = () => {
         <button
           className={`p-4 font-bold transition-colors duration-200 ${
             input
-              ? "bg-violet-500 dark:bg-violet-700 text-white"
-              : "text-zinc-300 dark:text-zinc-500 cursor-not-allowed"
+              ? "bg-violet-500 text-white dark:bg-violet-700"
+              : "cursor-not-allowed text-zinc-300 dark:text-zinc-500"
           }`}
           type="submit"
           disabled={!input}
@@ -84,18 +84,18 @@ const PromptInput = () => {
         </button>
         <button
           type="button"
-          className="p-4 bg-violet-400 dark:bg-violet-600 text-white transition-colors 
-            duration-200 font-bold disabled:text-gray-300 
-            disabled:cursor-not-allowed disabled:bg-gray-400"
+          className="bg-violet-400 p-4 font-bold text-white transition-colors 
+            duration-200 disabled:cursor-not-allowed disabled:bg-gray-400 
+            disabled:text-gray-300 dark:bg-violet-600"
           onClick={() => submitPrompt(true)}
         >
           Use Suggestion
         </button>
         <button
           type="button"
-          className="p-4 bg-white dark:bg-transparent text-violet-500 border-none
-            transition-colors duration-200 rounded-b-md md:rounded-r-md
-            md:rounded-bl-none font-bold"
+          className="rounded-b-md border-none bg-white p-4 font-bold
+            text-violet-500 transition-colors duration-200 dark:bg-transparent
+            md:rounded-r-md md:rounded-bl-none"
           onClick={mutate}
         >
           New Suggestion
@@ -103,7 +103,7 @@ const PromptInput = () => {
       </form>
 
       {input && (
-        <p className="italic pt-2 pl-2 font-light dark:text-zinc-300">
+        <p className="pl-2 pt-2 font-light italic dark:text-zinc-300">
           Suggestion:{" "}
           <span className="text-violet-500">
             {loading ? "ChatGPT is thinking..." : suggestion}{" "}
