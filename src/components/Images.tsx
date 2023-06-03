@@ -45,10 +45,10 @@ const Images = () => {
             } hover:scale-[102%] transition-transform duration-200 ease-in-out`}
           >
             <div
-              className="absolute flex justify-center items-center w-full h-full bg-white opacity-0 
+              className="absolute flex justify-center items-center w-full h-full bg-white dark:bg-zinc-900 opacity-0 
                 hover:opacity-80 transition-opacity duration-200 z-10"
             >
-              <p className="text-center font-light text-lg p-5">
+              <p className="text-center font-light text-lg p-5 dark:text-white">
                 {image.name.split("_").shift()?.toString().split(".").shift()}
               </p>
             </div>
