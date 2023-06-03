@@ -31,7 +31,7 @@ const Images = () => {
         {!isLoading && isValidating ? "Refreshing..." : "Refresh Images"}
       </button>
       {isLoading && (
-        <p className="animate-pulse text-center pb-7 font-extralight">
+        <p className="animate-pulse text-center pb-7 font-extralight dark:text-white">
           Loading <span className="text-violet-400">AI</span> Generated
           Images...
         </p>
