@@ -21,10 +21,10 @@ export const getChatGPTSuggestion = functions.https.onRequest(
 
       log.info(`HTTP Function processed request for URL ${request.url}`);
       const responseText = resp.data.choices[0].text;
-      response.send(responseText);
+      response.send({ error: false, payload: responseText });
     } catch (err) {
       log.error(err);
-      response.send(err);
+      response.send({ error: true, payload: err });
     }
   }
 );
