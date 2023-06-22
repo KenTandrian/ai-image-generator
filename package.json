@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "eslint": "8.43.0",
-    "eslint-config-next": "13.4.6",
+    "eslint-config-next": "13.4.7",
     "next": "^13.4.7",
     "openai": "^3.3.0",
     "react": "18.2.0",
