@@ -36,18 +36,3 @@ jobs:
         run: |
           gh pr comment $PR_URL --body "I'm **not approving** this PR because **it includes a major update of a dependency used in production**"
           gh pr edit $PR_URL --add-label "requires-manual-qa"
-
-  review-lockfile-pr:
-    name: Review Lockfile Maintenance PR
-    runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'github-actions[bot]' && contains(github.event.pull_request.title, 'lockfile maintenance') }}
-    env:
-      PR_URL: ${{github.event.pull_request.html_url}}
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    steps:
-      - name: Enable auto-merge for Lockfile PRs
-        run: gh pr merge --auto --squash "$PR_URL"
-
-      - name: Approve PR
-        continue-on-error: true
-        run: gh pr review $PR_URL --approve -b "I'm **approving** this pull request because **it includes lockfile maintenance**"
