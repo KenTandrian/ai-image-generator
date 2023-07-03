@@ -9,4 +9,5 @@ permissions:
 
 jobs:
   review-dependabot-pr:
+    name: PR Review
     uses: KenTandrian/workflows/.github/workflows/dependabot-reviewer.yml@main
