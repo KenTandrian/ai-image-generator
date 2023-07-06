@@ -10,3 +10,14 @@ jobs:
     with:
       package-manager: yarn
     secrets: inherit
+
+  cloud:
+    name: Run cloud workflow
+    needs: run
+    uses: KenTandrian/workflows/.github/workflows/lockfile.yml@main
+    permissions:
+      contents: write
+    with:
+      package-manager: yarn
+      working-directory: ./cloud/functions
+    secrets: inherit
