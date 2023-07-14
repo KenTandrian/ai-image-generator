@@ -1,11 +1,17 @@
 version: 2
 updates:
+  # Maintain dependencies for github-actions
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+
   # Maintain dependencies for npm/yarn
   - package-ecosystem: npm
     directory: "/"
     schedule:
       interval: daily
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 0 #disable
     labels:
       - javascript
       - dependencies
@@ -15,7 +21,7 @@ updates:
     directory: "/cloud/functions"
     schedule:
       interval: daily
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 0 #disable
     labels:
       - functions
       - dependencies
