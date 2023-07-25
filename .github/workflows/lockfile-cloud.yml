@@ -1,4 +1,4 @@
-name: Lockfile Maintenance
+name: Lockfile Maintenance (Cloud)
 on: workflow_dispatch
 
 jobs:
@@ -9,4 +9,5 @@ jobs:
       contents: write
     with:
       package-manager: yarn
+      working-directory: ./cloud/functions
     secrets: inherit
