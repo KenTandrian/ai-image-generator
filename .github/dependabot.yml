@@ -14,6 +14,15 @@ updates:
     labels:
       - javascript
       - dependencies
+    groups:
+      nextjs:
+        patterns:
+          - "next"
+          - "eslint-config-next"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
 
   # Maintain dependencies for Cloud Functions
   - package-ecosystem: npm
@@ -23,3 +32,7 @@ updates:
     labels:
       - functions
       - dependencies
+    groups:
+      typescript-eslint:
+        patterns:
+          - "@typescript-eslint/*"
