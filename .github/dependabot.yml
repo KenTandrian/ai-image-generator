@@ -10,8 +10,7 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: daily
-    open-pull-requests-limit: 0 #disable
+      interval: monthly
     labels:
       - javascript
       - dependencies
@@ -20,8 +19,7 @@ updates:
   - package-ecosystem: npm
     directory: "/cloud/functions"
     schedule:
-      interval: daily
-    open-pull-requests-limit: 0 #disable
+      interval: monthly
     labels:
       - functions
       - dependencies
