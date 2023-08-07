@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^13.4.12",
+    "next": "^13.4.13",
     "openai": "^3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -24,7 +24,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.46.0",
-    "eslint-config-next": "^13.4.12",
+    "eslint-config-next": "^13.4.13",
     "postcss": "^8.4.27",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
