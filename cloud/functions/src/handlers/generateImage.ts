@@ -18,14 +18,14 @@ export const generateImage = functions
       const { prompt } = request.body;
       log.info(`Prompt is ${prompt}`);
 
-      const resp = await openai.createImage({
+      const resp = await openai.images.generate({
         prompt,
         n: 1,
         size: "1024x1024",
       });
       log.info("Image generated!");
 
-      const imageUrl = resp.data.data[0].url ?? "";
+      const imageUrl = resp.data[0].url ?? "";
       const res = await axios.get(imageUrl, { responseType: "arraybuffer" });
       const arrayBuffer = res.data;
       log.info("Image file fetched!");
