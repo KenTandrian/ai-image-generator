@@ -1,9 +1,8 @@
-import * as functions from "firebase-functions";
+import { https } from "firebase-functions";
+import { logger as log } from "firebase-functions/v2";
 import openai from "../lib/openai";
 
-const log = functions.logger;
-
-export const getChatGPTSuggestion = functions.https.onRequest(
+export const getChatGPTSuggestion = https.onRequest(
   async (request, response) => {
     if (request.method !== "GET") {
       response.status(405).send("Method not allowed");
