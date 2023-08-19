@@ -1,14 +1,13 @@
-import * as functions from "firebase-functions";
+import { onRequest } from "firebase-functions/v2/https";
+import { logger as log } from "firebase-functions/v2";
 import openai from "../lib/openai";
 import axios from "axios";
 import { storeImage } from "../lib/storeImage";
 import { IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 
-const log = functions.logger;
-
-export const generateImage = functions
-  .runWith({ timeoutSeconds: 540, memory: "4GB" })
-  .https.onRequest(async (request, response) => {
+export const generateImage = onRequest(
+  { timeoutSeconds: 540, memory: "4GiB" },
+  async (request, response) => {
     if (request.method !== "POST") {
       response.status(405).send("Method not allowed");
       return;
@@ -40,4 +39,5 @@ export const generateImage = functions
       log.error(err);
       response.send(err);
     }
-  });
+  }
+);
