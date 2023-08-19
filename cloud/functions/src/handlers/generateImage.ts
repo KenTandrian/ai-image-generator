@@ -1,6 +1,6 @@
 import { onRequest } from "firebase-functions/v2/https";
 import { logger as log } from "firebase-functions/v2";
-import openai from "../lib/openai";
+import OpenAIService from "../lib/openai";
 import axios from "axios";
 import { storeImage } from "../lib/storeImage";
 import { IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
@@ -17,6 +17,7 @@ export const generateImage = onRequest(
       const { prompt } = request.body;
       log.info(`Prompt is ${prompt}`);
 
+      const openai = new OpenAIService();
       const resp = await openai.images.generate({
         prompt,
         n: 1,

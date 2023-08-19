@@ -1,8 +1,26 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  organization: process.env.OPENAI_ORGANIZATION,
-  apiKey: process.env.OPENAI_API_KEY,
-});
+/** OpenAI Service */
+class OpenAIService {
+  private openai: OpenAI;
 
-export default openai;
+  /** Initialize OpenAI Service */
+  constructor() {
+    this.openai = new OpenAI({
+      organization: process.env.OPENAI_ORGANIZATION,
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+
+  /** Get OpenAI completions service */
+  get completions() {
+    return this.openai.completions;
+  }
+
+  /** Get OpenAI images service */
+  get images() {
+    return this.openai.images;
+  }
+}
+
+export default OpenAIService;

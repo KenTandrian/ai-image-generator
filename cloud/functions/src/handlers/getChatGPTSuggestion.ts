@@ -1,6 +1,6 @@
 import { https } from "firebase-functions";
 import { logger as log } from "firebase-functions/v2";
-import openai from "../lib/openai";
+import OpenAIService from "../lib/openai";
 
 export const getChatGPTSuggestion = https.onRequest(
   async (request, response) => {
@@ -10,6 +10,7 @@ export const getChatGPTSuggestion = https.onRequest(
     }
 
     try {
+      const openai = new OpenAIService();
       const resp = await openai.completions.create({
         model: "text-davinci-003",
         prompt:
