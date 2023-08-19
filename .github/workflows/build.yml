@@ -1,0 +1,27 @@
+name: Lint and Build Functions
+on: [pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Run lint and build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./cloud/functions
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Code Linting
+        run: yarn lint --max-warnings=0
+
+      - name: Run build
+        run: yarn build
