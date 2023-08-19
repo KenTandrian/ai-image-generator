@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFunctions } from "firebase/functions";
+import { getFunctions, httpsCallable } from "firebase/functions";
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -16,4 +16,7 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Functions
 const REGION = process.env.FUNCTIONS_REGION;
-export const functions = getFunctions(app, REGION);
+const functions = getFunctions(app, REGION);
+export const callableFn = <TReq, TRes>(name: string) => {
+  return httpsCallable<TReq, TRes>(functions, name);
+};

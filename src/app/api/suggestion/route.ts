@@ -1,3 +1,4 @@
+import { callableFn } from "@/services/firebase";
 import { NextResponse } from "next/server";
 
 export const runtime = "edge";
@@ -9,10 +10,8 @@ type Return = {
 
 export async function GET() {
   // Connect to Cloud Function
-  const response = await fetch(`${process.env.API_URL}/getChatGPTSuggestion`, {
-    cache: "no-store",
-  });
-  const data: Return = await response.json();
+  const response = await callableFn<{}, Return>("getChatGPTSuggestion")();
+  const data = response.data;
   if (data.error) {
     return new NextResponse(
       JSON.stringify("Sorry, I can't think of anything right now :("),
