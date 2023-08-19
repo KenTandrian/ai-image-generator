@@ -2,7 +2,7 @@ import * as functions from "firebase-functions";
 import { storage } from "../lib/firebase";
 import { IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
-import { File } from "@google-cloud/storage";
+import { File } from "firebase-admin/node_modules/@google-cloud/storage";
 
 const log = functions.logger;
 
