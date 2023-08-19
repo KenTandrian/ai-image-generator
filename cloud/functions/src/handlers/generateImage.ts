@@ -1,20 +1,15 @@
-import { onRequest } from "firebase-functions/v2/https";
+import { onCall } from "firebase-functions/v2/https";
 import { logger as log } from "firebase-functions/v2";
 import OpenAIService from "../lib/openai";
 import axios from "axios";
 import { storeImage } from "../lib/storeImage";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 
-export const generateImage = onRequest(
+export const generateImage = onCall(
   { ...GLOBAL_OPTIONS, timeoutSeconds: 540, memory: "4GiB" },
-  async (request, response) => {
-    if (request.method !== "POST") {
-      response.status(405).send("Method not allowed");
-      return;
-    }
-
+  async (request) => {
     try {
-      const { prompt } = request.body;
+      const { prompt } = request.data;
       log.info(`Prompt is ${prompt}`);
 
       const openai = new OpenAIService();
@@ -35,10 +30,10 @@ export const generateImage = onRequest(
       await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, arrayBuffer, fileName);
       log.info("Image stored!");
 
-      response.send("File uploaded successfully!");
+      return "File uploaded successfully!";
     } catch (err) {
       log.error(err);
-      response.send(err);
+      return err;
     }
   }
 );

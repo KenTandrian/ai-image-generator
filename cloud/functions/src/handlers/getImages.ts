@@ -1,4 +1,4 @@
-import { onRequest } from "firebase-functions/v2/https";
+import { onCall } from "firebase-functions/v2/https";
 import { logger as log } from "firebase-functions/v2";
 import { storage } from "../lib/firebase";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
@@ -11,7 +11,7 @@ const sortByTimeCreated = (a: File, b: File) => {
   return dateB.getTime() - dateA.getTime(); // descending
 };
 
-export const getImages = onRequest(GLOBAL_OPTIONS, async (req, res) => {
+export const getImages = onCall(GLOBAL_OPTIONS, async (request) => {
   try {
     const bucket = storage.bucket();
     const [files] = await bucket.getFiles({
@@ -27,11 +27,12 @@ export const getImages = onRequest(GLOBAL_OPTIONS, async (req, res) => {
       ),
       name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
     }));
-    log.info(`HTTP Function processed request for url ${req.url}`);
+    const URL = request.rawRequest.url;
+    log.info(`HTTP Function processed request for url ${URL}`);
 
-    res.json({ imageUrls: sorted });
+    return { imageUrls: sorted };
   } catch (err) {
     log.error(err);
-    res.json(err);
+    return err;
   }
 });
