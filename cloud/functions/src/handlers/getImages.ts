@@ -1,7 +1,7 @@
 import { onRequest } from "firebase-functions/v2/https";
 import { logger as log } from "firebase-functions/v2";
 import { storage } from "../lib/firebase";
-import { IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
+import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
 import { File } from "firebase-admin/node_modules/@google-cloud/storage";
 
@@ -11,7 +11,7 @@ const sortByTimeCreated = (a: File, b: File) => {
   return dateB.getTime() - dateA.getTime(); // descending
 };
 
-export const getImages = onRequest(async (req, res) => {
+export const getImages = onRequest(GLOBAL_OPTIONS, async (req, res) => {
   try {
     const bucket = storage.bucket();
     const [files] = await bucket.getFiles({

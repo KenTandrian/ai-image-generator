@@ -3,10 +3,10 @@ import { logger as log } from "firebase-functions/v2";
 import OpenAIService from "../lib/openai";
 import axios from "axios";
 import { storeImage } from "../lib/storeImage";
-import { IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
+import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 
 export const generateImage = onRequest(
-  { timeoutSeconds: 540, memory: "4GiB" },
+  { ...GLOBAL_OPTIONS, timeoutSeconds: 540, memory: "4GiB" },
   async (request, response) => {
     if (request.method !== "POST") {
       response.status(405).send("Method not allowed");
