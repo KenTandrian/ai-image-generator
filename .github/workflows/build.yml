@@ -1,5 +1,7 @@
 name: Lint and Build Functions
-on: [pull_request]
+on: 
+  pull_request:
+    paths: ["cloud/functions/**"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
