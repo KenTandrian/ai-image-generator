@@ -3,7 +3,7 @@ import { logger as log } from "firebase-functions/v2";
 import OpenAIService from "../lib/openai";
 import { GLOBAL_OPTIONS } from "../constants";
 
-export const getChatGPTSuggestion = onCall(GLOBAL_OPTIONS, async (request) => {
+export const getChatGPTSuggestion = onCall(GLOBAL_OPTIONS, async () => {
   try {
     const openai = new OpenAIService();
     const resp = await openai.completions.create({
@@ -13,9 +13,6 @@ export const getChatGPTSuggestion = onCall(GLOBAL_OPTIONS, async (request) => {
       max_tokens: 100,
       temperature: 0.8,
     });
-
-    const URL = request.rawRequest.url;
-    log.info(`HTTP Function processed request for URL ${URL}`);
     const responseText = resp.choices[0].text;
     return { error: false, payload: responseText };
   } catch (err) {

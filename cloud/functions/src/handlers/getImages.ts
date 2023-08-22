@@ -11,7 +11,7 @@ const sortByTimeCreated = (a: File, b: File) => {
   return dateB.getTime() - dateA.getTime(); // descending
 };
 
-export const getImages = onCall(GLOBAL_OPTIONS, async (request) => {
+export const getImages = onCall(GLOBAL_OPTIONS, async () => {
   try {
     const bucket = storage.bucket();
     const [files] = await bucket.getFiles({
@@ -27,9 +27,6 @@ export const getImages = onCall(GLOBAL_OPTIONS, async (request) => {
       ),
       name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
     }));
-    const URL = request.rawRequest.url;
-    log.info(`HTTP Function processed request for url ${URL}`);
-
     return { imageUrls: sorted };
   } catch (err) {
     log.error(err);
