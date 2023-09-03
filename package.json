@@ -1,6 +1,6 @@
 {
   "name": "ai-image-generator",
-  "version": "0.3.79",
+  "version": "0.3.86",
   "private": true,
   "scripts": {
     "dev": "next dev",
