@@ -1,5 +1,5 @@
 name: Lint and Build Functions
-on: 
+on:
   pull_request:
     paths: ["cloud/functions/**"]
 
