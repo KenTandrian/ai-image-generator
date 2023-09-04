@@ -10,7 +10,7 @@ type Return = {
 
 export async function GET() {
   // Connect to Cloud Function
-  const response = await callableFn<{}, Return>("getChatGPTSuggestion")();
+  const response = await callableFn<object, Return>("getChatGPTSuggestion")();
   const data = response.data;
   if (data.error) {
     return new NextResponse(

@@ -1,8 +1,9 @@
+import React from "react";
 import Header from "@/components/Header";
 import PromptInput from "@/components/PromptInput";
 import ToastProvider from "@/components/ToastProvider";
-import "../styles/globals.css";
 import Footer from "@/components/Footer";
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "AI Art Gallery",

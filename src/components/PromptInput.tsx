@@ -2,7 +2,7 @@
 
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
-import { useState } from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 import toast from "react-hot-toast";
 
