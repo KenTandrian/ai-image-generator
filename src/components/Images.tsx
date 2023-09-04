@@ -48,7 +48,7 @@ const Images = () => {
               className="absolute z-10 flex h-full w-full items-center justify-center bg-white opacity-0 
                 transition-opacity duration-200 hover:opacity-80 dark:bg-zinc-900"
             >
-              <p className="p-3 sm:p-5 text-center text-sm xs:text-base sm:text-lg font-light dark:text-white">
+              <p className="p-3 text-center text-sm font-light dark:text-white xs:text-base sm:p-5 sm:text-lg">
                 {image.name.split("_").shift()?.toString().split(".").shift()}
               </p>
             </div>
