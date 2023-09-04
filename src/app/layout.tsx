@@ -15,7 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}
+      lang="en"
+    >
       <body className="bg-white dark:bg-zinc-950">
         <ToastProvider>
           <Header />
