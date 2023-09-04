@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier . --write --ignore-unknown",
-    "format:check": "prettier . --check --ignore-unknown"
+    "format": "prettier . --check --ignore-unknown",
+    "format:write": "prettier . --write --ignore-unknown"
   },
   "dependencies": {
     "firebase": "^10.3.1",
