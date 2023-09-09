@@ -23,6 +23,9 @@ updates:
         patterns:
           - "react"
           - "react-dom"
+      typescript-eslint:
+        patterns:
+          - "@typescript-eslint/*"
 
   # Maintain dependencies for Cloud Functions
   - package-ecosystem: npm
