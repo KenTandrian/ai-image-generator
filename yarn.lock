@@ -2516,10 +2516,10 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-openai@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/openai/-/openai-4.7.0.tgz#df0e0dfd5f03e9f60bcf8551054d9ac9032d50ac"
-  integrity sha512-URaLIqEyh60i46h0yM296TA5HRTK4NY+mB718METphyQZo74Vd2s0thwaHZMWqYc/3LHFOokpZLpW2HNiP54sw==
+openai@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/openai/-/openai-4.8.0.tgz#42e818e484d5c831e438439ed202b08d67416b1c"
+  integrity sha512-CnLZvHi2x4pIoGAWCaj3jHi1a6NA4oFBL6mJDSXkIR5A/wv6lven7uL2gxMevjGBLA7OqYqis3Z2PMluiGauVw==
   dependencies:
     "@types/node" "^18.11.18"
     "@types/node-fetch" "^2.6.4"
