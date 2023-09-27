@@ -18,7 +18,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
-    "swr": "^2.2.2",
+    "swr": "^2.2.4",
     "typescript": "5.2.2"
   },
   "devDependencies": {
