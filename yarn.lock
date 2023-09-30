@@ -2729,6 +2729,11 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+react-circle-flags@^0.0.19:
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/react-circle-flags/-/react-circle-flags-0.0.19.tgz#365451ce666cd9cd85e3055c411b6f1eb91ddb92"
+  integrity sha512-QJ96+CIEpHZ/QmgB7tXaaHFvaCNGS06kJHQJ7q7a60bXjcImQTrPxcO//b/d4hFrVmHeL61viJtUYYHKcLZszQ==
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
