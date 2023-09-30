@@ -28,7 +28,10 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
       name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
       metadata: {
         createdAt: x.metadata.timeCreated,
-        geo: x.metadata.metadata?.geo,
+        geo: {
+          city: x.metadata.metadata?.geo?.city,
+          country: x.metadata.metadata?.geo?.country,
+        },
       },
     }));
     return { imageUrls: sorted };

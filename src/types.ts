@@ -9,8 +9,5 @@ export type ImageMeta = {
   geo?: {
     city?: string;
     country?: string;
-    region?: string;
-    latitude?: string;
-    longitude?: string;
   };
 };

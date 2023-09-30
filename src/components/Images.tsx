@@ -4,6 +4,7 @@ import fetchImages from "@/services/fetchImages";
 import { ImageType } from "@/types";
 import { relative } from "@/utils/date-fns";
 import Image from "next/image";
+import { CircleFlag } from "react-circle-flags";
 import useSWR from "swr";
 
 const Images = () => {
@@ -41,8 +42,19 @@ const Images = () => {
               i === 0 && "col-span-2 row-span-2"
             } transition-transform duration-200 ease-in-out hover:scale-[102%]`}
           >
-            <div className="absolute bottom-1 right-1 z-10 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
-              {relative(new Date(image.metadata.createdAt), true)}
+            <div className="absolute bottom-1 right-1 z-10 flex items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
+              {image.metadata.createdAt
+                ? relative(new Date(image.metadata.createdAt), true)
+                : null}
+              {image.metadata.geo?.country && (
+                <CircleFlag
+                  className="inline-block h-3 w-3"
+                  countryCode={image.metadata.geo.country.toLowerCase()}
+                />
+              )}
+              {image.metadata.geo?.city && (
+                <span>{image.metadata.geo?.city}</span>
+              )}
             </div>
             <div
               className="absolute z-10 flex h-full w-full items-center justify-center bg-white opacity-0 
