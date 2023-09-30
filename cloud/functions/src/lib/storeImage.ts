@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto";
 import { storage } from "./firebase";
+import { ImageMeta } from "../types";
 
 /**
  * Stores image into Firebase storage and returns path.
@@ -7,13 +8,15 @@ import { storage } from "./firebase";
  * @param {string} folderName - Name of the bucket.
  * @param {Buffer} file - Image file in Buffer format.
  * @param {string} fileName - File name.
+ * @param {ImageMeta} metadata - File name.
  * @return {Promise<string>} - File path or download url of stored image.
  */
 export async function storeImage(
   projectName: string,
   folderName: string,
   file: Buffer,
-  fileName: string
+  fileName: string,
+  metadata: ImageMeta
 ): Promise<string> {
   const filePath = `${projectName}/${folderName}/${fileName}`;
   const uuid = randomUUID();
@@ -22,6 +25,7 @@ export async function storeImage(
     resumable: false,
     metadata: {
       metadata: {
+        ...metadata,
         firebaseStorageDownloadTokens: uuid,
       },
     },

@@ -4,13 +4,19 @@ import OpenAIService from "../lib/openai";
 import axios from "axios";
 import { storeImage } from "../lib/storeImage";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
+import { ImageMeta } from "../types";
 
-export const generateImage = onCall(
+type RequestData = {
+  prompt: string;
+  metadata: ImageMeta;
+};
+
+export const generateImage = onCall<RequestData>(
   { ...GLOBAL_OPTIONS, timeoutSeconds: 540, memory: "4GiB" },
   async (request) => {
     try {
-      const { prompt } = request.data;
-      log.info(`Prompt is ${prompt}`);
+      const { prompt, metadata } = request.data;
+      log.info(`Prompt is ${prompt}, coming from ${metadata.geo?.city}`);
 
       const openai = new OpenAIService();
       const resp = await openai.images.generate({
@@ -27,7 +33,13 @@ export const generateImage = onCall(
 
       const timeStamp = new Date().getTime();
       const fileName = `${prompt}_${timeStamp}.png`;
-      await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, arrayBuffer, fileName);
+      await storeImage(
+        PROJECT_NAME,
+        IMAGE_FOLDER_NAME,
+        arrayBuffer,
+        fileName,
+        metadata
+      );
       log.info("Image stored!");
 
       return "File uploaded successfully!";

@@ -26,6 +26,10 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
         x.metadata.metadata?.firebaseStorageDownloadTokens
       ),
       name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
+      metadata: {
+        createdAt: x.metadata.timeCreated,
+        geo: x.metadata.metadata?.geo,
+      },
     }));
     return { imageUrls: sorted };
   } catch (err) {
