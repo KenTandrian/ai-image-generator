@@ -61,7 +61,11 @@ const Images = () => {
                 transition-opacity duration-200 hover:opacity-80 dark:bg-zinc-900"
             >
               <p className="p-3 text-center text-sm font-light dark:text-white xs:text-base sm:p-5 sm:text-lg">
-                {image.name.split("_").shift()?.toString().split(".").shift()}
+                {image.name
+                  .split("_")
+                  .shift()
+                  ?.toString()
+                  .replace(/\.[^/.]+$/, "")}
               </p>
             </div>
             <Image
