@@ -1,13 +1,9 @@
 "use client";
 
 import fetchImages from "@/services/fetchImages";
+import { ImageType } from "@/types";
 import Image from "next/image";
 import useSWR from "swr";
-
-type ImageType = {
-  name: string;
-  url: string;
-};
 
 const Images = () => {
   const {
@@ -15,7 +11,7 @@ const Images = () => {
     isLoading,
     mutate: refreshImages,
     isValidating,
-  } = useSWR("/api/getImages", fetchImages, {
+  } = useSWR<{ imageUrls: ImageType[] }>("/api/getImages", fetchImages, {
     revalidateOnFocus: false,
   });
 
@@ -37,7 +33,7 @@ const Images = () => {
         </p>
       )}
       <div className="m-6 grid grid-cols-2 gap-4 md:m-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {images?.imageUrls?.map((image: ImageType, i: number) => (
+        {images?.imageUrls?.map((image, i) => (
           <div
             key={image.name}
             className={`relative cursor-help ${
