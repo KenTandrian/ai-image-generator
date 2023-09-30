@@ -25,8 +25,9 @@ export async function storeImage(
     resumable: false,
     metadata: {
       metadata: {
-        ...metadata,
         firebaseStorageDownloadTokens: uuid,
+        geo: JSON.stringify(metadata.geo),
+        ip: metadata.ip,
       },
     },
   };

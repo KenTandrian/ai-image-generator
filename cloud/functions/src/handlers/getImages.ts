@@ -19,21 +19,27 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
     });
     log.info("All images retrieved.");
 
-    const sorted = files.sort(sortByTimeCreated).map((x) => ({
-      url: createPersistentDownloadUrl(
-        bucket.name,
-        x.name,
-        x.metadata.metadata?.firebaseStorageDownloadTokens
-      ),
-      name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
-      metadata: {
-        createdAt: x.metadata.timeCreated,
-        geo: {
-          city: x.metadata.metadata?.geo?.city,
-          country: x.metadata.metadata?.geo?.country,
+    const sorted = files.sort(sortByTimeCreated).map((x) => {
+      const geo = x.metadata.metadata?.geo
+        ? JSON.parse(x.metadata.metadata.geo)
+        : undefined;
+
+      return {
+        url: createPersistentDownloadUrl(
+          bucket.name,
+          x.name,
+          x.metadata.metadata?.firebaseStorageDownloadTokens
+        ),
+        name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
+        metadata: {
+          createdAt: x.metadata.timeCreated,
+          geo: {
+            city: geo?.city,
+            country: geo?.country,
+          },
         },
-      },
-    }));
+      };
+    });
     return { imageUrls: sorted };
   } catch (err) {
     log.error(err);
