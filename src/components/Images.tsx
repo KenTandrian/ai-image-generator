@@ -2,6 +2,7 @@
 
 import fetchImages from "@/services/fetchImages";
 import { ImageType } from "@/types";
+import { relative } from "@/utils/date-fns";
 import Image from "next/image";
 import useSWR from "swr";
 
@@ -40,6 +41,9 @@ const Images = () => {
               i === 0 && "col-span-2 row-span-2"
             } transition-transform duration-200 ease-in-out hover:scale-[102%]`}
           >
+            <div className="absolute bottom-1 right-1 z-10 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
+              {relative(new Date(image.metadata.createdAt), true)}
+            </div>
             <div
               className="absolute z-10 flex h-full w-full items-center justify-center bg-white opacity-0 
                 transition-opacity duration-200 hover:opacity-80 dark:bg-zinc-900"
