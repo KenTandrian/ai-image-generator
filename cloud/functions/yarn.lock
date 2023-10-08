@@ -185,10 +185,10 @@
     teeny-request "^8.0.0"
     uuid "^8.0.0"
 
-"@google-cloud/storage@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-7.1.0.tgz#c76ff48350d2e83989cc1050c29549ace55787a1"
-  integrity sha512-kAtniePZT5Ms9wayYcbT44H+1jwkYvRaA+E3IGnmBLG+aGwMTM0q9Xn0CCIez4D8toeBYczNkhQsQfRT1TDy7A==
+"@google-cloud/storage@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-7.2.0.tgz#3ece7d7e029474558c9608c471a9fd4cbf3b966e"
+  integrity sha512-g3j/LoGPydCo5MUfWS1GupBjjPmesKWIo6dH8kUWiVMBmvSG4dpwXVL1NvG1DZTkJSiyjvqRWi9lHJxRfxWbsw==
   dependencies:
     "@google-cloud/paginator" "^5.0.0"
     "@google-cloud/projectify" "^4.0.0"
@@ -198,7 +198,7 @@
     compressible "^2.0.12"
     duplexify "^4.0.0"
     ent "^2.2.0"
-    fast-xml-parser "^4.2.2"
+    fast-xml-parser "^4.3.0"
     gaxios "^6.0.2"
     google-auth-library "^9.0.0"
     mime "^3.0.0"
@@ -1534,7 +1534,7 @@ fast-text-encoding@^1.0.0, fast-text-encoding@^1.0.3:
   resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.6.tgz#0aa25f7f638222e3396d72bf936afcf1d42d6867"
   integrity sha512-VhXlQgj9ioXCqGstD37E/HBeqEGV/qOD/kmbVG8h5xKBYvM1L3lR1Zn4555cQ8GkYbJa8aJSipLPndE1k6zK2w==
 
-fast-xml-parser@^4.2.2:
+fast-xml-parser@^4.2.2, fast-xml-parser@^4.3.0:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.3.2.tgz#761e641260706d6e13251c4ef8e3f5694d4b0d79"
   integrity sha512-rmrXUXwbJedoXkStenj1kkljNF7ugn5ZjR9FJcwmCfcCbtOMDghPajbc+Tck6vE6F5XsDmx+Pr2le9fw8+pXBg==
