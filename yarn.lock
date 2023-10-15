@@ -635,6 +635,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@trpc/client@^10.40.0":
+  version "10.40.0"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-10.40.0.tgz#edf1eb1221c611de911a85b3fa433fbb1421a47b"
+  integrity sha512-bT6BcdWjj0KzGQiimE6rB2tIaRYX0Ear4Gthb5szN/c01wrP0yC1Fbz2uCcm/QTVAwu4Lve5M+YjPoEaTHG6lg==
+
 "@types/json-schema@^7.0.12":
   version "7.0.13"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.13.tgz#02c24f4363176d2d18fc8b70b9f3c54aba178a85"
