@@ -1,5 +1,3 @@
-/** @type {import('next').NextConfig} */
-
 const securityHeaders = [
   {
     key: "Strict-Transport-Security",
@@ -7,6 +5,7 @@ const securityHeaders = [
   },
 ];
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     domains: ["firebasestorage.googleapis.com"],
