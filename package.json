@@ -19,8 +19,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
-    "swr": "^2.2.4",
-    "typescript": "5.2.2"
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@types/node": "^20.8.6",
@@ -35,6 +34,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.3",
-    "tailwindcss-debug-screens": "^2.2.1"
+    "tailwindcss-debug-screens": "^2.2.1",
+    "typescript": "5.2.2"
   }
 }
