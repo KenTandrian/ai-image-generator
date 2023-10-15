@@ -185,10 +185,10 @@
     teeny-request "^8.0.0"
     uuid "^8.0.0"
 
-"@google-cloud/storage@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-7.2.0.tgz#3ece7d7e029474558c9608c471a9fd4cbf3b966e"
-  integrity sha512-g3j/LoGPydCo5MUfWS1GupBjjPmesKWIo6dH8kUWiVMBmvSG4dpwXVL1NvG1DZTkJSiyjvqRWi9lHJxRfxWbsw==
+"@google-cloud/storage@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-7.3.0.tgz#fd20626211dfa45240d3202a6a968390f8d2d6e3"
+  integrity sha512-el97xKaVLEpSyXcPE9ZuEiBjNeX20wY3KJ2E9oebYNSMWa968PRD2GjePl0qGJIKqIbMobSIwpNzUS0fSQ38pw==
   dependencies:
     "@google-cloud/paginator" "^5.0.0"
     "@google-cloud/projectify" "^4.0.0"
