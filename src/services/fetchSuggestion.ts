@@ -1,6 +1,6 @@
-const fetchSuggestion = () =>
-  fetch("api/suggestion", {
-    cache: "no-store",
-  }).then((res) => res.json());
+import trpc from "@/server/client";
 
-export default fetchSuggestion;
+export default async function fetchSuggestion() {
+  const res = await trpc.suggestion.query();
+  return res.message;
+}

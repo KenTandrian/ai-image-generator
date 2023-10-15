@@ -1,5 +1,6 @@
 "use client";
 
+import trpc from "@/server/client";
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
 import React, { useState } from "react";
@@ -28,20 +29,16 @@ const PromptInput = () => {
 
     // p is the prompt to send to API
     const p = useSuggestion ? suggestion : inputPrompt;
+    if (!p) {
+      toast.error("Prompt is empty!");
+      return;
+    }
 
     const notifPrompt = p.slice(0, 50);
     const notification = toast.loading(`DALL·E is creating: ${notifPrompt}...`);
 
-    const resp = await fetch("/api/generateImage", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt: p }),
-    });
-    const data = await resp.json();
-
-    if (data.error) toast.error(data.error, { id: notification });
+    const data = await trpc.generateImage.mutate({ prompt: p });
+    if (!data.success) toast.error(data.message, { id: notification });
     else toast.success("Your AI Art has been generated!", { id: notification });
     refreshImages();
   };
@@ -96,7 +93,7 @@ const PromptInput = () => {
           className="rounded-b-md border-none bg-white p-4 font-bold
             text-violet-500 transition-colors duration-200 dark:bg-transparent
             md:rounded-r-md md:rounded-bl-none"
-          onClick={mutate}
+          onClick={() => mutate()}
         >
           New Suggestion
         </button>

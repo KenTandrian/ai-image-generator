@@ -1,6 +1,5 @@
-const fetchImages = () =>
-  fetch("api/getImages", {
-    cache: "no-store",
-  }).then((res) => res.json());
+import trpc from "@/server/client";
 
-export default fetchImages;
+export default function fetchImages() {
+  return trpc.getImages.query();
+}
