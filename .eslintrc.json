@@ -6,5 +6,10 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended"
-  ]
+  ],
+  "ignorePatterns": ["cloud/", "node_modules/"],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-import-type-side-effects": "error"
+  }
 }

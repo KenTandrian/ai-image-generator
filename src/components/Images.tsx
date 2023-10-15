@@ -1,7 +1,7 @@
 "use client";
 
 import fetchImages from "@/services/fetchImages";
-import { ImageType } from "@/types";
+import type { ImageType } from "@/types";
 import { relative } from "@/utils/date-fns";
 import Image from "next/image";
 import { CircleFlag } from "react-circle-flags";
