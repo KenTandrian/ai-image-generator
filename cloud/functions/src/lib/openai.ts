@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 /** OpenAI Service */
-class OpenAIService {
+export default class OpenAIService {
   private openai: OpenAI;
 
   /** Initialize OpenAI Service */
@@ -22,5 +22,3 @@ class OpenAIService {
     return this.openai.images;
   }
 }
-
-export default OpenAIService;
