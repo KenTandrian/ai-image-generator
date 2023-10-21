@@ -24,6 +24,8 @@ module.exports = {
   ],
   plugins: ["@typescript-eslint", "import", "prettier"],
   rules: {
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-import-type-side-effects": "error",
     quotes: ["error", "double"],
     "import/no-unresolved": 0,
     indent: ["error", 2],
