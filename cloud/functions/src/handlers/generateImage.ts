@@ -1,10 +1,10 @@
-import { onCall } from "firebase-functions/v2/https";
-import { logger as log } from "firebase-functions/v2";
-import OpenAIService from "../lib/openai";
 import axios from "axios";
-import { storeImage } from "../lib/storeImage";
+import { logger as log } from "firebase-functions/v2";
+import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
-import { ImageMeta } from "../types";
+import OpenAIService from "../lib/openai";
+import { storeImage } from "../lib/storeImage";
+import type { ImageMeta } from "../types";
 
 type RequestData = {
   prompt: string;

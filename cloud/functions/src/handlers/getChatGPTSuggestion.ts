@@ -1,7 +1,7 @@
-import { onCall } from "firebase-functions/v2/https";
 import { logger as log } from "firebase-functions/v2";
-import OpenAIService from "../lib/openai";
+import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS } from "../constants";
+import OpenAIService from "../lib/openai";
 
 export const getChatGPTSuggestion = onCall(GLOBAL_OPTIONS, async () => {
   try {

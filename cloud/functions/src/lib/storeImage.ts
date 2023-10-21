@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
+import type { ImageMeta } from "../types";
 import { storage } from "./firebase";
-import { ImageMeta } from "../types";
 
 /**
  * Stores image into Firebase storage and returns path.

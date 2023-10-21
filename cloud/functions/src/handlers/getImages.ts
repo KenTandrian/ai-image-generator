@@ -1,9 +1,9 @@
-import { onCall } from "firebase-functions/v2/https";
+import type { File } from "firebase-admin/node_modules/@google-cloud/storage";
 import { logger as log } from "firebase-functions/v2";
-import { storage } from "../lib/firebase";
+import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
+import { storage } from "../lib/firebase";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
-import { File } from "firebase-admin/node_modules/@google-cloud/storage";
 
 const sortByTimeCreated = (a: File, b: File) => {
   const dateA = new Date(a.metadata.timeCreated);
