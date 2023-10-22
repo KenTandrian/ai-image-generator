@@ -1,20 +1,22 @@
 "use client";
 
+import useProviderSelector from "@/components/ProviderSelector";
 import trpc from "@/server/client";
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
-import React, { useState } from "react";
-import useSWR from "swr";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import useSWR from "swr";
 
 const PromptInput = () => {
+  const { provider, ProviderSelector } = useProviderSelector();
   const [input, setInput] = useState("");
   const {
     data: suggestion,
     isLoading,
     mutate,
     isValidating,
-  } = useSWR("/api/suggestion", fetchSuggestion, {
+  } = useSWR("/api/suggestion", () => fetchSuggestion({ provider }), {
     revalidateOnFocus: false,
   });
   const loading = isLoading || isValidating;
@@ -50,6 +52,7 @@ const PromptInput = () => {
 
   return (
     <div className="m-6 md:m-10">
+      <ProviderSelector />
       <form
         className="flex flex-col rounded-md border 
         shadow-md shadow-slate-400/10 dark:divide-zinc-500 dark:border-zinc-500 lg:flex-row lg:divide-x"
