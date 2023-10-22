@@ -1,8 +1,7 @@
-import React from "react";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PromptInput from "@/components/PromptInput";
 import ToastProvider from "@/components/ToastProvider";
-import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -17,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html
-      className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}
+      className={
+        "dark " +
+        (process.env.NODE_ENV === "development" ? "debug-screens" : "")
+      }
       lang="en"
     >
       <body className="bg-white dark:bg-zinc-950">
