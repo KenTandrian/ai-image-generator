@@ -21,6 +21,7 @@ export default function RootLayout({
         (process.env.NODE_ENV === "development" ? "debug-screens" : "")
       }
       lang="en"
+      style={{ colorScheme: "dark" }}
     >
       <body className="bg-white dark:bg-zinc-950">
         <ToastProvider>
