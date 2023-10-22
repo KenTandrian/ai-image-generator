@@ -1,6 +1,7 @@
 "use client";
 
 import useProviderSelector from "@/components/ProviderSelector";
+import { getProviderName } from "@/data/ai-providers";
 import trpc from "@/server/client";
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
@@ -63,7 +64,8 @@ const PromptInput = () => {
           id="prompt"
           className="flex-1 resize-none rounded-md p-4 outline-none dark:bg-transparent dark:text-zinc-200"
           placeholder={
-            (loading && "ChatGPT is thinking of a suggestion...") ||
+            (loading &&
+              `${getProviderName(provider)} is thinking of a suggestion...`) ||
             suggestion ||
             "Enter a prompt..."
           }
@@ -106,7 +108,9 @@ const PromptInput = () => {
         <p className="pl-2 pt-2 font-light italic dark:text-zinc-300">
           Suggestion:{" "}
           <span className="text-violet-500">
-            {loading ? "ChatGPT is thinking..." : suggestion}{" "}
+            {loading
+              ? `${getProviderName(provider)} is thinking...`
+              : suggestion}{" "}
           </span>
         </p>
       )}

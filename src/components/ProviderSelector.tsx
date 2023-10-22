@@ -1,40 +1,34 @@
+import { PROVIDERS, type AIProvider } from "@/data/ai-providers";
 import { useCallback, useState } from "react";
-
-const PROVIDERS = [
-  { name: "Google VertexAI", value: "vertexai" },
-  { name: "OpenAI ChatGPT", value: "openai" },
-] as const;
-
-type Provider = (typeof PROVIDERS)[number]["value"];
 
 function Selector({
   onChange,
   provider,
 }: {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  provider: Provider;
+  provider: AIProvider;
 }) {
   return (
     <div className="mb-4 flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 dark:border-zinc-700 sm:flex-row">
-      <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+      <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
         Choose AI Provider:
       </h3>
 
-      <div className="flex">
+      <div className="flex gap-4">
         {PROVIDERS.map((p, i) => (
-          <div className="mr-4 flex items-center" key={i}>
+          <div className="flex items-center" key={i}>
             <input
               id={p.value}
               type="radio"
               value={p.value}
               name="provider"
-              className="h-4 w-4 border-gray-300 bg-gray-100 text-violet-600 accent-violet-600 dark:border-gray-600 dark:bg-gray-700"
+              className="h-4 w-4 border-zinc-300 bg-zinc-100 text-violet-600 accent-violet-600 dark:border-zinc-600 dark:bg-zinc-700"
               onChange={onChange}
               checked={p.value === provider}
             />
             <label
               htmlFor={p.value}
-              className="ml-2 text-sm text-gray-900 dark:text-gray-300"
+              className="ml-2 text-sm text-zinc-900 dark:text-zinc-300"
             >
               {p.name}
             </label>
@@ -46,11 +40,11 @@ function Selector({
 }
 
 export default function useProviderSelector() {
-  const [provider, setProvider] = useState<Provider>("vertexai");
+  const [provider, setProvider] = useState<AIProvider>("vertexai");
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.value);
-    setProvider(event.target.value as Provider);
+    setProvider(event.target.value as AIProvider);
   };
 
   const ProviderSelector = useCallback(
