@@ -12,12 +12,20 @@ import useSWR from "swr";
 const PromptInput = () => {
   const { provider, ProviderSelector } = useProviderSelector();
   const [input, setInput] = useState("");
+
+  // Latest AI provider that is being fetched
+  const [fetchingProvider, setFetchingProvider] = useState<string>();
+  function getSuggestion(p: typeof provider) {
+    setFetchingProvider(getProviderName(p));
+    return fetchSuggestion({ provider: p });
+  }
+
   const {
     data: suggestion,
     isLoading,
     mutate,
     isValidating,
-  } = useSWR("/api/suggestion", () => fetchSuggestion({ provider }), {
+  } = useSWR("/api/suggestion", () => getSuggestion(provider), {
     revalidateOnFocus: false,
   });
   const loading = isLoading || isValidating;
@@ -64,8 +72,7 @@ const PromptInput = () => {
           id="prompt"
           className="flex-1 resize-none rounded-md p-4 outline-none dark:bg-transparent dark:text-zinc-200"
           placeholder={
-            (loading &&
-              `${getProviderName(provider)} is thinking of a suggestion...`) ||
+            (loading && `${fetchingProvider} is thinking of a suggestion...`) ||
             suggestion ||
             "Enter a prompt..."
           }
@@ -108,9 +115,7 @@ const PromptInput = () => {
         <p className="pl-2 pt-2 font-light italic dark:text-zinc-300">
           Suggestion:{" "}
           <span className="text-violet-500">
-            {loading
-              ? `${getProviderName(provider)} is thinking...`
-              : suggestion}{" "}
+            {loading ? `${fetchingProvider} is thinking...` : suggestion}{" "}
           </span>
         </p>
       )}
