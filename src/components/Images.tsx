@@ -5,6 +5,7 @@ import type { ImageType } from "@/types";
 import { relative } from "@/utils/date-fns";
 import Image from "next/image";
 import { CircleFlag } from "react-circle-flags";
+import { TbRefresh } from "react-icons/tb";
 import useSWR from "swr";
 
 const Images = () => {
@@ -16,17 +17,19 @@ const Images = () => {
   } = useSWR<{ imageUrls: ImageType[] }>("/api/getImages", fetchImages, {
     revalidateOnFocus: false,
   });
+  const loading = !isLoading && isValidating;
 
   return (
     <div>
       <button
-        disabled={!isLoading && isValidating}
+        disabled={loading}
         onClick={() => refreshImages(images)}
-        className="fixed bottom-10 right-10 z-20 rounded-md bg-violet-400/90 px-5 py-3 
-        font-bold text-white hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400
+        className="fixed bottom-8 right-8 z-20 flex items-center rounded-md bg-violet-400/90 px-4 py-2 font-medium
+          text-white transition-colors hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400
           disabled:cursor-not-allowed"
       >
-        {!isLoading && isValidating ? "Refreshing..." : "Refresh Images"}
+        <TbRefresh className={"mr-2" + (loading ? " animate-spin" : "")} />
+        {loading ? "Refreshing..." : "Refresh Images"}
       </button>
       {isLoading && (
         <p className="animate-pulse pb-7 text-center font-extralight dark:text-white">
