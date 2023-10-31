@@ -225,9 +225,9 @@
     "@types/node" ">=12.12.47"
 
 "@grpc/grpc-js@~1.9.6":
-  version "1.9.8"
-  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.9.8.tgz#92dc0eca37d701b3d3b7b898e55ce20e0507176b"
-  integrity sha512-FFPzDS333Vw8hvf+1FaEsaCYVPBdNdUCw7zArTiF7+6gOzln967b4GBCBekKGqoKEgna8d3Ayxv8t+IvazXG3g==
+  version "1.9.9"
+  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.9.9.tgz#ce3a05439b1c957ec64c2ecdc6f1e4f54e8af797"
+  integrity sha512-vQ1qwi/Kiyprt+uhb1+rHMpyk4CVRMTGNUGGPRGS7pLNfWkdCHrGEnT6T3/JyC2VZgoOX/X1KwdoU0WYQAeYcQ==
   dependencies:
     "@grpc/proto-loader" "^0.7.8"
     "@types/node" ">=12.12.47"
@@ -489,9 +489,9 @@
   integrity sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==
 
 "@types/node-fetch@^2.6.4":
-  version "2.6.7"
-  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.6.7.tgz#a1abe2ce24228b58ad97f99480fdcf9bbc6ab16d"
-  integrity sha512-lX17GZVpJ/fuCjguZ5b3TjEbSENxmEk1B2z02yoXSK9WMEWRivhdSY73wWMn6bpcCDAOh6qAdktpKHIlkDk2lg==
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.6.8.tgz#9a2993583975849c2e1f360b6ca2f11755b2c504"
+  integrity sha512-nnH5lV9QCMPsbEVdTb5Y+F3GQxLSw1xQgIydrb2gSfEavRPs50FnMr+KUaa+LoPSqibm2N+ZZxH7lavZlAT4GA==
   dependencies:
     "@types/node" "*"
     form-data "^4.0.0"
@@ -3103,9 +3103,9 @@ pseudomap@^1.0.1:
   integrity sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==
 
 punycode@^2.1.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.0.tgz#f67fa67c94da8f4d0cfff981aee4118064199b8f"
-  integrity sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.1.tgz#027422e2faec0b25e1549c3e1bd8309b9133b6e5"
+  integrity sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==
 
 qs@6.11.0:
   version "6.11.0"
