@@ -115,10 +115,10 @@
   dependencies:
     tslib "^2.1.0"
 
-"@google-cloud/aiplatform@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/aiplatform/-/aiplatform-3.5.0.tgz#c1cdd3986f83a5ea4619fd8705ab674f493c16ce"
-  integrity sha512-K+4/B183J9mql8Nhx5sDDlcaTzp2A/nGvg+sgksDED6kS5FVTXfcIR/GUAGu2xan2IXIPDjj0UDD6DIgn5EXfw==
+"@google-cloud/aiplatform@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/aiplatform/-/aiplatform-3.6.0.tgz#ce3bbcdf6c72606a254991d26b163dd19d7e1255"
+  integrity sha512-2e2b46s/G4De1V8CeFCbFf0nVpbzhpy4Ezv5Uia/v4gyxu6cnS8gW/SjZQoMh9SkwDcS+1q9DXC7Umvk3W8QlA==
   dependencies:
     google-gax "^4.0.3"
     protobuf.js "^1.1.2"
