@@ -689,9 +689,9 @@
   integrity sha512-Vlktnchmkylvc9SnwwwozTv04L/e1NykF5vgoQ0XTmI8DD+wxfjQuHuvHS3p0r2jz2x2ghPs2h1FVeDirIteWA==
 
 "@types/semver@^7.5.0":
-  version "7.5.4"
-  resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.4.tgz#0a41252ad431c473158b22f9bfb9a63df7541cff"
-  integrity sha512-MMzuxN3GdFwskAnb6fz0orFvhfqi752yjaXylr0Rp4oDg5H0Zn1IuyRhDVvYOwAXoJirx2xuS16I3WjxnAIHiQ==
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.5.tgz#deed5ab7019756c9c90ea86139106b0346223f35"
+  integrity sha512-+d+WYC1BxJ6yVOgUgzK8gWvp5qF8ssV5r4nsDcZWKRWcDQLQ619tvWAxJQYGgBrO1MnLJC7a5GtiYsAoQ47dJg==
 
 "@typescript-eslint/eslint-plugin@^6.11.0":
   version "6.11.0"
@@ -1027,9 +1027,9 @@ camelcase-css@^2.0.1:
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
 caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001538, caniuse-lite@^1.0.30001541:
-  version "1.0.30001561"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001561.tgz#752f21f56f96f1b1a52e97aae98c57c562d5d9da"
-  integrity sha512-NTt0DNoKe958Q0BE0j0c1V9jbUzhBxHIEJy7asmGrpE0yG63KTV7PLHPnK2E1O9RsQrQ081I3NLuXGS6zht3cw==
+  version "1.0.30001562"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001562.tgz#9d16c5fd7e9c592c4cd5e304bc0f75b0008b2759"
+  integrity sha512-kfte3Hym//51EdX4239i+Rmp20EsLIYGdPkERegTgU19hQWCRhsRFGKHTliUlsry53tv17K7n077Kqa0WJU4ng==
 
 chalk@^4.0.0:
   version "4.1.2"
@@ -1188,9 +1188,9 @@ doctrine@^3.0.0:
     esutils "^2.0.2"
 
 electron-to-chromium@^1.4.535:
-  version "1.4.577"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.577.tgz#a732f11cf4532be96e5e3f1197dcda54c2cec7ad"
-  integrity sha512-/5xHPH6f00SxhHw6052r+5S1xO7gHNc89hV7tqlvnStvKbSrDqc/u6AlwPvVWWNj+s4/KL6T6y8ih+nOY0qYNA==
+  version "1.4.582"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.582.tgz#4908215182266793499ac57d80e2680d7dd9b3db"
+  integrity sha512-89o0MGoocwYbzqUUjc+VNpeOFSOK9nIdC5wY4N+PVUarUK0MtjyTjks75AZS2bW4Kl8MdewdFsWaH0jLy+JNoA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1611,9 +1611,9 @@ firebase@^10.6.0:
     "@firebase/util" "1.9.3"
 
 flat-cache@^3.0.4:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-3.1.1.tgz#a02a15fdec25a8f844ff7cc658f03dd99eb4609b"
-  integrity sha512-/qM2b3LUIaIgviBQovTLvijfyOQXPtSRnRK26ksj2J7rzPIecePUIpJsZ4T02Qg+xiAEKIs5K8dsHEd+VaKa/Q==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-3.2.0.tgz#2c0c2d5040c99b1632771a9d105725c0115363ee"
+  integrity sha512-CYcENa+FtcUKLmhhqyctpclsq7QF38pKjZHsGNiSQF5r4FtoKDWabFDl3hzaEQMvT1LHEysw5twgLvpYYb4vbw==
   dependencies:
     flatted "^3.2.9"
     keyv "^4.5.3"
