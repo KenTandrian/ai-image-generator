@@ -24,8 +24,8 @@
     "openai": "^4.19.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
     "eslint": "^8.54.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^9.0.0",
