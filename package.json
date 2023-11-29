@@ -13,7 +13,7 @@
   "dependencies": {
     "@trpc/client": "^10.44.1",
     "@trpc/server": "^10.44.1",
-    "firebase": "^10.6.0",
+    "firebase": "^10.7.0",
     "javascript-time-ago": "^2.5.9",
     "next": "^14.0.3",
     "react": "18.2.0",
