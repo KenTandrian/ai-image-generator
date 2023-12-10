@@ -1,3 +1,5 @@
+// @ts-check
+
 const securityHeaders = [
   {
     key: "Strict-Transport-Security",
@@ -24,4 +26,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
