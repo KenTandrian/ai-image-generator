@@ -8,6 +8,6 @@ jobs:
     permissions:
       contents: write
     with:
-      package-manager: yarn
+      package-manager: npm
       working-directory: ./cloud/functions
     secrets: inherit

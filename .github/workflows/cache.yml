@@ -1,0 +1,36 @@
+name: Cache Node.js Dependencies
+on:
+  schedule:
+    # Every Sunday at 00:00 UTC+7
+    - cron: "0 17 * * 6"
+  workflow_dispatch:
+
+env:
+  RUNNER_OS: linux
+  RUNNER_ARCH: x64
+
+jobs:
+  cache:
+    name: Cache frontend dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛎️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📁 Get Yarn cache directory
+        id: yarn-cache-dir
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: ☁️ Cache Yarn
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: node-cache-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: node-cache-${{ runner.os }}-yarn-
+
+      - name: 🧽 Cache cleanup
+        run: yarn cache clean
+
+      - name: 📦 Install dependencies
+        run: yarn install --frozen-lockfile
