@@ -10,7 +10,7 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: monthly
+      interval: weekly
     labels:
       - javascript
       - dependencies
@@ -31,7 +31,7 @@ updates:
   - package-ecosystem: npm
     directory: "/cloud/functions"
     schedule:
-      interval: monthly
+      interval: weekly
     labels:
       - functions
       - dependencies
