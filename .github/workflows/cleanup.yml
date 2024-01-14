@@ -1,7 +1,10 @@
 name: Cleanup Old Cache
 on:
   workflow_run:
-    workflows: ["Cache Node.js dependencies", "Lockfile Maintenance"]
+    workflows:
+      - "Cache Node.js dependencies"
+      - "Lockfile Maintenance"
+      - "Lockfile Maintenance (Cloud)"
     branches: [main]
     types: [completed]
   workflow_dispatch:
