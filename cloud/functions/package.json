@@ -1,6 +1,6 @@
 {
   "name": "functions",
-  "version": "0.8.1",
+  "version": "0.8.9",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
