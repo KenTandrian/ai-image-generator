@@ -11,8 +11,8 @@
     "format:write": "prettier . --write --ignore-unknown"
   },
   "dependencies": {
-    "@trpc/client": "10.45.0",
-    "@trpc/server": "10.45.0",
+    "@trpc/client": "10.45.1",
+    "@trpc/server": "10.45.1",
     "firebase": "10.8.0",
     "javascript-time-ago": "2.5.9",
     "next": "14.1.0",
