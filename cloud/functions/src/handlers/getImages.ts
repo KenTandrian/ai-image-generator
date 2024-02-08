@@ -1,4 +1,4 @@
-import type { File } from "firebase-admin/node_modules/@google-cloud/storage";
+import type { File } from "@google-cloud/storage";
 import { logger as log } from "firebase-functions/v2";
 import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
@@ -6,8 +6,8 @@ import { storage } from "../lib/firebase";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
 
 const sortByTimeCreated = (a: File, b: File) => {
-  const dateA = new Date(a.metadata.timeCreated);
-  const dateB = new Date(b.metadata.timeCreated);
+  const dateA = new Date(a.metadata.timeCreated!);
+  const dateB = new Date(b.metadata.timeCreated!);
   return dateB.getTime() - dateA.getTime(); // descending
 };
 
@@ -28,7 +28,7 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
         url: createPersistentDownloadUrl(
           bucket.name,
           x.name,
-          x.metadata.metadata?.firebaseStorageDownloadTokens
+          x.metadata.metadata?.firebaseStorageDownloadTokens ?? ""
         ),
         name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
         metadata: {
