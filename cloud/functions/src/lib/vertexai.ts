@@ -16,7 +16,7 @@ export default class VertexAIService {
   private project = process.env.GCLOUD_PROJECT;
   private location = "us-central1";
   private publisher = "google";
-  private model = "chat-bison@001";
+  private model = "chat-bison@002";
 
   /** Initialize Vertex AI Service */
   constructor() {
