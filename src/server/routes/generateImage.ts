@@ -1,6 +1,6 @@
+import { callableFn } from "@/services/firebase";
 import { z } from "zod";
 import { APIResp, type Context } from "../trpc";
-import { callableFn } from "@/services/firebase";
 
 export const generateImageInput = z.object({
   prompt: z.string(),
@@ -13,6 +13,10 @@ export async function generateImageFn(ctx: Context, input: Input) {
     prompt,
     metadata: { ip: ctx.ip, geo: ctx.geo },
   });
+  if (Object.hasOwn(response.data as object, "error")) {
+    const data = response.data as { error: { message: string } };
+    return new APIResp(data.error.message, false);
+  }
   const textData = response.data as string;
   return new APIResp(textData, true);
 }
