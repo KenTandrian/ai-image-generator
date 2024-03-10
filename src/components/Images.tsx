@@ -1,7 +1,6 @@
 "use client";
 
 import fetchImages from "@/services/fetchImages";
-import type { ImageType } from "@/types";
 import { TbRefresh } from "react-icons/tb";
 import useSWR from "swr";
 import AIImage from "./Image";
@@ -12,7 +11,7 @@ const Images = () => {
     isLoading,
     mutate: refreshImages,
     isValidating,
-  } = useSWR<{ imageUrls: ImageType[] }>("/api/getImages", fetchImages, {
+  } = useSWR("/api/getImages", fetchImages, {
     revalidateOnFocus: false,
   });
   const loading = !isLoading && isValidating;
