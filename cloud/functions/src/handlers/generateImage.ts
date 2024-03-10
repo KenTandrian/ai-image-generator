@@ -15,7 +15,8 @@ export const generateImage = onCall<RequestData>(
   { ...GLOBAL_OPTIONS, timeoutSeconds: 540, memory: "4GiB" },
   async (request) => {
     try {
-      const { prompt, metadata } = request.data;
+      const { prompt: rawPrompt, metadata } = request.data;
+      const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
       log.info(`Prompt is ${prompt}, coming from ${metadata.geo?.city}`);
 
       const openai = new OpenAIService();
