@@ -45,7 +45,7 @@ const Images = () => {
               i === 0 && "col-span-2 row-span-2"
             } transition-transform duration-200 ease-in-out hover:scale-[102%]`}
           >
-            <div className="absolute bottom-1 right-1 z-10 flex items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
+            <div className="absolute bottom-1 right-1 z-10 ml-1 flex items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
               {image.metadata.createdAt
                 ? relative(new Date(image.metadata.createdAt), true)
                 : null}
