@@ -60,7 +60,7 @@ const PromptInput = () => {
   };
 
   return (
-    <div className="m-6 md:m-10">
+    <div className="max-w-screen-3xl mx-auto my-6 px-6 md:my-10 md:px-10">
       <ProviderSelector />
       <form
         className="flex flex-col rounded-md border 
