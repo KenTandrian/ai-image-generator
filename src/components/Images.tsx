@@ -24,9 +24,9 @@ const Images = () => {
       <button
         disabled={loading}
         onClick={() => refreshImages(images)}
-        className="fixed bottom-8 right-8 z-20 flex items-center rounded-md bg-violet-400/90 px-4 py-2 font-medium
-          text-white transition-colors hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400
-          disabled:cursor-not-allowed"
+        className="fixed bottom-4 right-4 z-20 flex items-center rounded-md bg-violet-400/90 px-4 py-2 font-medium text-white transition-colors
+          hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400 disabled:cursor-not-allowed md:bottom-8
+          md:right-8"
       >
         <TbRefresh className={"mr-2" + (loading ? " animate-spin" : "")} />
         {loading ? "Refreshing..." : "Refresh Images"}
