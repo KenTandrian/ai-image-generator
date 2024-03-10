@@ -1,4 +1,4 @@
-import type { File } from "@google-cloud/storage";
+import type { Bucket, File } from "@google-cloud/storage";
 import { logger as log } from "firebase-functions/v2";
 import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
@@ -11,6 +11,28 @@ const sortByTimeCreated = (a: File, b: File) => {
   return dateB.getTime() - dateA.getTime(); // descending
 };
 
+const prepareImage = (bucket: Bucket) => (x: File) => {
+  const geo = x.metadata.metadata?.geo
+    ? JSON.parse(x.metadata.metadata.geo)
+    : undefined;
+
+  return {
+    url: createPersistentDownloadUrl(
+      bucket.name,
+      x.name,
+      x.metadata.metadata?.firebaseStorageDownloadTokens ?? ""
+    ),
+    name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
+    metadata: {
+      createdAt: x.metadata.timeCreated,
+      geo: {
+        city: geo?.city,
+        country: geo?.country,
+      },
+    },
+  };
+};
+
 export const getImages = onCall(GLOBAL_OPTIONS, async () => {
   try {
     const bucket = storage.bucket();
@@ -20,27 +42,7 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
     log.info("All images retrieved.");
 
     const sorted = files.sort(sortByTimeCreated);
-    const imageUrls = sorted.slice(0, 27).map((x) => {
-      const geo = x.metadata.metadata?.geo
-        ? JSON.parse(x.metadata.metadata.geo)
-        : undefined;
-
-      return {
-        url: createPersistentDownloadUrl(
-          bucket.name,
-          x.name,
-          x.metadata.metadata?.firebaseStorageDownloadTokens ?? ""
-        ),
-        name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
-        metadata: {
-          createdAt: x.metadata.timeCreated,
-          geo: {
-            city: geo?.city,
-            country: geo?.country,
-          },
-        },
-      };
-    });
+    const imageUrls = sorted.slice(0, 27).map(prepareImage(bucket));
     return { imageUrls };
   } catch (err) {
     log.error(err);
