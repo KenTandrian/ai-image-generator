@@ -17,7 +17,7 @@ const Images = () => {
   const loading = !isLoading && isValidating;
 
   return (
-    <div>
+    <div className="max-w-screen-3xl mx-auto mb-12">
       <button
         disabled={loading}
         onClick={() => refreshImages(images)}

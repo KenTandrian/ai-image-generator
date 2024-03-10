@@ -11,6 +11,7 @@ export default {
     extend: {},
     screens: {
       xs: "360px",
+      "3xl": "1920px",
       ...defaultTheme.screens,
     },
   },
