@@ -1,7 +1,7 @@
 "use client";
 
 import fetchImages from "@/services/fetchImages";
-import { TbRefresh } from "react-icons/tb";
+import { TbLoader2, TbRefresh } from "react-icons/tb";
 import useSWR from "swr";
 import AIImage from "./Image";
 
@@ -29,10 +29,13 @@ const Images = () => {
         {loading ? "Refreshing..." : "Refresh Images"}
       </button>
       {isLoading && (
-        <p className="animate-pulse pb-7 text-center font-extralight dark:text-white">
-          Loading <span className="text-violet-400">AI</span> Generated
-          Images...
-        </p>
+        <div className="mb-7 text-center">
+          <TbLoader2 className="mb-3 inline-block h-10 w-10 animate-spin text-violet-400" />
+          <p className="animate-pulse font-extralight dark:text-white">
+            Loading <span className="text-violet-400">AI</span> Generated
+            Images...
+          </p>
+        </div>
       )}
       <div className="m-6 grid grid-cols-2 gap-4 md:m-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {images?.imageUrls?.map((image, i) => (
