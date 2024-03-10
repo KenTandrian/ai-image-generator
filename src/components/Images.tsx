@@ -48,10 +48,12 @@ const Images = () => {
           <AIImage key={i} isFirst={i === 0} image={image} />
         ))}
       </div>
-      <div className="mx-6 mt-12 text-2xl font-medium md:mx-10">
-        <TbStar className="mb-1 mr-2 inline-block h-8 w-8 text-violet-400" />
-        Favorites
-      </div>
+      {!isLoading && (
+        <div className="mx-6 mt-12 text-2xl font-medium md:mx-10">
+          <TbStar className="mb-1 mr-2 inline-block h-8 w-8 text-violet-400" />
+          Favorites
+        </div>
+      )}
       <div className="mx-6 my-3 grid grid-cols-2 gap-4 md:mx-10 md:my-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {images?.favorites?.map((image, i) => (
           <AIImage key={i} isFirst={i === 0} image={image} />
