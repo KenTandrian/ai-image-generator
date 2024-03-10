@@ -43,7 +43,11 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
 
     const sorted = files.sort(sortByTimeCreated);
     const imageUrls = sorted.slice(0, 27).map(prepareImage(bucket));
-    return { imageUrls };
+    const favorites = sorted
+      .filter((x) => x.metadata.metadata?.favorite === "true")
+      .slice(0, 27)
+      .map(prepareImage(bucket));
+    return { imageUrls, favorites };
   } catch (err) {
     log.error(err);
     return err;
