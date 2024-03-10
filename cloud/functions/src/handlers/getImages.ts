@@ -19,7 +19,8 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
     });
     log.info("All images retrieved.");
 
-    const sorted = files.sort(sortByTimeCreated).map((x) => {
+    const sorted = files.sort(sortByTimeCreated);
+    const imageUrls = sorted.slice(0, 27).map((x) => {
       const geo = x.metadata.metadata?.geo
         ? JSON.parse(x.metadata.metadata.geo)
         : undefined;
@@ -40,7 +41,7 @@ export const getImages = onCall(GLOBAL_OPTIONS, async () => {
         },
       };
     });
-    return { imageUrls: sorted };
+    return { imageUrls };
   } catch (err) {
     log.error(err);
     return err;
