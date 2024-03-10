@@ -1,7 +1,7 @@
 "use client";
 
 import fetchImages from "@/services/fetchImages";
-import { TbLoader2, TbRefresh } from "react-icons/tb";
+import { TbHistory, TbLoader2, TbRefresh, TbStar } from "react-icons/tb";
 import useSWR from "swr";
 import AIImage from "./Image";
 
@@ -37,8 +37,23 @@ const Images = () => {
           </p>
         </div>
       )}
-      <div className="m-6 grid grid-cols-2 gap-4 md:m-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      {!isLoading && (
+        <div className="mx-6 text-2xl font-medium md:mx-10">
+          <TbHistory className="mb-1 mr-2 inline-block h-8 w-8 text-violet-400" />
+          Recent
+        </div>
+      )}
+      <div className="mx-6 my-3 grid grid-cols-2 gap-4 md:mx-10 md:my-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {images?.imageUrls?.map((image, i) => (
+          <AIImage key={i} isFirst={i === 0} image={image} />
+        ))}
+      </div>
+      <div className="mx-6 mt-12 text-2xl font-medium md:mx-10">
+        <TbStar className="mb-1 mr-2 inline-block h-8 w-8 text-violet-400" />
+        Favorites
+      </div>
+      <div className="mx-6 my-3 grid grid-cols-2 gap-4 md:mx-10 md:my-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        {images?.favorites?.map((image, i) => (
           <AIImage key={i} isFirst={i === 0} image={image} />
         ))}
       </div>

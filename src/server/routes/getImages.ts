@@ -3,6 +3,7 @@ import type { ImageType } from "@/types";
 
 type Return = {
   imageUrls: ImageType[];
+  favorites: ImageType[];
 };
 
 export async function getImagesFn() {
