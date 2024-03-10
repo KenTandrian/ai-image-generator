@@ -40,5 +40,8 @@
     "tailwindcss": "3.4.1",
     "tailwindcss-debug-screens": "2.2.1",
     "typescript": "5.4.2"
+  },
+  "resolutions": {
+    "eslint/file-entry-cache": "^8.0.0"
   }
 }
