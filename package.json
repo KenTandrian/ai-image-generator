@@ -1,6 +1,7 @@
 {
   "name": "ai-image-generator",
   "version": "0.8.74",
+  "packageManager": "yarn@1.22.19",
   "private": true,
   "scripts": {
     "dev": "next dev",
