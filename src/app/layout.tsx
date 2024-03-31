@@ -6,7 +6,8 @@ import "@/styles/globals.css";
 
 export const metadata = {
   title: "AI Art Gallery",
-  description: "Generated using DALL·E 2.0, ChatGPT & Google Cloud Functions",
+  description:
+    "AI image generator powered by Imagen, Vertex AI & Google Cloud Functions",
 };
 
 export default function RootLayout({

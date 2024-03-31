@@ -46,7 +46,7 @@ const PromptInput = () => {
     }
 
     const notifPrompt = p.slice(0, 50);
-    const notification = toast.loading(`DALL·E is creating: ${notifPrompt}...`);
+    const notification = toast.loading(`AI is creating: ${notifPrompt}...`);
 
     const data = await trpc.generateImage.mutate({ prompt: p });
     if (!data.success) toast.error(data.message, { id: notification });
@@ -60,7 +60,7 @@ const PromptInput = () => {
   };
 
   return (
-    <div className="max-w-screen-3xl mx-auto my-6 px-6 md:my-10 md:px-10">
+    <div className="mx-auto my-6 max-w-screen-3xl px-6 md:my-10 md:px-10">
       <ProviderSelector />
       <form
         className="flex flex-col rounded-md border 

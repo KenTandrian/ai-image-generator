@@ -11,7 +11,7 @@
 
 ## Introduction
 
-AI Image Generator is an AI-based drawing generator site made using DALL·E 2.0, ChatGPT and Google Cloud.\
+AI Image Generator is an AI-based drawing generator site made using Imagen, [Vertex AI](https://cloud.google.com/vertex-ai) and [Google Cloud](https://cloud.google.com).\
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Running Locally
