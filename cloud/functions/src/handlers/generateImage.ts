@@ -19,25 +19,14 @@ export const generateImage = onCall<RequestData>(
       const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
       log.info(`Prompt is ${prompt}, coming from ${metadata.geo?.city}`);
 
-      const openai = new OpenAIService();
-      const resp = await openai.images.generate({
-        prompt,
-        n: 1,
-        size: "1024x1024",
-      });
-      log.info("Image generated!");
-
-      const imageUrl = resp.data[0].url ?? "";
-      const res = await axios.get(imageUrl, { responseType: "arraybuffer" });
-      const arrayBuffer = res.data;
-      log.info("Image file fetched!");
+      const imgBuffer = await generateWithDalle(prompt);
 
       const timeStamp = new Date().getTime();
       const fileName = `${prompt}_${timeStamp}.png`;
       await storeImage(
         PROJECT_NAME,
         IMAGE_FOLDER_NAME,
-        arrayBuffer,
+        imgBuffer,
         fileName,
         metadata
       );
@@ -50,3 +39,27 @@ export const generateImage = onCall<RequestData>(
     }
   }
 );
+
+/**
+ * Generate image with DALL·E 2.0
+ * @param {string} prompt Prompt
+ * @return {Buffer} Buffer of the generated image
+ */
+async function generateWithDalle(prompt: string) {
+  const openai = new OpenAIService();
+  const resp = await openai.images.generate({
+    prompt,
+    n: 1,
+    size: "1024x1024",
+  });
+  log.info("Image generated!");
+
+  const imageUrl = resp.data[0].url ?? "";
+  const res = await axios.get<Buffer>(imageUrl, {
+    responseType: "arraybuffer",
+  });
+  const arrayBuffer = res.data;
+  log.info("Image file fetched!");
+
+  return arrayBuffer;
+}
