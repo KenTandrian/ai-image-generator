@@ -9,7 +9,7 @@ function Selector({
   provider: AIProvider;
 }) {
   return (
-    <div className="mb-4 flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 sm:flex-row dark:border-zinc-700">
+    <div className="mb-4 flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 dark:border-zinc-700 sm:flex-row">
       <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
         Choose AI Provider:
       </h3>
@@ -40,7 +40,7 @@ function Selector({
 }
 
 export default function useProviderSelector() {
-  const [provider, setProvider] = useState<AIProvider>("vertexai");
+  const [provider, setProvider] = useState<AIProvider>("palm2");
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setProvider(event.target.value as AIProvider);

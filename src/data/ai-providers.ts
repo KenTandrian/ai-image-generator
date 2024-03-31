@@ -1,6 +1,7 @@
 export const PROVIDERS = [
-  { name: "Google VertexAI", value: "vertexai" },
-  { name: "ChatGPT", value: "openai" },
+  { name: "Google Gemini", value: "gemini" },
+  { name: "Google PaLM 2", value: "palm2" },
+  // { name: "ChatGPT", value: "openai" },
 ] as const;
 
 export type AIProvider = (typeof PROVIDERS)[number]["value"];
