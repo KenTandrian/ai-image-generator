@@ -4,6 +4,7 @@ import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import OpenAIService from "../lib/openai";
 import { storeImage } from "../lib/storeImage";
+import VertexAIService from "../lib/vertexai";
 import type { ImageMeta } from "../types";
 
 type RequestData = {
@@ -19,7 +20,8 @@ export const generateImage = onCall<RequestData>(
       const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
       log.info(`Prompt is ${prompt}, coming from ${metadata.geo?.city}`);
 
-      const imgBuffer = await generateWithDalle(prompt);
+      // DALL·E is replaced by Imagen due to billing changes
+      const imgBuffer = await generateWithImagen(prompt);
 
       const timeStamp = new Date().getTime();
       const fileName = `${prompt}_${timeStamp}.png`;
@@ -45,7 +47,7 @@ export const generateImage = onCall<RequestData>(
  * @param {string} prompt Prompt
  * @return {Buffer} Buffer of the generated image
  */
-async function generateWithDalle(prompt: string) {
+export async function generateWithDalle(prompt: string) {
   const openai = new OpenAIService();
   const resp = await openai.images.generate({
     prompt,
@@ -59,6 +61,23 @@ async function generateWithDalle(prompt: string) {
     responseType: "arraybuffer",
   });
   const arrayBuffer = res.data;
+  log.info("Image file fetched!");
+
+  return arrayBuffer;
+}
+
+/**
+ * Generate image with Google Imagen
+ * @param {string} prompt Prompt
+ * @return {Buffer} Buffer of the generated image
+ */
+export async function generateWithImagen(prompt: string) {
+  const vertexai = new VertexAIService();
+  const resp = await vertexai.imagen({ prompt });
+  if (!resp) throw new Error("Image generation failed");
+  log.info("Image generated!");
+
+  const arrayBuffer = Buffer.from(resp, "base64");
   log.info("Image file fetched!");
 
   return arrayBuffer;

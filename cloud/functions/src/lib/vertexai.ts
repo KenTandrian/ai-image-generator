@@ -10,6 +10,11 @@ type PredictionResult = {
   }[];
 };
 
+type ImgPredictionResult = {
+  mimeType: "image/png";
+  bytesBase64Encoded: string;
+};
+
 /** Google Cloud Vertex AI Service */
 export default class VertexAIService {
   private client: PredictionServiceClient;
@@ -17,6 +22,7 @@ export default class VertexAIService {
   private location = "us-central1";
   private publisher = "google";
   private model = "chat-bison@002";
+  private modelImagen = "imagegeneration@005";
 
   /** Initialize Vertex AI Service */
   constructor() {
@@ -51,7 +57,6 @@ export default class VertexAIService {
       ],
     };
     const [response] = await this.client.predict({
-      // eslint-disable-next-line max-len
       endpoint: `projects/${this.project}/locations/${this.location}/publishers/${this.publisher}/models/${this.model}`,
       instances: [helpers.toValue(prompt)!],
       parameters: helpers.toValue({
@@ -67,5 +72,21 @@ export default class VertexAIService {
     ) as PredictionResult;
     const prediction = result.candidates[0].content;
     return prediction ?? "";
+  }
+
+  /** Generate image */
+  async imagen({ prompt }: { prompt: string }) {
+    const [response] = await this.client.predict({
+      endpoint: `projects/${this.project}/locations/${this.location}/publishers/${this.publisher}/models/${this.modelImagen}`,
+      instances: [helpers.toValue({ prompt })!],
+      parameters: helpers.toValue({
+        sampleCount: 1,
+      }),
+    });
+    if (!response.predictions?.[0]) return "";
+    const result = helpers.fromValue(
+      response.predictions[0] as protobuf.common.IValue
+    ) as ImgPredictionResult;
+    return result.bytesBase64Encoded ?? "";
   }
 }
