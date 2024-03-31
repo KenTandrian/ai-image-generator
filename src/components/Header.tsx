@@ -1,20 +1,14 @@
 import { VERSION } from "@/common";
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import VertexAILogo from "./VertexAILogo";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white p-5 shadow-md dark:bg-zinc-900">
       <div className="mx-auto flex max-w-screen-3xl justify-between">
         <div className="flex items-center space-x-2 text-black dark:text-zinc-200">
-          <Image
-            src="/openai-b.png"
-            alt="Logo"
-            height={30}
-            width={30}
-            className="dark:invert"
-          />
+          <VertexAILogo height={42} width={42} />
           <div>
             <h1 className="font-bold">
               The{" "}
@@ -25,7 +19,7 @@ export default function Header() {
               </span>
             </h1>
             <h2 className="text-xs">
-              Powered by DALL·E 2.0, Vertex AI & Google Cloud Functions!
+              Powered by Imagen, Vertex AI & Google Cloud Functions!
             </h2>
           </div>
         </div>
