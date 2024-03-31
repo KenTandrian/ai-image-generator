@@ -6,7 +6,7 @@ import VertexAIService from "../lib/vertexai";
 
 type Provider = "openai" | "vertexai";
 
-export const getChatGPTSuggestion = onCall(GLOBAL_OPTIONS, async ({ data }) => {
+export const getPromptSuggestion = onCall(GLOBAL_OPTIONS, async ({ data }) => {
   try {
     // Default to Vertex AI
     const provider: Provider = data.provider ?? "vertexai";

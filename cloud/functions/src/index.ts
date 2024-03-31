@@ -1,7 +1,7 @@
 import { generateImage } from "./handlers/generateImage";
-import { getChatGPTSuggestion } from "./handlers/getChatGPTSuggestion";
 import { getImages } from "./handlers/getImages";
+import { getPromptSuggestion } from "./handlers/getPromptSuggestion";
 
-exports.getChatGPTSuggestion = getChatGPTSuggestion;
 exports.generateImage = generateImage;
 exports.getImages = getImages;
+exports.getPromptSuggestion = getPromptSuggestion;

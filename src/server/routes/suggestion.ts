@@ -14,7 +14,7 @@ type Return = {
 
 export async function suggestionFn(input: SuggestionPayload) {
   // Connect to Cloud Function
-  const response = await callableFn<object, Return>("getChatGPTSuggestion")(
+  const response = await callableFn<object, Return>("getPromptSuggestion")(
     input
   );
   const data = response.data;
