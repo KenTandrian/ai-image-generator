@@ -11,7 +11,7 @@ function Selector({
   return (
     <div className="mb-4 flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 dark:border-zinc-700 sm:flex-row">
       <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
-        Choose AI Provider:
+        Choose AI Model:
       </h3>
 
       <div className="flex gap-4">

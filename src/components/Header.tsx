@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white p-5 shadow-md dark:bg-zinc-900">
-      <div className="max-w-screen-3xl mx-auto flex justify-between">
+      <div className="mx-auto flex max-w-screen-3xl justify-between">
         <div className="flex items-center space-x-2 text-black dark:text-zinc-200">
           <Image
             src="/openai-b.png"
@@ -25,7 +25,7 @@ export default function Header() {
               </span>
             </h1>
             <h2 className="text-xs">
-              Powered by DALL·E 2.0, ChatGPT & Google Cloud Functions!
+              Powered by DALL·E 2.0, Vertex AI & Google Cloud Functions!
             </h2>
           </div>
         </div>
