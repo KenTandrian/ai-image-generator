@@ -28,10 +28,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Code Linting
-        run: yarn lint --max-warnings=0
+        run: npm run lint --max-warnings=0
 
       - name: Run build
-        run: yarn build
+        run: npm run build
