@@ -1,7 +1,7 @@
-name: Lint and Build Functions
+name: Lint and Build Apps
 on:
   pull_request:
-    paths: ["cloud/functions/**"]
+    branches: ["main"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -14,24 +14,36 @@ jobs:
   build:
     name: Run lint and build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./cloud/functions
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install Dependencies
-        run: npm ci
+      - name: Check changed files
+        uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            frontend:
+              - "src/**"
+            functions:
+              - "cloud/functions/**"
 
-      - name: Code Linting
-        run: npm run lint --max-warnings=0
+      - name: Lint frontend
+        if: steps.changes.outputs.frontend == 'true'
+        run: |
+          yarn install --frozen-lockfile
+          yarn lint
 
-      - name: Run build
-        run: npm run build
+      - name: Lint functions
+        if: steps.changes.outputs.functions == 'true'
+        working-directory: ./cloud/functions
+        run: |
+          npm ci
+          npm run lint --max-warnings=0
+          npm run build
