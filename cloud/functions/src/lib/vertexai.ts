@@ -22,7 +22,7 @@ export default class VertexAIService {
   private location = "us-central1";
   private publisher = "google";
   private model = "chat-bison@002";
-  private modelImagen = "imagegeneration@005";
+  private modelImagen = "imagegeneration@006";
 
   /** Initialize Vertex AI Service */
   constructor() {
