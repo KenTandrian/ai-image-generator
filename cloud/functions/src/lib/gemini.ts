@@ -40,7 +40,7 @@ export default class GeminiService {
 
     // Wait for the response stream to complete
     const aggResp = await responseStream.response;
-    const prediction = aggResp.candidates[0].content.parts[0].text;
+    const prediction = aggResp.candidates?.[0].content.parts[0].text;
     return prediction ?? "";
   }
 }
