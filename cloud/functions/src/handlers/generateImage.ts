@@ -18,7 +18,7 @@ export const generateImage = onCall<RequestData>(
     try {
       const { prompt: rawPrompt, metadata } = request.data;
       const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
-      log.info(`Prompt is ${prompt}, coming from ${metadata.geo?.city}`);
+      log.info(`Prompt is "${prompt}", coming from ${metadata.geo?.city}`);
 
       // DALL·E is replaced by Imagen due to billing changes
       const imgBuffer = await generateWithImagen(prompt);
