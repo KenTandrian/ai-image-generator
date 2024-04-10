@@ -1,12 +1,17 @@
 import { logger as log } from "firebase-functions/v2";
-import { onCall } from "firebase-functions/v2/https";
+import { onCall, type HttpsOptions } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS } from "../constants";
 import GeminiService from "../lib/gemini";
 import VertexAIService from "../lib/vertexai";
 
 type Provider = "gemini" | "palm2" | "openai";
 
-export const getPromptSuggestion = onCall(GLOBAL_OPTIONS, async ({ data }) => {
+const OPTIONS: HttpsOptions = {
+  ...GLOBAL_OPTIONS,
+  memory: "512MiB",
+};
+
+export const getPromptSuggestion = onCall(OPTIONS, async ({ data }) => {
   try {
     // Default to PaLM 2
     const provider: Provider = data.provider ?? "palm2";
