@@ -17,7 +17,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@google-cloud/aiplatform": "3.19.0",
-    "@google-cloud/storage": "7.10.0",
+    "@google-cloud/storage": "7.10.1",
     "@google-cloud/vertexai": "1.1.0",
     "axios": "1.6.8",
     "firebase-admin": "12.1.0",
