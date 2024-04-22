@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import type { ImageMeta } from "../types";
+import type { GCSImageMeta, ImageMeta } from "../types";
 import { storage } from "./firebase";
 
 /**
@@ -21,19 +21,17 @@ export async function storeImage(
   const filePath = `${projectName}/${folderName}/${fileName}`;
   const uuid = randomUUID();
 
-  const opts: Record<string, unknown> = {
-    resumable: false,
-    metadata: {
-      metadata: {
-        firebaseStorageDownloadTokens: uuid,
-        geo: JSON.stringify(metadata.geo),
-        ip: metadata.ip,
-      },
-    },
+  const imageMeta: GCSImageMeta = {
+    firebaseStorageDownloadTokens: uuid,
+    geo: JSON.stringify(metadata.geo),
+    ip: metadata.ip,
   };
 
   const bucket = storage.bucket();
-  await bucket.file(filePath).save(file, opts);
+  await bucket.file(filePath).save(file, {
+    resumable: false,
+    metadata: { metadata: imageMeta },
+  });
   return filePath;
 }
 
