@@ -4,6 +4,7 @@ import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import { storage } from "../lib/firebase";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
+import type { GCSImageMeta } from "../types";
 
 const sortByTimeCreated = (a: File, b: File) => {
   const dateA = new Date(a.metadata.timeCreated!);
@@ -12,15 +13,14 @@ const sortByTimeCreated = (a: File, b: File) => {
 };
 
 const prepareImage = (bucket: Bucket) => (x: File) => {
-  const geo = x.metadata.metadata?.geo
-    ? JSON.parse(x.metadata.metadata.geo)
-    : undefined;
+  const fileMeta: GCSImageMeta | undefined = x.metadata.metadata;
+  const geo = fileMeta?.geo ? JSON.parse(fileMeta.geo) : undefined;
 
   return {
     url: createPersistentDownloadUrl(
       bucket.name,
       x.name,
-      x.metadata.metadata?.firebaseStorageDownloadTokens ?? ""
+      fileMeta?.firebaseStorageDownloadTokens ?? ""
     ),
     name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
     metadata: {
