@@ -1,3 +1,5 @@
+import type { UUID } from "crypto";
+
 export type ImageMeta = {
   ip?: string;
   geo?: {
@@ -7,4 +9,10 @@ export type ImageMeta = {
     latitude?: string;
     longitude?: string;
   };
+};
+
+export type GCSImageMeta = {
+  ip?: string;
+  geo?: string;
+  firebaseStorageDownloadTokens?: UUID;
 };
