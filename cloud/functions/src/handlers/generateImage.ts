@@ -12,6 +12,17 @@ type RequestData = {
   metadata: ImageMeta;
 };
 
+interface PredictionError extends Error {
+  code: number;
+  details: string;
+  metadata: object;
+}
+
+const RESPONSIBLE_AI_ERR =
+  "Image generation failed with the following error: The prompt could not be submitted. This prompt contains sensitive words that violate Google's Responsible AI practices. Try rephrasing the prompt. If you think this was an error, send feedback.";
+const RESPONSIBLE_AI_MSG =
+  "This prompt contains sensitive words that violate Google's Responsible AI practices. Try rephrasing the prompt.";
+
 export const generateImage = onCall<RequestData>(
   { ...GLOBAL_OPTIONS, timeoutSeconds: 540, memory: "4GiB" },
   async (request) => {
@@ -37,7 +48,16 @@ export const generateImage = onCall<RequestData>(
       return "File uploaded successfully!";
     } catch (err) {
       log.error(err);
-      return err;
+      if (err instanceof Error) {
+        if ((err as PredictionError).details === RESPONSIBLE_AI_ERR) {
+          return { error: { message: RESPONSIBLE_AI_MSG } };
+        }
+        return { error: { message: err.message } };
+      } else if (typeof err === "string") {
+        return { error: { message: err } };
+      } else {
+        return { error: { message: "Oops! Something went wrong!" } };
+      }
     }
   }
 );
