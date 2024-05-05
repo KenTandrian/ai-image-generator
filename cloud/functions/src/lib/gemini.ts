@@ -36,6 +36,12 @@ export default class GeminiService {
 
     const responseStream = await this.client.generateContentStream({
       contents: [{ role: "user", parts: [textPart] }],
+      generationConfig: {
+        maxOutputTokens: 256,
+        temperature: 1.6,
+        topK: 40,
+        topP: 0.95,
+      },
     });
 
     // Wait for the response stream to complete
