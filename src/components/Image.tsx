@@ -1,6 +1,7 @@
 import type { ImageType } from "@/types";
 import { relative } from "@/utils/date-fns";
 import Image from "next/image";
+import Link from "next/link";
 import { CircleFlag } from "react-circle-flags";
 
 export default function AIImage({
@@ -16,8 +17,9 @@ export default function AIImage({
     ?.toString()
     .replace(/\.[^/.]+$/, "");
   return (
-    <div
-      className={`relative cursor-help ${
+    <Link
+      href={`/${Buffer.from(image.name, "utf-8").toString("hex")}`}
+      className={`relative ${
         isFirst && "col-span-2 row-span-2"
       } group transition-transform duration-200 ease-in-out hover:scale-[102%]`}
     >
@@ -52,6 +54,6 @@ export default function AIImage({
         placeholder="blur"
         blurDataURL="/placeholder.jpg"
       />
-    </div>
+    </Link>
   );
 }
