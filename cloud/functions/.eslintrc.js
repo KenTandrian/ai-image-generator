@@ -6,9 +6,9 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
+    "plugin:import-x/errors",
+    "plugin:import-x/warnings",
+    "plugin:import-x/typescript",
     "google",
     "plugin:@typescript-eslint/recommended",
     "prettier",
@@ -22,12 +22,12 @@ module.exports = {
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
   ],
-  plugins: ["@typescript-eslint", "import", "prettier"],
+  plugins: ["@typescript-eslint", "import-x", "prettier"],
   rules: {
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-import-type-side-effects": "error",
     quotes: ["error", "double"],
-    "import/no-unresolved": 0,
+    "import-x/no-unresolved": 0,
     indent: ["error", 2],
     "object-curly-spacing": ["error", "always"],
     "prettier/prettier": ["error"],
