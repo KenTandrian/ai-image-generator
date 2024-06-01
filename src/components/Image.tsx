@@ -10,13 +10,18 @@ export default function AIImage({
   image: ImageType;
   isFirst: boolean;
 }) {
+  const prompt = image.name
+    .split("_")
+    .shift()
+    ?.toString()
+    .replace(/\.[^/.]+$/, "");
   return (
     <div
       className={`relative cursor-help ${
         isFirst && "col-span-2 row-span-2"
-      } transition-transform duration-200 ease-in-out hover:scale-[102%]`}
+      } group transition-transform duration-200 ease-in-out hover:scale-[102%]`}
     >
-      <div className="absolute bottom-1 right-1 z-10 ml-1 flex max-w-[calc(100%-0.5rem)] items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
+      <div className="absolute right-1.5 top-1.5 z-10 ml-1 flex max-w-[calc(100%-0.5rem)] items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
         {image.metadata.createdAt
           ? relative(new Date(image.metadata.createdAt), true)
           : null}
@@ -30,13 +35,12 @@ export default function AIImage({
           <span className="truncate">{image.metadata.geo?.city}</span>
         )}
       </div>
-      <div className="absolute z-10 flex h-full w-full items-center justify-center bg-white opacity-0 transition-opacity duration-200 hover:opacity-80 dark:bg-zinc-900">
-        <p className="p-3 text-center text-sm font-light dark:text-white xs:text-base sm:p-5 sm:text-lg">
-          {image.name
-            .split("_")
-            .shift()
-            ?.toString()
-            .replace(/\.[^/.]+$/, "")}
+      <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-tr-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80 sm:h-[100px]">
+        <p
+          className="m-4 line-clamp-2 text-ellipsis text-left text-sm font-light dark:text-white xs:text-base sm:m-5 sm:text-lg"
+          title={prompt}
+        >
+          {prompt}
         </p>
       </div>
       <Image
