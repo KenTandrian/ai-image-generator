@@ -19,7 +19,7 @@ type ImgPredictionResult = {
 export default class VertexAIService {
   private client: PredictionServiceClient;
   private project = process.env.GCLOUD_PROJECT;
-  private location = "us-central1";
+  private location = "asia-southeast1";
   private publisher = "google";
   private model = "chat-bison@002";
   private modelImagen = "imagegeneration@006";
@@ -27,7 +27,7 @@ export default class VertexAIService {
   /** Initialize Vertex AI Service */
   constructor() {
     this.client = new PredictionServiceClient({
-      apiEndpoint: "us-central1-aiplatform.googleapis.com",
+      apiEndpoint: `${this.location}-aiplatform.googleapis.com`,
     });
   }
 
