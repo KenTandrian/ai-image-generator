@@ -1,5 +1,5 @@
 export const PROVIDERS = [
-  { name: "Google Gemini", value: "gemini" },
+  { name: "Google Gemini 1.5", value: "gemini" },
   { name: "Google PaLM 2", value: "palm2" },
   // { name: "ChatGPT", value: "openai" },
 ] as const;
