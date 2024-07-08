@@ -39,7 +39,7 @@
     "prettier-plugin-tailwindcss": "0.6.5",
     "tailwindcss": "3.4.4",
     "tailwindcss-debug-screens": "2.2.1",
-    "typescript": "5.5.2"
+    "typescript": "5.5.3"
   },
   "resolutions": {
     "eslint/file-entry-cache": "^8.0.0"
