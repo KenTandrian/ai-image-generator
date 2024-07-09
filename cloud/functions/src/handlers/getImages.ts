@@ -1,6 +1,6 @@
 import type { Bucket, File } from "@google-cloud/storage";
 import { logger as log } from "firebase-functions/v2";
-import { onCall } from "firebase-functions/v2/https";
+import { onCall, type HttpsOptions } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import { storage } from "../lib/firebase";
 import { createPersistentDownloadUrl } from "../lib/storeImage";
@@ -33,7 +33,12 @@ const prepareImage = (bucket: Bucket) => (x: File) => {
   };
 };
 
-export const getImages = onCall(GLOBAL_OPTIONS, async () => {
+const OPTIONS: HttpsOptions = {
+  ...GLOBAL_OPTIONS,
+  memory: "512MiB",
+};
+
+export const getImages = onCall(OPTIONS, async () => {
   try {
     const bucket = storage.bucket();
     const [files] = await bucket.getFiles({
