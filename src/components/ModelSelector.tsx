@@ -1,30 +1,30 @@
-import { PROVIDERS, type AIProvider } from "@/data/ai-providers";
+import { IMAGEN_MODELS, type ImagenModel } from "@/data/imagen-models";
 import { useCallback, useState } from "react";
 
 function Selector({
   onChange,
-  provider,
+  model,
 }: {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  provider: AIProvider;
+  model: ImagenModel;
 }) {
   return (
     <div className="flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 dark:border-zinc-700 sm:flex-row">
       <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
-        Prompt Generator
+        Image Generator
       </h3>
 
       <div className="flex gap-4">
-        {PROVIDERS.map((p, i) => (
+        {IMAGEN_MODELS.map((p, i) => (
           <div className="flex items-center" key={i}>
             <input
               id={p.value}
               type="radio"
               value={p.value}
-              name="provider"
+              name="model"
               className="h-4 w-4 border-zinc-300 bg-zinc-100 text-violet-600 accent-violet-600 dark:border-zinc-600 dark:bg-zinc-700"
               onChange={onChange}
-              checked={p.value === provider}
+              checked={p.value === model}
             />
             <label
               htmlFor={p.value}
@@ -39,17 +39,17 @@ function Selector({
   );
 }
 
-export default function useProviderSelector() {
-  const [provider, setProvider] = useState<AIProvider>("palm2");
+export default function useModelSelector() {
+  const [model, setModel] = useState<ImagenModel>("imagegeneration@006");
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setProvider(event.target.value as AIProvider);
+    setModel(event.target.value as ImagenModel);
   };
 
-  const ProviderSelector = useCallback(
-    () => <Selector onChange={onChange} provider={provider} />,
-    [provider]
+  const ModelSelector = useCallback(
+    () => <Selector onChange={onChange} model={model} />,
+    [model]
   );
 
-  return { provider, ProviderSelector };
+  return { model, ModelSelector };
 }

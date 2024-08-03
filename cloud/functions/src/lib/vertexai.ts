@@ -22,7 +22,7 @@ export default class VertexAIService {
   private location = "asia-southeast1";
   private publisher = "google";
   private model = "chat-bison@002";
-  private modelImagen = "imagegeneration@006";
+  private defaultImagen = "imagegeneration@006";
 
   /** Initialize Vertex AI Service */
   constructor() {
@@ -75,9 +75,20 @@ export default class VertexAIService {
   }
 
   /** Generate image */
-  async imagen({ prompt }: { prompt: string }) {
+  async imagen({ prompt, model }: { prompt: string; model: string }) {
+    // Validate Imagen model resource ID
+    const IMAGEN_MODELS = [
+      "imagegeneration@006",
+      "imagen-3.0-fast-generate-001",
+      "imagen-3.0-generate-001",
+    ];
+    const modelName = IMAGEN_MODELS.includes(model)
+      ? model
+      : this.defaultImagen;
+
+    // Generate image
     const [response] = await this.client.predict({
-      endpoint: `projects/${this.project}/locations/${this.location}/publishers/${this.publisher}/models/${this.modelImagen}`,
+      endpoint: `projects/${this.project}/locations/${this.location}/publishers/${this.publisher}/models/${modelName}`,
       instances: [helpers.toValue({ prompt })!],
       parameters: helpers.toValue({
         sampleCount: 1,

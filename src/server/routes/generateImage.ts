@@ -4,6 +4,7 @@ import { APIResp, type Context } from "../trpc";
 
 export const generateImageInput = z.object({
   prompt: z.string(),
+  model: z.string(),
 });
 type Input = z.infer<typeof generateImageInput>;
 
@@ -12,7 +13,7 @@ export async function generateImageFn(ctx: Context, input: Input) {
   try {
     const response = await callableFn("generateImage")({
       prompt,
-      metadata: { ip: ctx.ip, geo: ctx.geo },
+      metadata: { ip: ctx.ip, geo: ctx.geo, model: input.model },
     });
     if (Object.hasOwn(response.data as object, "error")) {
       const data = response.data as { error: { message: string } };

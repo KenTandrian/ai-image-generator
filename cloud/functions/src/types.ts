@@ -9,6 +9,7 @@ export type ImageMeta = {
     longitude?: string;
   };
   ip?: string;
+  model: string;
 };
 
 export type GCSImageMeta = {

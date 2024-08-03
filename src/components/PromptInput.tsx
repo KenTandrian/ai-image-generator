@@ -1,5 +1,6 @@
 "use client";
 
+import useModelSelector from "@/components/ModelSelector";
 import useProviderSelector from "@/components/ProviderSelector";
 import { getProviderName } from "@/data/ai-providers";
 import trpc from "@/server/client";
@@ -11,6 +12,7 @@ import useSWR from "swr";
 
 const PromptInput = () => {
   const { provider, ProviderSelector } = useProviderSelector();
+  const { model, ModelSelector } = useModelSelector();
   const [input, setInput] = useState("");
 
   // Latest AI provider that is being fetched
@@ -48,7 +50,7 @@ const PromptInput = () => {
     const notifPrompt = p.slice(0, 50);
     const notification = toast.loading(`AI is creating: ${notifPrompt}...`);
 
-    const data = await trpc.generateImage.mutate({ prompt: p });
+    const data = await trpc.generateImage.mutate({ prompt: p, model });
     if (!data.success) toast.error(data.message, { id: notification });
     else toast.success("Your AI Art has been generated!", { id: notification });
     refreshImages();
@@ -61,10 +63,12 @@ const PromptInput = () => {
 
   return (
     <div className="mx-auto my-6 max-w-screen-3xl px-6 md:my-10 md:px-10">
-      <ProviderSelector />
+      <div className="mb-4 grid grid-cols-1 gap-3 xl:grid-cols-2">
+        <ProviderSelector />
+        <ModelSelector />
+      </div>
       <form
-        className="flex flex-col rounded-md border 
-        shadow-md shadow-slate-400/10 dark:divide-zinc-500 dark:border-zinc-500 lg:flex-row lg:divide-x"
+        className="flex flex-col rounded-md border shadow-md shadow-slate-400/10 dark:divide-zinc-500 dark:border-zinc-500 lg:flex-row lg:divide-x"
         onSubmit={handleSubmit}
       >
         <textarea
@@ -93,18 +97,14 @@ const PromptInput = () => {
         </button>
         <button
           type="button"
-          className="bg-violet-400 p-4 font-bold text-white transition-colors 
-            duration-200 disabled:cursor-not-allowed disabled:bg-gray-400 
-            disabled:text-gray-300 dark:bg-violet-600"
+          className="bg-violet-400 p-4 font-bold text-white transition-colors duration-200 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-300 dark:bg-violet-600"
           onClick={() => submitPrompt(true)}
         >
           Use Suggestion
         </button>
         <button
           type="button"
-          className="rounded-b-md border-none bg-white p-4 font-bold
-            text-violet-500 transition-colors duration-200 dark:bg-transparent
-            md:rounded-r-md md:rounded-bl-none"
+          className="rounded-b-md border-none bg-white p-4 font-bold text-violet-500 transition-colors duration-200 dark:bg-transparent md:rounded-r-md md:rounded-bl-none"
           onClick={() => mutate()}
         >
           New Suggestion
