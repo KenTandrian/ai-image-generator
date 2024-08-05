@@ -16,4 +16,5 @@ export type GCSImageMeta = {
   firebaseStorageDownloadTokens?: UUID;
   geo?: string;
   ip?: string;
+  model?: string;
 };
