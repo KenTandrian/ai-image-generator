@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import PromptInput from "@/components/PromptInput";
 import ToastProvider from "@/components/ToastProvider";
 import "@/styles/globals.css";
 
@@ -27,7 +26,6 @@ export default function RootLayout({
       <body className="bg-white dark:bg-zinc-950">
         <ToastProvider>
           <Header />
-          <PromptInput />
           {children}
           <Footer />
         </ToastProvider>
