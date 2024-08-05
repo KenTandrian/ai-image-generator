@@ -15,7 +15,7 @@ function Selector({
       </h3>
 
       <div className="flex gap-4">
-        {IMAGEN_MODELS.map((p, i) => (
+        {IMAGEN_MODELS.filter((x) => x.active).map((p, i) => (
           <div className="flex items-center" key={i}>
             <input
               id={p.value}
