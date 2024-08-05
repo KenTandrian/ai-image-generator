@@ -1,3 +1,5 @@
+import type { ImagenModel } from "./data/imagen-models";
+
 export type ImageType = {
   name: string;
   url: string;
@@ -10,4 +12,5 @@ export type ImageMeta = {
     city?: string;
     country?: string;
   };
+  model: ImagenModel;
 };
