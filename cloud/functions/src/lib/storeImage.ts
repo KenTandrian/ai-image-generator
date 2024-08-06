@@ -25,6 +25,7 @@ export async function storeImage(
     firebaseStorageDownloadTokens: uuid,
     geo: JSON.stringify(metadata.geo),
     ip: metadata.ip,
+    model: metadata.model,
   };
 
   const bucket = storage.bucket();
