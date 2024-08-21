@@ -1,4 +1,5 @@
 import { IMAGEN_MODELS, type ImagenModel } from "@/data/imagen-models";
+import { useSession } from "next-auth/react";
 import { useCallback, useState } from "react";
 
 function Selector({
@@ -8,6 +9,13 @@ function Selector({
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   model: ImagenModel;
 }) {
+  const { data: session } = useSession();
+  const isLoggedIn = !!session?.user;
+
+  const models = IMAGEN_MODELS.filter(
+    (x) => x.status === "PUBLIC" || (x.status === "PRIVATE" && isLoggedIn)
+  );
+
   return (
     <div className="flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 dark:border-zinc-700 sm:flex-row">
       <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
@@ -15,7 +23,7 @@ function Selector({
       </h3>
 
       <div className="flex gap-4">
-        {IMAGEN_MODELS.filter((x) => x.active).map((p, i) => (
+        {models.map((p, i) => (
           <div className="flex items-center" key={i}>
             <input
               id={p.value}
