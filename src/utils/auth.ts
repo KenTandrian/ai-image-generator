@@ -13,7 +13,6 @@ export const authConfig: NextAuthConfig = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     authorized({ auth }) {
       return isAllowedEmail(auth?.user?.email);
