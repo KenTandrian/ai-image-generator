@@ -2,6 +2,7 @@ import ClientProvider from "@/components/ClientProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "@/styles/globals.css";
+import { auth } from "@/utils/auth";
 
 export const metadata = {
   title: "AI Art Gallery",
@@ -9,11 +10,12 @@ export const metadata = {
     "AI image generator powered by Imagen, Vertex AI & Google Cloud Functions",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
   return (
     <html
       className={
@@ -24,7 +26,7 @@ export default function RootLayout({
       style={{ colorScheme: "dark" }}
     >
       <body className="bg-white dark:bg-zinc-950">
-        <ClientProvider>
+        <ClientProvider session={session}>
           <Header />
           {children}
           <Footer />
