@@ -1,6 +1,6 @@
+import ClientProvider from "@/components/ClientProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import ToastProvider from "@/components/ToastProvider";
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -24,11 +24,11 @@ export default function RootLayout({
       style={{ colorScheme: "dark" }}
     >
       <body className="bg-white dark:bg-zinc-950">
-        <ToastProvider>
+        <ClientProvider>
           <Header />
           {children}
           <Footer />
-        </ToastProvider>
+        </ClientProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import { VERSION } from "@/common";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import AuthButton from "./AuthButton";
 import VertexAILogo from "./VertexAILogo";
 
 export default function Header() {
@@ -37,6 +38,7 @@ export default function Header() {
           >
             <FaGithub className="text-zinc-500 transition-colors hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-500" />
           </Link>
+          <AuthButton />
         </div>
       </div>
     </header>
