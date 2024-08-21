@@ -1,8 +1,8 @@
-enum MODEL_STATUS {
-  PUBLIC = "PUBLIC",
-  PRIVATE = "PRIVATE", // Only for allowed logged in users.
-  DEPRECATED = "DEPRECATED",
-}
+const MODEL_STATUS = {
+  PUBLIC: "PUBLIC",
+  PRIVATE: "PRIVATE", // Only for allowed logged in users.
+  DEPRECATED: "DEPRECATED",
+} as const;
 
 export const IMAGEN_MODELS = [
   {
