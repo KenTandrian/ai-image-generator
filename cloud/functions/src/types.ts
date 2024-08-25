@@ -10,6 +10,7 @@ export type ImageMeta = {
   };
   ip?: string;
   model: string;
+  prompt: string;
 };
 
 export type GCSImageMeta = {

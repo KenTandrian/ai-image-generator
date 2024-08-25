@@ -37,13 +37,10 @@ export const generateImage = onCall<RequestData>(
 
       const timeStamp = new Date().getTime();
       const fileName = `${prompt}_${timeStamp}.png`;
-      await storeImage(
-        PROJECT_NAME,
-        IMAGE_FOLDER_NAME,
-        imgBuffer,
-        fileName,
-        metadata
-      );
+      await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, imgBuffer, fileName, {
+        ...metadata,
+        prompt,
+      });
       log.info("Image stored!");
 
       return "File uploaded successfully!";
