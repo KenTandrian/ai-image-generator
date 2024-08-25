@@ -20,6 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   // Fetch image data
   const image = await fetchData(imgName);
   const model = findModel(image.metadata.model);
+  const Logo = model?.logo ?? FcGoogle;
   const prompt = imgName
     .split("_")
     .shift()
@@ -62,7 +63,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               Image Generator
             </p>
             <h1 className="mt-2 flex items-center text-xl lg:text-2xl">
-              <FcGoogle className="mr-2.5 inline-block" />
+              <Logo className="mr-2.5 inline-block" />
               {model?.vendor} {model?.name}
             </h1>
           </div>

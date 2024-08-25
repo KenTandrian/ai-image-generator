@@ -1,3 +1,6 @@
+import { FcGoogle } from "react-icons/fc";
+import { SiOpenai } from "react-icons/si";
+
 const MODEL_STATUS = {
   PUBLIC: "PUBLIC",
   PRIVATE: "PRIVATE", // Only for allowed logged in users.
@@ -31,6 +34,11 @@ export const IMAGEN_MODELS = [
   },
 ] as const;
 
+const VENDOR_LOGOS = {
+  Google: FcGoogle,
+  OpenAI: SiOpenai,
+};
+
 export type ImagenModel = (typeof IMAGEN_MODELS)[number]["value"];
 
 export function getModelName(model: ImagenModel) {
@@ -38,5 +46,6 @@ export function getModelName(model: ImagenModel) {
 }
 
 export function findModel(model: ImagenModel) {
-  return IMAGEN_MODELS.find((p) => p.value === model);
+  const m = IMAGEN_MODELS.find((p) => p.value === model);
+  if (m) return { ...m, logo: VENDOR_LOGOS[m?.vendor] };
 }
