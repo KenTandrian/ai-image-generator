@@ -22,7 +22,7 @@
     "axios": "1.7.7",
     "firebase-admin": "12.5.0",
     "firebase-functions": "6.0.0",
-    "openai": "4.61.0"
+    "openai": "4.61.1"
   },
   "devDependencies": {
     "eslint": "8.57.0",
