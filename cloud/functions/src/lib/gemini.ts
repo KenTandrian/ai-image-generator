@@ -9,7 +9,7 @@ export default class GeminiService {
   private client: GenerativeModel;
   private project = process.env.GCLOUD_PROJECT;
   private location = "asia-southeast1";
-  private model = "gemini-1.5-flash-001";
+  private model = "gemini-1.5-flash-002";
 
   /** Initialize Gemini API Service */
   constructor() {
