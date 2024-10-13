@@ -43,6 +43,7 @@
     "typescript": "5.6.3"
   },
   "resolutions": {
-    "eslint/file-entry-cache": "^8.0.0"
+    "eslint/file-entry-cache": "^8.0.0",
+    "next-auth/@auth/core": "^0.37.0"
   }
 }
