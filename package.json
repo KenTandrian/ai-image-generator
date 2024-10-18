@@ -1,6 +1,6 @@
 {
   "name": "ai-image-generator",
-  "version": "1.3.10",
+  "version": "1.3.30",
   "packageManager": "yarn@1.22.22",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "format:write": "prettier . --write --ignore-unknown"
   },
   "dependencies": {
+    "@auth/core": "^0.37.0",
     "@trpc/client": "10.45.2",
     "@trpc/server": "10.45.2",
     "firebase": "10.14.1",
