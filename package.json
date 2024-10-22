@@ -15,7 +15,7 @@
     "@auth/core": "^0.37.2",
     "@trpc/client": "10.45.2",
     "@trpc/server": "10.45.2",
-    "firebase": "10.14.1",
+    "firebase": "11.0.1",
     "javascript-time-ago": "2.5.11",
     "next": "14.2.15",
     "next-auth": "5.0.0-beta.25",
