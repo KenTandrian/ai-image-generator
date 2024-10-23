@@ -13,8 +13,12 @@ async function fetchData(path: string) {
   return resp.data;
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
   const imgName = Buffer.from(id, "hex").toString("utf-8");
 
   // Fetch image data
