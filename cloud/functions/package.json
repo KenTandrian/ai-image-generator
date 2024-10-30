@@ -32,7 +32,7 @@
     "eslint-plugin-prettier": "5.2.1",
     "prettier": "3.3.3",
     "typescript": "5.6.3",
-    "typescript-eslint": "7.18.0"
+    "typescript-eslint": "8.12.2"
   },
   "overrides": {
     "firebase-functions": {
