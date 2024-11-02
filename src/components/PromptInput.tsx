@@ -6,6 +6,7 @@ import { getProviderName } from "@/data/ai-providers";
 import trpc from "@/server/client";
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
+import { cn } from "@/utils/classname";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import useSWR from "swr";
@@ -85,11 +86,12 @@ const PromptInput = () => {
           rows={2}
         />
         <button
-          className={`p-4 font-bold transition-colors duration-200 ${
+          className={cn(
+            "p-4 font-bold transition-colors duration-200",
             input
               ? "bg-violet-500 text-white dark:bg-violet-700"
               : "cursor-not-allowed text-zinc-300 dark:text-zinc-500"
-          }`}
+          )}
           type="submit"
           disabled={!input}
         >

@@ -1,4 +1,5 @@
 import type { ImageType } from "@/types";
+import { cn } from "@/utils/classname";
 import { relative } from "@/utils/date-fns";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,9 +20,10 @@ export default function AIImage({
   return (
     <Link
       href={`/${Buffer.from(image.name, "utf-8").toString("hex")}`}
-      className={`relative ${
+      className={cn(
+        "group relative transition-transform duration-200 ease-in-out hover:scale-[102%]",
         isFirst && "col-span-2 row-span-2"
-      } group transition-transform duration-200 ease-in-out hover:scale-[102%]`}
+      )}
     >
       <div className="absolute right-1.5 top-1.5 z-10 ml-1 flex max-w-[calc(100%-0.5rem)] items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
         {image.metadata.createdAt
