@@ -8,7 +8,12 @@ export default {
   ],
   darkMode: ["class"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        default: ["var(--font-pjs)"],
+        sans: ["var(--font-pjs)", ...defaultTheme.fontFamily.sans],
+      },
+    },
     screens: {
       xs: "360px",
       "3xl": "1920px",
