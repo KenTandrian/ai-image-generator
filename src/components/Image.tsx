@@ -37,7 +37,7 @@ export default function AIImage({
           <span className="truncate">{image.metadata.geo?.city}</span>
         )}
       </div>
-      <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-tr-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80 sm:h-[100px]">
+      <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-b-md rounded-tr-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80 sm:h-[100px]">
         <p
           className="m-4 line-clamp-2 text-ellipsis text-left text-sm font-light dark:text-white xs:text-base sm:m-5 sm:text-lg"
           title={prompt}
@@ -50,7 +50,7 @@ export default function AIImage({
         alt={image.name}
         height={800}
         width={800}
-        className="-z-10 w-full rounded-sm shadow-2xl drop-shadow-lg"
+        className="-z-10 w-full rounded-lg shadow-2xl drop-shadow-lg"
         placeholder="blur"
         blurDataURL="/placeholder.jpg"
       />
