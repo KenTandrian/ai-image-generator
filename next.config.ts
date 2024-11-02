@@ -1,4 +1,4 @@
-// @ts-check
+import type { NextConfig } from "next";
 
 const securityHeaders = [
   {
@@ -7,8 +7,7 @@ const securityHeaders = [
   },
 ];
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { hostname: "firebasestorage.googleapis.com", protocol: "https" },
