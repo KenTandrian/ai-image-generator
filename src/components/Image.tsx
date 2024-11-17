@@ -13,11 +13,6 @@ export default function AIImage({
   isFirst: boolean;
 }) {
   const href = encodeURIComponent(image.name);
-  const prompt = image.name
-    .split("_")
-    .shift()
-    ?.toString()
-    .replace(/\.[^/.]+$/, "");
   return (
     <Link
       href={href}
@@ -43,9 +38,9 @@ export default function AIImage({
       <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-b-md rounded-tr-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80 sm:h-[100px]">
         <p
           className="m-4 line-clamp-2 text-ellipsis text-left text-sm font-light dark:text-white xs:text-base sm:m-5 sm:text-lg"
-          title={image.metadata.prompt || prompt}
+          title={image.metadata.prompt}
         >
-          {image.metadata.prompt || prompt}
+          {image.metadata.prompt}
         </p>
       </div>
       <Image

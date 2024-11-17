@@ -7,6 +7,9 @@ export const prepareImage = (bucket: Bucket) => (x: File) => {
   const fileMeta: GCSImageMeta | undefined = x.metadata.metadata;
   const geo = fileMeta?.geo ? JSON.parse(fileMeta.geo) : undefined;
 
+  const unixCreatedAt = parseInt(
+    x.name.split("/")?.pop()?.split("-")?.[0] ?? ""
+  );
   return {
     url: createPersistentDownloadUrl(
       bucket.name,
@@ -15,7 +18,7 @@ export const prepareImage = (bucket: Bucket) => (x: File) => {
     ),
     name: x.name.replace(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/`, ""),
     metadata: {
-      createdAt: x.metadata.timeCreated,
+      createdAt: new Date(unixCreatedAt).toISOString(),
       geo: {
         city: geo?.city,
         country: geo?.country,

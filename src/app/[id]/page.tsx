@@ -25,11 +25,6 @@ export default async function Page({ params }: PageProps) {
   const image = await fetchData(imgName);
   const model = findModel(image.metadata.model);
   const Logo = model?.logo ?? FcGoogle;
-  const prompt = imgName
-    .split("_")
-    .shift()
-    ?.toString()
-    .replace(/\.[^/.]+$/, "");
 
   return (
     <div className="mx-auto my-6 max-w-screen-3xl px-6 md:my-10 md:px-10">
@@ -61,7 +56,7 @@ export default async function Page({ params }: PageProps) {
               Prompt
             </p>
             <h1 className="mt-2 text-2xl lg:text-3xl">
-              {image.metadata.prompt || prompt}
+              {image.metadata.prompt}
             </h1>
           </div>
           <div>
