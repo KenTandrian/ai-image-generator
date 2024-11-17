@@ -12,6 +12,7 @@ export default function AIImage({
   image: ImageType;
   isFirst: boolean;
 }) {
+  const href = encodeURIComponent(image.name);
   const prompt = image.name
     .split("_")
     .shift()
@@ -19,7 +20,7 @@ export default function AIImage({
     .replace(/\.[^/.]+$/, "");
   return (
     <Link
-      href={`/${Buffer.from(image.name, "utf-8").toString("hex")}`}
+      href={href}
       className={cn(
         "group relative transition-transform duration-200 ease-in-out hover:scale-[102%]",
         isFirst && "col-span-2 row-span-2"
@@ -42,9 +43,9 @@ export default function AIImage({
       <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-b-md rounded-tr-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80 sm:h-[100px]">
         <p
           className="m-4 line-clamp-2 text-ellipsis text-left text-sm font-light dark:text-white xs:text-base sm:m-5 sm:text-lg"
-          title={prompt}
+          title={image.metadata.prompt || prompt}
         >
-          {prompt}
+          {image.metadata.prompt || prompt}
         </p>
       </div>
       <Image

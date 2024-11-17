@@ -21,6 +21,7 @@ export const prepareImage = (bucket: Bucket) => (x: File) => {
         country: geo?.country,
       },
       model: fileMeta?.model ?? "imagegeneration@006",
+      prompt: fileMeta?.prompt ?? "",
     },
   };
 };

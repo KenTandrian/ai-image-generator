@@ -19,7 +19,7 @@ type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
-  const imgName = Buffer.from(id, "hex").toString("utf-8");
+  const imgName = decodeURIComponent(id);
 
   // Fetch image data
   const image = await fetchData(imgName);
@@ -60,7 +60,9 @@ export default async function Page({ params }: PageProps) {
             <p className="text-sm uppercase tracking-wider text-violet-500">
               Prompt
             </p>
-            <h1 className="mt-2 text-2xl lg:text-3xl">{prompt}</h1>
+            <h1 className="mt-2 text-2xl lg:text-3xl">
+              {image.metadata.prompt || prompt}
+            </h1>
           </div>
           <div>
             <p className="text-sm uppercase tracking-wider text-violet-500">
