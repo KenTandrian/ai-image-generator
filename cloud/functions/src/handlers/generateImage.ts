@@ -1,4 +1,5 @@
 import axios from "axios";
+import { randomUUID } from "crypto";
 import { logger as log } from "firebase-functions/v2";
 import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
@@ -36,7 +37,7 @@ export const generateImage = onCall<RequestData>(
       const imgBuffer = await generateWithImagen(prompt, model);
 
       const timeStamp = new Date().getTime();
-      const fileName = `${prompt}_${timeStamp}.png`;
+      const fileName = `${timeStamp}-${randomUUID()}.png`;
       await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, imgBuffer, fileName, {
         ...metadata,
         prompt,

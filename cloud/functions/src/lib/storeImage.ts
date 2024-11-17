@@ -26,6 +26,7 @@ export async function storeImage(
     geo: JSON.stringify(metadata.geo),
     ip: metadata.ip,
     model: metadata.model,
+    prompt: metadata.prompt,
   };
 
   const bucket = storage.bucket();
