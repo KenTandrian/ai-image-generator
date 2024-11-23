@@ -20,7 +20,7 @@
     "@google-cloud/storage": "7.14.0",
     "@google-cloud/vertexai": "1.9.0",
     "axios": "1.7.7",
-    "firebase-admin": "13.0.0",
+    "firebase-admin": "13.0.1",
     "firebase-functions": "6.1.1",
     "openai": "4.73.0"
   },
