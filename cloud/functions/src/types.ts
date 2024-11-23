@@ -18,4 +18,5 @@ export type GCSImageMeta = {
   geo?: string;
   ip?: string;
   model?: string;
+  prompt?: string;
 };

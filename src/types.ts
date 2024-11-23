@@ -13,4 +13,5 @@ export type ImageMeta = {
     country?: string;
   };
   model: ImagenModel;
+  prompt?: string;
 };

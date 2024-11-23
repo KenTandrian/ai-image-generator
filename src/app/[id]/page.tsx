@@ -19,17 +19,12 @@ type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
-  const imgName = Buffer.from(id, "hex").toString("utf-8");
+  const imgName = decodeURIComponent(id);
 
   // Fetch image data
   const image = await fetchData(imgName);
   const model = findModel(image.metadata.model);
   const Logo = model?.logo ?? FcGoogle;
-  const prompt = imgName
-    .split("_")
-    .shift()
-    ?.toString()
-    .replace(/\.[^/.]+$/, "");
 
   return (
     <div className="mx-auto my-6 max-w-screen-3xl px-6 md:my-10 md:px-10">
@@ -60,7 +55,9 @@ export default async function Page({ params }: PageProps) {
             <p className="text-sm uppercase tracking-wider text-violet-500">
               Prompt
             </p>
-            <h1 className="mt-2 text-2xl lg:text-3xl">{prompt}</h1>
+            <h1 className="mt-2 text-2xl lg:text-3xl">
+              {image.metadata.prompt}
+            </h1>
           </div>
           <div>
             <p className="text-sm uppercase tracking-wider text-violet-500">
