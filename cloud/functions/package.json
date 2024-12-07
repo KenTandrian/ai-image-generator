@@ -18,7 +18,7 @@
   "dependencies": {
     "@google-cloud/aiplatform": "3.34.0",
     "@google-cloud/storage": "7.14.0",
-    "@google-cloud/vertexai": "1.9.0",
+    "@google-cloud/vertexai": "1.9.2",
     "axios": "1.7.9",
     "firebase-admin": "13.0.1",
     "firebase-functions": "6.1.1",
