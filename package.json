@@ -15,7 +15,7 @@
     "@auth/core": "^0.37.4",
     "@trpc/client": "10.45.2",
     "@trpc/server": "10.45.2",
-    "@vercel/functions": "1.5.1",
+    "@vercel/functions": "1.5.2",
     "clsx": "2.1.1",
     "firebase": "11.0.2",
     "javascript-time-ago": "2.5.11",
