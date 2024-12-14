@@ -2607,12 +2607,12 @@ next-auth@5.0.0-beta.25:
   dependencies:
     "@auth/core" "0.37.2"
 
-next-nprogress-bar@2.3.15:
-  version "2.3.15"
-  resolved "https://registry.yarnpkg.com/next-nprogress-bar/-/next-nprogress-bar-2.3.15.tgz#a7d22147cd60aef7b1e84472d9edee36166b839e"
-  integrity sha512-8s8slKMUXvDrl7wWzKyWt6BJQThOJREpCicdbi66xAOzQ23DeIauEzMGPg1BMixnqlIRY3ayUO/ey9dafkgWcA==
+next-nprogress-bar@2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/next-nprogress-bar/-/next-nprogress-bar-2.4.2.tgz#808c30f1b8f6d62d99548fd45fd9bb293b700b76"
+  integrity sha512-esXEm+t0JnhfXEVmwN9JJ8/awLMbLJ0dPMiOOPLMPwpyhd+wikkNLaXGOt/vuBaeGKHC/gGYFKMv+R6zkd6RCw==
   dependencies:
-    nprogress "^0.2.0"
+    nprogress-v2 "^1.0.4"
 
 next@15.1.0:
   version "15.1.0"
@@ -2652,10 +2652,10 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
-nprogress@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
-  integrity sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==
+nprogress-v2@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nprogress-v2/-/nprogress-v2-1.0.4.tgz#7893410df3319e60d1f567d5bae958ada79f170d"
+  integrity sha512-HPhTEgqsQMFXXuaftvu6bevqEXvcQ/hogvkAswlcNyS9eRGjvo7wZY1O4H3aZS4Uq8oWSO6sL3dOj6Oq/ZJN5A==
 
 oauth4webapi@^3.0.0, oauth4webapi@^3.1.1:
   version "3.1.3"
