@@ -2607,10 +2607,10 @@ next-auth@5.0.0-beta.25:
   dependencies:
     "@auth/core" "0.37.2"
 
-next-nprogress-bar@2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/next-nprogress-bar/-/next-nprogress-bar-2.4.2.tgz#808c30f1b8f6d62d99548fd45fd9bb293b700b76"
-  integrity sha512-esXEm+t0JnhfXEVmwN9JJ8/awLMbLJ0dPMiOOPLMPwpyhd+wikkNLaXGOt/vuBaeGKHC/gGYFKMv+R6zkd6RCw==
+next-nprogress-bar@2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/next-nprogress-bar/-/next-nprogress-bar-2.4.3.tgz#5a2b9ec1e652ac08241f699c50709444701948c2"
+  integrity sha512-069WmFALkpCyKiIy89q6dWcPiHhUmXh6EZz6oLpOS7zsIunNOYLscloKFALjIQNCOg3ZO9dWRPowYW4ULho4HQ==
   dependencies:
     nprogress-v2 "^1.0.4"
 
