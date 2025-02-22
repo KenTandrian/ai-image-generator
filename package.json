@@ -12,7 +12,6 @@
     "format:write": "prettier . --write --ignore-unknown"
   },
   "dependencies": {
-    "@auth/core": "^0.37.4",
     "@bprogress/next": "3.0.5",
     "@trpc/client": "10.45.2",
     "@trpc/server": "10.45.2",
