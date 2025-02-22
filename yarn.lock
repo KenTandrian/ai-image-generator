@@ -31,6 +31,26 @@
     preact "10.24.3"
     preact-render-to-string "6.5.11"
 
+"@bprogress/core@^1.1.15":
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/@bprogress/core/-/core-1.1.15.tgz#115d64c4d85780defc94a2f62b69cb386f914603"
+  integrity sha512-s5O7RjLwD8YXa8tUCQhm/VIc/yTifAlCiOBX2ejCM3e+HSAiEXEvYiEgslSdnSjw/wKl3myLzvO+DLHuBzO+IQ==
+
+"@bprogress/next@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@bprogress/next/-/next-3.0.5.tgz#d98bae13157f20bd93796e05ee6f03ecc7559ffd"
+  integrity sha512-vOvbW+s576QBITl2TAdrrEEMMUE6U0etrvif04g2iGKZ9i/wNXBPNANoal4IhV/GTs9pr7DmCGVvsg3Q2UCFQg==
+  dependencies:
+    "@bprogress/core" "^1.1.15"
+    "@bprogress/react" "^1.1.0"
+
+"@bprogress/react@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@bprogress/react/-/react-1.1.0.tgz#7613e6669c11517f5809f368e5faa68f7fbc9f4f"
+  integrity sha512-5hf3aSBZ1orUxBl1cQDLz8cCROkpZux26v+egVBaMxyUq8jEaTttyPvG96KiHb+9OtalgNUJgR4cxnqvkH6A0w==
+  dependencies:
+    "@bprogress/core" "^1.1.15"
+
 "@emnapi/runtime@^1.2.0":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.3.1.tgz#0fcaa575afc31f455fd33534c19381cfce6c6f60"
@@ -2683,13 +2703,6 @@ next-auth@5.0.0-beta.25:
   dependencies:
     "@auth/core" "0.37.2"
 
-next-nprogress-bar@2.4.5:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/next-nprogress-bar/-/next-nprogress-bar-2.4.5.tgz#e0a05dd3dab5a8406cdfebc770fdd673badaf2c9"
-  integrity sha512-VkPMp+Cnazu0jpABVFVRTnUxGwFblHVxmBiJoVj4xl5tRw+K6jKqP0GNxACeB1ub0RfxKsVGlZ0HNqkwYjJK+Q==
-  dependencies:
-    nprogress-v2 "^1.0.4"
-
 next@15.1.7:
   version "15.1.7"
   resolved "https://registry.yarnpkg.com/next/-/next-15.1.7.tgz#e814845e7cdb0294aee88ceab0bb962de83e8e6f"
@@ -2727,11 +2740,6 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
-
-nprogress-v2@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/nprogress-v2/-/nprogress-v2-1.0.4.tgz#7893410df3319e60d1f567d5bae958ada79f170d"
-  integrity sha512-HPhTEgqsQMFXXuaftvu6bevqEXvcQ/hogvkAswlcNyS9eRGjvo7wZY1O4H3aZS4Uq8oWSO6sL3dOj6Oq/ZJN5A==
 
 oauth4webapi@^3.0.0, oauth4webapi@^3.1.1:
   version "3.1.4"
