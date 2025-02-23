@@ -22,9 +22,15 @@ export const IMAGEN_MODELS = [
   },
   {
     name: "Imagen 3",
-    value: "imagen-3.0-generate-001",
+    value: "imagen-3.0-generate-002",
     vendor: "Google",
     status: MODEL_STATUS.PRIVATE,
+  },
+  {
+    name: "Imagen 3",
+    value: "imagen-3.0-generate-001",
+    vendor: "Google",
+    status: MODEL_STATUS.DEPRECATED,
   },
   {
     name: "DALL·E 2",
