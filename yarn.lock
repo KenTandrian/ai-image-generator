@@ -3356,10 +3356,10 @@ tailwind-merge@3.0.2:
   resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-3.0.2.tgz#567eff76de12211e24dd909da0f5ed6f4f422b0c"
   integrity sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==
 
-tailwindcss-debug-screens@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-2.2.1.tgz#8dd0854a273daa4f30f4c383370872c6bca337cd"
-  integrity sha512-EMyA0CYBzqcZJHtVDvBfmYzfx3NxuK4qDyVO5wnzcGOrmJsv25D9xPpWefVTORTvhE6pCh90Z1WYnLUKsg3yMw==
+tailwindcss-debug-screens@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-3.0.0.tgz#2e414ee80539d96bbbac51b9be6c1a89c716784c"
+  integrity sha512-r37aA4TfQ+pHl0LP3dcjw1uwfU6xQp476e5EVOFMJdHNOIlPB7HQUX2s8BejYPyqoQWHWvNsndmeMDRFtTZG3w==
 
 tailwindcss@4.0.12:
   version "4.0.12"
