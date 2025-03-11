@@ -21,7 +21,7 @@ export default function AIImage({
         isFirst && "col-span-2 row-span-2"
       )}
     >
-      <div className="absolute right-1.5 top-1.5 z-10 ml-1 flex max-w-[calc(100%-0.5rem)] items-center gap-1 rounded-md bg-black bg-opacity-50 px-1.5 py-1 text-xs font-light text-white">
+      <div className="absolute top-1.5 right-1.5 z-10 ml-1 flex max-w-[calc(100%-0.5rem)] items-center gap-1 rounded-md bg-black/50 px-1.5 py-1 text-xs font-light text-white">
         {image.metadata.createdAt
           ? relative(new Date(image.metadata.createdAt), true)
           : null}
@@ -35,9 +35,9 @@ export default function AIImage({
           <span className="truncate">{image.metadata.geo?.city}</span>
         )}
       </div>
-      <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-b-md rounded-tr-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80 sm:h-[100px]">
+      <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-tr-2xl rounded-b-md opacity-0 transition-opacity duration-200 group-hover:opacity-80 sm:h-[100px] dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80">
         <p
-          className="m-4 line-clamp-2 text-ellipsis text-left text-sm font-light dark:text-white xs:text-base sm:m-5 sm:text-lg"
+          className="xs:text-base m-4 line-clamp-2 text-left text-sm font-light text-ellipsis sm:m-5 sm:text-lg dark:text-white"
           title={image.metadata.prompt}
         >
           {image.metadata.prompt}

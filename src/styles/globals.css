@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @plugin "tailwindcss-debug-screens"; */
+
+@theme {
+  --breakpoint-xs: 360px;
+  --breakpoint-3xl: 1920px;
+
+  --font-default: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
