@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @plugin "tailwindcss-debug-screens"; */
+@plugin "tailwindcss-debug-screens";
 
 @theme {
   --breakpoint-xs: 360px;
