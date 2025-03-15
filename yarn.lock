@@ -20,25 +20,25 @@
     preact "10.11.3"
     preact-render-to-string "5.2.3"
 
-"@bprogress/core@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@bprogress/core/-/core-1.3.1.tgz#639a831b786958f47270eb0830708ec1fe986864"
-  integrity sha512-i7hJN8IyyY3by47VpLH8p/R4u/YrNkwQ8GwvrdMSPW0yj6SqRh1Bb9HCLw7iKeR6VMM4zziSGM+Oxuudgf35pQ==
+"@bprogress/core@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@bprogress/core/-/core-1.3.3.tgz#b44abf6471cd87d25c6167d8cfaf980ea8c68be3"
+  integrity sha512-Vz9vzZE8xvfkgY09e0S6kzNz/ev/2lUw7A/z0TW7N0ZBG9xmVXrzSsFe3uvypxDa5ltn+xLBtfDtxBc8KsrvBQ==
 
-"@bprogress/next@3.2.7":
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/@bprogress/next/-/next-3.2.7.tgz#f6224a406f00be0ec5c0031627206fbf00c84207"
-  integrity sha512-csbdc6SxobbxHaPYHDzZUSgV2CwrwQmill2G2mfWy+MZ3dOmcHRHnHKTYWC6rkWCjqdcgU801eCZpcPVVSxy3A==
+"@bprogress/next@3.2.10":
+  version "3.2.10"
+  resolved "https://registry.yarnpkg.com/@bprogress/next/-/next-3.2.10.tgz#6fbb79e7219d796125a4666e63f8afa72decc049"
+  integrity sha512-uHu7risLFdXgyJzg1kL5Q+g8YGw9RBMqcyLWuDq7LGk95Ok/gWXMXg2pcSzpQ9pGxNQpq3LRzm67a8RFH2RpPQ==
   dependencies:
-    "@bprogress/core" "^1.3.1"
-    "@bprogress/react" "^1.2.2"
+    "@bprogress/core" "^1.3.3"
+    "@bprogress/react" "^1.2.4"
 
-"@bprogress/react@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@bprogress/react/-/react-1.2.2.tgz#8d1816d3fd257b91c4fa50276db4b4cb101cb919"
-  integrity sha512-Q0TLu7BpUK6iWyJWtPebaGvGN5dyenYRhoT9dsEsEoRBG/tV11F+yYFmL6hCEpJARxK3pK9nS2tsodhXwf6C1w==
+"@bprogress/react@^1.2.4":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@bprogress/react/-/react-1.2.5.tgz#7a8b68866562b14c5c42cc8acee61968b2c6a8df"
+  integrity sha512-q389gPI3ckUQzKf8GbZiZgM1ErbSw9ynEavuIUunxiQYiPxyNuRisnEFZjbZV+48AZBhbwyU4vf6zBZ2ycGsow==
   dependencies:
-    "@bprogress/core" "^1.3.1"
+    "@bprogress/core" "^1.3.3"
 
 "@emnapi/runtime@^1.2.0":
   version "1.3.1"
