@@ -7,6 +7,7 @@ import trpc from "@/server/client";
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
 import { cn } from "@/utils/classname";
+import { TRPCClientError } from "@trpc/client";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import useSWR from "swr";
@@ -51,10 +52,21 @@ const PromptInput = () => {
     const notifPrompt = p.slice(0, 50);
     const notification = toast.loading(`AI is creating: ${notifPrompt}...`);
 
-    const data = await trpc.generateImage.mutate({ prompt: p, model });
-    if (!data.success) toast.error(data.message, { id: notification });
-    else toast.success("Your AI Art has been generated!", { id: notification });
-    refreshImages();
+    try {
+      const data = await trpc.generateImage.mutate({ prompt: p, model });
+      if (!data.success) {
+        toast.error(data.message, { id: notification });
+      } else {
+        toast.success("Your AI Art has been generated!", { id: notification });
+        refreshImages();
+      }
+    } catch (err) {
+      if (err instanceof TRPCClientError) {
+        toast.error(JSON.parse(err.message)[0].message, { id: notification });
+      } else {
+        toast.error("Something went wrong!", { id: notification });
+      }
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -63,13 +75,13 @@ const PromptInput = () => {
   };
 
   return (
-    <div className="mx-auto my-6 max-w-screen-3xl px-6 md:my-10 md:px-10">
+    <div className="max-w-screen-3xl mx-auto my-6 px-6 md:my-10 md:px-10">
       <div className="mb-4 grid grid-cols-1 gap-3 xl:grid-cols-2">
         <ProviderSelector />
         <ModelSelector />
       </div>
       <form
-        className="flex flex-col rounded-md border shadow-md shadow-slate-400/10 dark:divide-zinc-500 dark:border-zinc-500 lg:flex-row lg:divide-x"
+        className="flex flex-col rounded-md border shadow-md shadow-slate-400/10 lg:flex-row lg:divide-x dark:divide-zinc-500 dark:border-zinc-500"
         onSubmit={handleSubmit}
       >
         <textarea
@@ -106,7 +118,7 @@ const PromptInput = () => {
         </button>
         <button
           type="button"
-          className="rounded-b-md border-none bg-white p-4 font-bold text-violet-500 transition-colors duration-200 dark:bg-transparent md:rounded-r-md md:rounded-bl-none"
+          className="rounded-b-md border-none bg-white p-4 font-bold text-violet-500 transition-colors duration-200 md:rounded-r-md md:rounded-bl-none dark:bg-transparent"
           onClick={() => mutate()}
         >
           New Suggestion
@@ -114,7 +126,7 @@ const PromptInput = () => {
       </form>
 
       {input && (
-        <p className="pl-2 pt-2 font-light italic dark:text-zinc-300">
+        <p className="pt-2 pl-2 font-light italic dark:text-zinc-300">
           Suggestion:{" "}
           <span className="text-violet-500">
             {loading ? `${fetchingProvider} is thinking...` : suggestion}{" "}

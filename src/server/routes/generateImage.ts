@@ -3,7 +3,7 @@ import { z } from "zod";
 import { APIResp, type Context } from "../trpc";
 
 export const generateImageInput = z.object({
-  prompt: z.string(),
+  prompt: z.string().min(20, "Prompt must be at least 20 characters long."),
   model: z.string(),
 });
 type Input = z.infer<typeof generateImageInput>;
