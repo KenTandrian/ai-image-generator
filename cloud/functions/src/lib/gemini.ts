@@ -3,22 +3,21 @@ import {
   type GenerativeModel,
   type Part,
 } from "@google-cloud/vertexai";
+import type { Model } from "../types";
 
 /** Google Cloud Gemini API Service */
 export default class GeminiService {
   private client: GenerativeModel;
   private project = process.env.GCLOUD_PROJECT;
-  private location = "asia-southeast1";
-  private model = "gemini-1.5-flash-002";
 
   /** Initialize Gemini API Service */
-  constructor() {
+  constructor(model: Model) {
     const vertexAI = new VertexAI({
       project: this.project!,
-      location: this.location,
+      location: model.location,
     });
     this.client = vertexAI.getGenerativeModel({
-      model: this.model,
+      model: model.id,
     });
   }
 

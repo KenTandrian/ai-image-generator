@@ -20,3 +20,8 @@ export type GCSImageMeta = {
   model?: string;
   prompt?: string;
 };
+
+export type Model = {
+  id: string;
+  location: string;
+};

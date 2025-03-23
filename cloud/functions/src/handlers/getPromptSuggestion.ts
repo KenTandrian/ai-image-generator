@@ -2,9 +2,12 @@ import { logger as log } from "firebase-functions/v2";
 import { onCall, type HttpsOptions } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS } from "../constants";
 import GeminiService from "../lib/gemini";
-import VertexAIService from "../lib/vertexai";
+import type { Model } from "../types";
 
-type Provider = "gemini" | "palm2" | "openai";
+const ALLOWED_MODELS: Model[] = [
+  { id: "gemini-1.5-flash", location: "asia-southeast1" },
+  { id: "gemini-2.0-flash-lite", location: "us-central1" },
+];
 
 const OPTIONS: HttpsOptions = {
   ...GLOBAL_OPTIONS,
@@ -13,23 +16,15 @@ const OPTIONS: HttpsOptions = {
 
 export const getPromptSuggestion = onCall(OPTIONS, async ({ data }) => {
   try {
-    // Default to PaLM 2
-    const provider: Provider = data.provider ?? "palm2";
+    const model = ALLOWED_MODELS.find(({ id }) => id === data.provider);
 
     let responseText = "";
-    if (provider === "openai") {
-      // ChatGPT is disabled for now due to billing changes.
-      return { error: true, payload: "Sorry, OpenAI is not supported." };
-    } else if (provider === "gemini") {
-      // Gemini 1.0 Pro model
-      const gemini = new GeminiService();
+    if (model) {
+      const gemini = new GeminiService(model);
       responseText = await gemini.suggestion();
-    } else if (provider === "palm2") {
-      // PaLM 2 for Chat (chat-bison) model
-      const vertexai = new VertexAIService();
-      responseText = await vertexai.suggestion();
     } else {
-      return { error: true, payload: "Invalid provider" };
+      log.error("Invalid model", model);
+      return { error: true, payload: "Invalid model" };
     }
     return { error: false, payload: responseText };
   } catch (err) {
