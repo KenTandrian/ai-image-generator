@@ -18,7 +18,9 @@ const PromptInput = () => {
   const [input, setInput] = useState("");
 
   // Latest AI provider that is being fetched
-  const [fetchingProvider, setFetchingProvider] = useState<string>();
+  const [fetchingProvider, setFetchingProvider] = useState<string | undefined>(
+    getProviderName(provider)
+  );
   function getSuggestion(p: typeof provider) {
     setFetchingProvider(getProviderName(p));
     return fetchSuggestion({ provider: p });
