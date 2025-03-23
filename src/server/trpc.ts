@@ -1,5 +1,5 @@
 import { TRPC_TOKEN } from "@/common";
-import { TRPCError, type inferAsyncReturnType, initTRPC } from "@trpc/server";
+import { TRPCError, initTRPC } from "@trpc/server";
 import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import { geolocation, ipAddress } from "@vercel/functions";
 import type { NextRequest } from "next/server";
@@ -11,7 +11,7 @@ export async function createContext(opts: FetchCreateContextFnOptions) {
   const token = headers.get("Authorization")?.split(" ")[1];
   return { ip, geo, token };
 }
-export type Context = inferAsyncReturnType<typeof createContext>;
+export type Context = Awaited<ReturnType<typeof createContext>>;
 
 const t = initTRPC.context<Context>().create();
 export const middleware = t.middleware;
