@@ -1,7 +1,6 @@
 export const PROVIDERS = [
-  { name: "PaLM 2", value: "palm2" },
-  { name: "Gemini 1.5 Flash", value: "gemini" },
-  // { name: "ChatGPT", value: "openai" },
+  { name: "Gemini 1.5 Flash", value: "gemini-1.5-flash" },
+  { name: "Gemini 2.0 Flash-Lite", value: "gemini-2.0-flash-lite" },
 ] as const;
 
 export type AIProvider = (typeof PROVIDERS)[number]["value"];

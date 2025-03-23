@@ -3,7 +3,7 @@ import { z } from "zod";
 import { APIResp } from "../trpc";
 
 export const suggestionInput = z.object({
-  provider: z.enum(["gemini", "palm2"]),
+  provider: z.enum(["gemini-1.5-flash", "gemini-2.0-flash-lite"]),
 });
 export type SuggestionPayload = z.infer<typeof suggestionInput>;
 
