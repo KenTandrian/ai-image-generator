@@ -3581,20 +3581,15 @@ swr@2.3.3:
     dequal "^2.0.3"
     use-sync-external-store "^1.4.0"
 
-tailwind-merge@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-3.1.0.tgz#451460cf5580b2da1120b45076e114814d593a36"
-  integrity sha512-aV27Oj8B7U/tAOMhJsSGdWqelfmudnGMdXIlMnk1JfsjwSjts6o8HyfN7SFH3EztzH4YH8kk6GbLTHzITJO39Q==
+tailwind-merge@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-3.2.0.tgz#bedcf6a67a8c982da5913afcba9c854f35abb857"
+  integrity sha512-FQT/OVqCD+7edmmJpsgCsY820RTD5AkBryuG5IUqR5YQZSdj5xlH5nLgH7YPths7WsLPSpSBNneJdM8aS8aeFA==
 
 tailwindcss-debug-screens@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-3.0.1.tgz#accb286e305413a334629a8226f1af67bbc0301a"
   integrity sha512-ibUaLQGk4AvxnKzGyoLlj1kzBRADcQV65ELENcWxkXJArUCnitR/GZxxDPL9XnW96mzUEuhJqgFI7C43hKm6Vw==
-
-tailwindcss@4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.2.tgz#5f1e4b1e336e8433c6e275bd3e6dd4f0f9ea6c47"
-  integrity sha512-VCsK+fitIbQF7JlxXaibFhxrPq4E2hDcG8apzHUdWFMCQWD8uLdlHg4iSkZ53cgLCCcZ+FZK7vG8VjvLcnBgKw==
 
 tailwindcss@4.1.3:
   version "4.1.3"
