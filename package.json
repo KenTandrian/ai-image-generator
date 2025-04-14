@@ -12,7 +12,7 @@
     "format:write": "prettier . --write --ignore-unknown"
   },
   "dependencies": {
-    "@bprogress/next": "3.2.11",
+    "@bprogress/next": "3.2.12",
     "@trpc/client": "11.0.0",
     "@trpc/server": "11.0.0",
     "@vercel/functions": "2.0.0",
