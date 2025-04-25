@@ -75,7 +75,7 @@ export async function generateWithDalle(prompt: string) {
   });
   log.info("Image generated!");
 
-  const imageUrl = resp.data[0].url ?? "";
+  const imageUrl = resp.data?.[0].url ?? "";
   const res = await axios.get<Buffer>(imageUrl, {
     responseType: "arraybuffer",
   });
