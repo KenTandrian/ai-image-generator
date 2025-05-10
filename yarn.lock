@@ -1231,10 +1231,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.7.0.tgz#c130ae8c0ce56dd1fe952d44fe95a6f9a91cccb6"
   integrity sha512-Jf14pKofg58DIwcZv4Wt9AyVVe7bSJP8ODz+EP9nG/rho08FQzan0VOJk1g6/BNE1RkoYd+lRTWK+/BgH12qoQ==
 
-"@vercel/functions@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.0.1.tgz#bcc17faec0139ef7b3bcafa75d4014b3ae6ff45c"
-  integrity sha512-WmGX0+wAPn0AEYN5GZjrlrGE6Vr/pkkmbfHoZjoAmJn+Vybi8/jM0gil4M3D8hRYq3k1uDKuNzrHnToXc+s8Ag==
+"@vercel/functions@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.0.3.tgz#794b3b947c6cdf36a3e1525ecd80a4b4d2558dc9"
+  integrity sha512-F4PX2D/0WDmoFz3fc5FcdINnSPrM+gU2z18KG7gej7xsvc6PbQ/rEUvP+RcOF6JGzTrHoZfSa1mpcrScuD6AEw==
 
 accepts@^2.0.0:
   version "2.0.0"
