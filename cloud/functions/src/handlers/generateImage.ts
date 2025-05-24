@@ -29,17 +29,20 @@ export const generateImage = onCall<RequestData>(
   async (request) => {
     try {
       const { prompt: rawPrompt, metadata } = request.data;
-      const model = metadata.model;
       const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
-      log.info({ prompt, model, location: metadata.geo?.city });
+      log.info({ prompt, model: metadata.model, location: metadata.geo?.city });
 
       // DALL·E is replaced by Imagen due to billing changes
-      const imgBuffer = await generateWithImagen(prompt, model);
+      const { imgBuffer, model } = await generateWithImagen(
+        prompt,
+        metadata.model
+      );
 
       const timeStamp = new Date().getTime();
       const fileName = `${timeStamp}-${randomUUID()}.png`;
       await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, imgBuffer, fileName, {
         ...metadata,
+        model,
         prompt,
       });
       log.info("Image stored!");
@@ -88,17 +91,17 @@ export async function generateWithDalle(prompt: string) {
 /**
  * Generate image with Google Imagen
  * @param {string} prompt Prompt
- * @param {string} model Imagen model resource ID
+ * @param {string} modelId Imagen model resource ID
  * @return {Buffer} Buffer of the generated image
  */
-export async function generateWithImagen(prompt: string, model: string) {
+export async function generateWithImagen(prompt: string, modelId: string) {
   const vertexai = new VertexAIService();
-  const resp = await vertexai.imagen({ prompt, model });
+  const resp = await vertexai.imagen({ prompt, modelId });
   if (!resp) throw new Error("Image generation failed");
   log.info("Image generated!");
 
-  const arrayBuffer = Buffer.from(resp, "base64");
+  const imgBuffer = Buffer.from(resp.bytes, "base64");
   log.info("Image file fetched!");
 
-  return arrayBuffer;
+  return { imgBuffer, model: resp.model };
 }

@@ -21,7 +21,7 @@ export default class VertexAIService {
   }
 
   /** Generate image */
-  async imagen({ prompt, model }: { prompt: string; model: string }) {
+  async imagen({ prompt, modelId }: { prompt: string; modelId: string }) {
     // Validate Imagen model resource ID
     const IMAGEN_MODELS = [
       "imagegeneration@006",
@@ -30,8 +30,8 @@ export default class VertexAIService {
       "imagen-4.0-generate-preview-05-20",
       "imagen-4.0-ultra-generate-exp-05-20",
     ];
-    const modelName = IMAGEN_MODELS.includes(model)
-      ? model
+    const modelName = IMAGEN_MODELS.includes(modelId)
+      ? modelId
       : this.defaultImagen;
 
     // Generate image
@@ -46,6 +46,9 @@ export default class VertexAIService {
     const result = helpers.fromValue(
       response.predictions[0] as protobuf.common.IValue
     ) as ImgPredictionResult;
-    return result.bytesBase64Encoded ?? "";
+    return {
+      bytes: result.bytesBase64Encoded ?? "",
+      model: modelName,
+    };
   }
 }
