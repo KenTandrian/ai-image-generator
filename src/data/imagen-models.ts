@@ -27,6 +27,19 @@ export const IMAGEN_MODELS = [
     status: MODEL_STATUS.PRIVATE,
   },
   {
+    name: "Imagen 4",
+    value: "imagen-4.0-generate-preview-05-20",
+    vendor: "Google",
+    status: MODEL_STATUS.PRIVATE,
+  },
+  {
+    name: "Imagen 4 Ultra",
+    value: "imagen-4.0-ultra-generate-exp-05-20",
+    vendor: "Google",
+    status: MODEL_STATUS.PRIVATE,
+  },
+  // Deprecated models
+  {
     name: "Imagen 3",
     value: "imagen-3.0-generate-001",
     vendor: "Google",
