@@ -7,3 +7,11 @@ export const GLOBAL_OPTIONS: GlobalOptions = {
   maxInstances: 5,
   region: "asia-southeast1",
 };
+
+export const IMAGEN_MODELS = [
+  { id: "imagegeneration@006", location: "asia-southeast1" },
+  { id: "imagen-3.0-fast-generate-001", location: "asia-southeast1" },
+  { id: "imagen-3.0-generate-002", location: "asia-southeast1" },
+  { id: "imagen-4.0-generate-preview-05-20", location: "us-central1" },
+  { id: "imagen-4.0-ultra-generate-exp-05-20", location: "us-central1" },
+] as const;

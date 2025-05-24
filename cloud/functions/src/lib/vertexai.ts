@@ -1,4 +1,5 @@
 import { PredictionServiceClient, helpers } from "@google-cloud/aiplatform";
+import { IMAGEN_MODELS } from "../constants";
 
 type ImgPredictionResult = {
   mimeType: "image/png";
@@ -11,7 +12,7 @@ export default class VertexAIService {
   private project = process.env.GCLOUD_PROJECT;
   private location = "asia-southeast1";
   private publisher = "google";
-  private defaultImagen = "imagegeneration@006";
+  private defaultImagen = IMAGEN_MODELS[0];
 
   /** Initialize Vertex AI Service */
   constructor() {
@@ -23,20 +24,18 @@ export default class VertexAIService {
   /** Generate image */
   async imagen({ prompt, modelId }: { prompt: string; modelId: string }) {
     // Validate Imagen model resource ID
-    const IMAGEN_MODELS = [
-      "imagegeneration@006",
-      "imagen-3.0-fast-generate-001",
-      "imagen-3.0-generate-002",
-      "imagen-4.0-generate-preview-05-20",
-      "imagen-4.0-ultra-generate-exp-05-20",
-    ];
-    const modelName = IMAGEN_MODELS.includes(modelId)
-      ? modelId
-      : this.defaultImagen;
+    const model =
+      IMAGEN_MODELS.find((m) => m.id === modelId) ?? this.defaultImagen;
+
+    if (model.location !== this.location) {
+      this.client = new PredictionServiceClient({
+        apiEndpoint: `${model.location}-aiplatform.googleapis.com`,
+      });
+    }
 
     // Generate image
     const [response] = await this.client.predict({
-      endpoint: `projects/${this.project}/locations/${this.location}/publishers/${this.publisher}/models/${modelName}`,
+      endpoint: `projects/${this.project}/locations/${model.location}/publishers/${this.publisher}/models/${model.id}`,
       instances: [helpers.toValue({ prompt })!],
       parameters: helpers.toValue({
         sampleCount: 1,
@@ -48,7 +47,7 @@ export default class VertexAIService {
     ) as ImgPredictionResult;
     return {
       bytes: result.bytesBase64Encoded ?? "",
-      model: modelName,
+      model: model.id,
     };
   }
 }
