@@ -42,7 +42,7 @@
     "eslint-config-next": "15.3.3",
     "postcss": "8.5.4",
     "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "0.6.11",
+    "prettier-plugin-tailwindcss": "0.6.12",
     "tailwindcss": "4.1.8",
     "tailwindcss-debug-screens": "3.0.1",
     "typescript": "5.8.3"
