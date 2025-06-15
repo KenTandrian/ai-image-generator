@@ -1298,10 +1298,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.7.9.tgz#d0eccd6808a5414d22fdcc8c6342887867e823c4"
   integrity sha512-hORofIRZCm85+TUZ9OmHQJNlgtOmK/TPfvYeSplKAl+zQvAwMGyy6DZcSbrF+KdB1EDoGISwU7dX7PE92haOXg==
 
-"@vercel/functions@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.1.0.tgz#f9301a5ac59c8737953c1f3f884f453c2cc54a35"
-  integrity sha512-1gSbK9zfrbJxk1JTBVERDhLi01mK3fz+gw4GjOjZwHnqs0zsBhQA70HGVtXQX/Z3BTRMfbpAEMVDfhecRw0lDA==
+"@vercel/functions@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.0.tgz#3bf8216eff61f096071e0026dc304460cef66106"
+  integrity sha512-x1Zrc2jOclTSB9+Ic/XNMDinO0SG4ZS5YeV2Xz1m/tuJOM7QtPVU3Epw2czBao0dukefmC8HCNpyUL8ZchJ/Tg==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
