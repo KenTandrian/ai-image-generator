@@ -20,7 +20,7 @@
     "firebase": "11.9.1",
     "javascript-time-ago": "2.5.11",
     "next": "15.3.4",
-    "next-auth": "5.0.0-beta.28",
+    "next-auth": "5.0.0-beta.29",
     "react": "19.1.0",
     "react-circle-flags": "0.0.23",
     "react-dom": "19.1.0",
