@@ -1,6 +1,7 @@
 import { IMAGEN_MODELS, type ImagenModel } from "@/data/imagen-models";
 import { useSession } from "next-auth/react";
 import { useCallback, useState } from "react";
+import { AiOutlineExperiment } from "react-icons/ai";
 
 function Selector({
   onChange,
@@ -17,7 +18,7 @@ function Selector({
   );
 
   return (
-    <div className="flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 dark:border-zinc-700 sm:flex-row">
+    <div className="flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 sm:flex-row dark:border-zinc-700">
       <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
         Image Generator
       </h3>
@@ -36,9 +37,12 @@ function Selector({
             />
             <label
               htmlFor={p.value}
-              className="ml-2 text-sm text-zinc-900 dark:text-zinc-300"
+              className="ml-2 flex items-center gap-1 text-sm text-zinc-900 dark:text-zinc-300"
             >
               {p.name}
+              {p.value.includes("preview") && (
+                <AiOutlineExperiment className="-mb-0.5 text-violet-400" />
+              )}
             </label>
           </div>
         ))}
