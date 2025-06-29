@@ -7,7 +7,13 @@ const MODEL_STATUS = {
   DEPRECATED: "DEPRECATED",
 } as const;
 
-export const IMAGEN_MODELS = [
+export const IMAGEN_MODELS: {
+  name: string;
+  value: string;
+  aliases?: string[];
+  vendor: keyof typeof VENDOR_LOGOS;
+  status: (typeof MODEL_STATUS)[keyof typeof MODEL_STATUS];
+}[] = [
   {
     name: "Imagen 2",
     value: "imagegeneration@006",
@@ -23,6 +29,7 @@ export const IMAGEN_MODELS = [
   {
     name: "Imagen 3",
     value: "imagen-3.0-generate-002",
+    aliases: ["imagen-3.0-generate-001"],
     vendor: "Google",
     status: MODEL_STATUS.PRIVATE,
   },
@@ -39,12 +46,6 @@ export const IMAGEN_MODELS = [
     status: MODEL_STATUS.PRIVATE,
   },
   // Deprecated models
-  {
-    name: "Imagen 3",
-    value: "imagen-3.0-generate-001",
-    vendor: "Google",
-    status: MODEL_STATUS.DEPRECATED,
-  },
   {
     name: "DALL·E 2",
     value: "dall-e-2",
@@ -65,6 +66,8 @@ export function getModelName(model: ImagenModel) {
 }
 
 export function findModel(model: ImagenModel) {
-  const m = IMAGEN_MODELS.find((p) => p.value === model);
+  const m = IMAGEN_MODELS.find(
+    (p) => p.value === model || p.aliases?.includes(model)
+  );
   if (m) return { ...m, logo: VENDOR_LOGOS[m?.vendor] };
 }
