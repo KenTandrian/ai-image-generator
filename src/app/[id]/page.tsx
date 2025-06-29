@@ -27,7 +27,7 @@ export default async function Page({ params }: PageProps) {
   const Logo = model?.logo ?? FcGoogle;
 
   return (
-    <div className="mx-auto my-6 max-w-screen-3xl px-6 md:my-10 md:px-10">
+    <div className="max-w-screen-3xl mx-auto my-6 px-6 md:my-10 md:px-10">
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div>
           <Image
@@ -47,20 +47,23 @@ export default async function Page({ params }: PageProps) {
               href="/"
               className="inline-flex items-center rounded-md bg-zinc-900 px-4 py-2 transition-colors hover:bg-zinc-800"
             >
-              <LuChevronLeft className="-ml-1 mr-1 inline-block h-5 w-5" />
+              <LuChevronLeft className="mr-1 -ml-1 inline-block h-5 w-5" />
               Back
             </Link>
           </div>
           <div>
-            <p className="text-sm uppercase tracking-wider text-violet-500">
+            <p className="text-sm tracking-wider text-violet-500 uppercase">
               Prompt
             </p>
-            <h1 className="mt-2 text-2xl lg:text-3xl">
+            <h1
+              className="mt-2 line-clamp-[8] text-2xl lg:text-3xl"
+              title={image.metadata.prompt}
+            >
               {image.metadata.prompt}
             </h1>
           </div>
           <div>
-            <p className="text-sm uppercase tracking-wider text-violet-500">
+            <p className="text-sm tracking-wider text-violet-500 uppercase">
               Image Generator
             </p>
             <h1 className="mt-2 flex items-center text-xl lg:text-2xl">
@@ -69,7 +72,7 @@ export default async function Page({ params }: PageProps) {
             </h1>
           </div>
           <div>
-            <p className="text-sm uppercase tracking-wider text-violet-500">
+            <p className="text-sm tracking-wider text-violet-500 uppercase">
               Created at
             </p>
             <h1 className="mt-2 text-xl lg:text-2xl">
@@ -80,7 +83,7 @@ export default async function Page({ params }: PageProps) {
             </h1>
           </div>
           <div>
-            <p className="text-sm uppercase tracking-wider text-violet-500">
+            <p className="text-sm tracking-wider text-violet-500 uppercase">
               Location
             </p>
             <h1 className="mt-2 flex items-center text-xl lg:text-2xl">

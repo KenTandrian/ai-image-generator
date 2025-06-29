@@ -7,7 +7,7 @@ import VertexAILogo from "./VertexAILogo";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white p-5 shadow-md dark:bg-zinc-900">
-      <div className="mx-auto flex max-w-screen-3xl justify-between">
+      <div className="max-w-screen-3xl mx-auto flex justify-between">
         <div className="flex items-center space-x-2 text-black dark:text-zinc-200">
           <VertexAILogo height={42} width={42} />
           <div>
