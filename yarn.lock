@@ -1307,10 +1307,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.7.9.tgz#d0eccd6808a5414d22fdcc8c6342887867e823c4"
   integrity sha512-hORofIRZCm85+TUZ9OmHQJNlgtOmK/TPfvYeSplKAl+zQvAwMGyy6DZcSbrF+KdB1EDoGISwU7dX7PE92haOXg==
 
-"@vercel/functions@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.2.tgz#770cd1c33f1d03f4ed31d81b72fc7eef273150e2"
-  integrity sha512-wgtgFwhYAUzS7UOvw44q14FaoRPONEnyoM0JlrjcDkI+kzSu7M8J5Tk5T3Kvv52//8is+HGxVQtaBSiO3G0wbw==
+"@vercel/functions@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.3.tgz#ec3108a1c1c099e78ae01dea08672fe023a17da6"
+  integrity sha512-Z6xwsxM/57/92PLW2HoLLmVw4+Nb5OZzMzDA4qfkksWgG1k5dGV7kvP1TDEOlW3WHjqWtfPJBcd61dE2p0mbxQ==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
