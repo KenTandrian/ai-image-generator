@@ -16,7 +16,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/aiplatform": "4.2.0",
+    "@google-cloud/aiplatform": "4.3.0",
     "@google-cloud/storage": "7.16.0",
     "@google-cloud/vertexai": "1.10.0",
     "axios": "1.10.0",
