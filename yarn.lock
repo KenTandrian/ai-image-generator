@@ -1261,10 +1261,17 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.11.1.tgz#538b1e103bf8d9864e7b85cc96fa8d6fb6c40777"
   integrity sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==
 
-"@vercel/functions@2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.4.tgz#57dbfb0ac5b0fce519518348030d685ff40c287c"
-  integrity sha512-dol8/MiNG9u7/FSPumYEEl2MJijXBxhKoBJpY83Sqay1VWi4XngaWzBkzSut0SCL4DVVRLtZNEcCkj2/vW3LMg==
+"@vercel/functions@2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.5.tgz#58e109de08527c54c105e2a7d769ea907cbf41c2"
+  integrity sha512-ghRGwKd0o2QYhv6Zn/dMtnJV7S1ckUwChMFQYMr9RIg4e/cnwF5OgXuyVpoMeGRiDhSMvfOAH50iSwmoDwgZKw==
+  dependencies:
+    "@vercel/oidc" "2.0.0"
+
+"@vercel/oidc@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-2.0.0.tgz#28c202c7b78716a6ceabffec06d311a108eb4489"
+  integrity sha512-U0hncpXof7gC9xtmSrjz6vrDqdwJXi8z/zSc9FyS80AoXKfCZtpkBz9gtL3x30Agmpxpwe35P1W2dP9Epa/RGA==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
