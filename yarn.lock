@@ -1261,10 +1261,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.11.1.tgz#538b1e103bf8d9864e7b85cc96fa8d6fb6c40777"
   integrity sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==
 
-"@vercel/functions@2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.5.tgz#58e109de08527c54c105e2a7d769ea907cbf41c2"
-  integrity sha512-ghRGwKd0o2QYhv6Zn/dMtnJV7S1ckUwChMFQYMr9RIg4e/cnwF5OgXuyVpoMeGRiDhSMvfOAH50iSwmoDwgZKw==
+"@vercel/functions@2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-2.2.7.tgz#9f994906925c3e2979ac2d020d4b3f3b286af459"
+  integrity sha512-3GzufulXUykEqB4/LdQEHuRLlOPqE6XK36gmr85BwBvm9zwkrrOcb8NTtXjUIRfxJRz+Yk4YBSa8Bo84foYXdA==
   dependencies:
     "@vercel/oidc" "2.0.0"
 
