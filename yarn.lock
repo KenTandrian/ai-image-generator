@@ -1315,10 +1315,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.11.1.tgz#538b1e103bf8d9864e7b85cc96fa8d6fb6c40777"
   integrity sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==
 
-"@vercel/functions@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.0.0.tgz#55f507427de9e564646140bc2cf90c0465d0c893"
-  integrity sha512-U7PRdjAcwirEg1u/oAbbwgWXZvZvrtuh2F1B9LB49bcXAIMXYonbFCn2euKZCyxDsANBJUY4R1QgExyKdTLhiA==
+"@vercel/functions@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.1.0.tgz#1301f016e98434e179a0808bba9e764881f6b7ca"
+  integrity sha512-V+p8dO+sg1VjiJJUO5rYPp1KG17SzDcR74OWwW7Euyde6L8U5wuTMe9QfEOfLTiWPUPzN1MXZvLcYxqSYhKc4Q==
   dependencies:
     "@vercel/oidc" "3.0.0"
 
