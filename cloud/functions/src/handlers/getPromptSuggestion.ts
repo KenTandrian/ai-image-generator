@@ -1,7 +1,7 @@
 import { logger as log } from "firebase-functions/v2";
 import { onCall, type HttpsOptions } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS } from "../constants";
-import GeminiService from "../lib/gemini";
+import VertexAIService from "../lib/vertexai";
 import type { Model } from "../types";
 
 const ALLOWED_MODELS: Model[] = [
@@ -20,8 +20,8 @@ export const getPromptSuggestion = onCall(OPTIONS, async ({ data }) => {
 
     let responseText = "";
     if (model) {
-      const gemini = new GeminiService(model);
-      responseText = await gemini.suggestion();
+      const vertexai = new VertexAIService();
+      responseText = await vertexai.suggestion({ modelId: model.id });
     } else {
       log.error("Invalid model", model);
       return { error: true, payload: "Invalid model" };
