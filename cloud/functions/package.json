@@ -16,7 +16,6 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/aiplatform": "5.7.0",
     "@google-cloud/storage": "7.17.1",
     "@google/genai": "1.20.0",
     "axios": "1.12.2",
