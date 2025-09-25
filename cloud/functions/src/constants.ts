@@ -9,10 +9,9 @@ export const GLOBAL_OPTIONS: GlobalOptions = {
 };
 
 export const IMAGEN_MODELS = [
-  { id: "imagegeneration@006", location: "asia-southeast1" },
   { id: "imagen-3.0-fast-generate-001", location: "asia-southeast1" },
   { id: "imagen-3.0-generate-002", location: "asia-southeast1" },
-  { id: "imagen-4.0-fast-generate-preview-06-06", location: "us-central1" },
-  { id: "imagen-4.0-generate-preview-06-06", location: "us-central1" },
-  { id: "imagen-4.0-ultra-generate-preview-06-06", location: "us-central1" },
+  { id: "imagen-4.0-fast-generate-001", location: "us-central1" },
+  { id: "imagen-4.0-generate-001", location: "us-central1" },
+  { id: "imagen-4.0-ultra-generate-001", location: "us-central1" },
 ] as const;

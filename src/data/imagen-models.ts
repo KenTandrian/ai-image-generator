@@ -29,21 +29,28 @@ export const IMAGEN_MODELS: {
   },
   {
     name: "Imagen 4 Fast",
-    value: "imagen-4.0-fast-generate-preview-06-06",
+    value: "imagen-4.0-fast-generate-001",
+    aliases: ["imagen-4.0-fast-generate-preview-06-06"],
     vendor: "Google",
     status: MODEL_STATUS.PUBLIC,
   },
   {
     name: "Imagen 4",
-    value: "imagen-4.0-generate-preview-06-06",
-    aliases: ["imagen-4.0-generate-preview-05-20"],
+    value: "imagen-4.0-generate-001",
+    aliases: [
+      "imagen-4.0-generate-preview-06-06",
+      "imagen-4.0-generate-preview-05-20",
+    ],
     vendor: "Google",
     status: MODEL_STATUS.PRIVATE,
   },
   {
     name: "Imagen 4 Ultra",
-    value: "imagen-4.0-ultra-generate-preview-06-06",
-    aliases: ["imagen-4.0-ultra-generate-exp-05-20"],
+    value: "imagen-4.0-ultra-generate-001",
+    aliases: [
+      "imagen-4.0-ultra-generate-preview-06-06",
+      "imagen-4.0-ultra-generate-exp-05-20",
+    ],
     vendor: "Google",
     status: MODEL_STATUS.PRIVATE,
   },
