@@ -5,8 +5,8 @@ import GeminiService from "../lib/gemini";
 import type { Model } from "../types";
 
 const ALLOWED_MODELS: Model[] = [
-  { id: "gemini-1.5-flash", location: "asia-southeast1" },
   { id: "gemini-2.0-flash-lite", location: "us-central1" },
+  { id: "gemini-2.5-flash-lite", location: "us-central1" },
 ];
 
 const OPTIONS: HttpsOptions = {

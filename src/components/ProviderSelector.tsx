@@ -40,7 +40,7 @@ function Selector({
 }
 
 export default function useProviderSelector() {
-  const [provider, setProvider] = useState<AIProvider>("gemini-1.5-flash");
+  const [provider, setProvider] = useState<AIProvider>(PROVIDERS[0].value);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setProvider(event.target.value as AIProvider);

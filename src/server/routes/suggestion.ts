@@ -1,9 +1,10 @@
+import { PROVIDERS } from "@/data/ai-providers";
 import { callableFn } from "@/services/firebase";
 import { z } from "zod";
 import { APIResp } from "../trpc";
 
 export const suggestionInput = z.object({
-  provider: z.enum(["gemini-1.5-flash", "gemini-2.0-flash-lite"]),
+  provider: z.enum(PROVIDERS.map((p) => p.value)),
 });
 export type SuggestionPayload = z.infer<typeof suggestionInput>;
 
