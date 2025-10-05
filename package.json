@@ -45,6 +45,6 @@
     "prettier-plugin-tailwindcss": "0.6.14",
     "tailwindcss": "4.1.13",
     "tailwindcss-debug-screens": "3.0.1",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   }
 }
