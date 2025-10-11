@@ -23,6 +23,9 @@ updates:
         patterns:
           - "react"
           - "react-dom"
+      trpc:
+        patterns:
+          - "@trpc/*"
       typescript-eslint:
         patterns:
           - "@typescript-eslint/*"
