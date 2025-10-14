@@ -24,12 +24,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### Production
 
 [`next`](https://yarnpkg.com/package/next)
-[`openai`](https://yarnpkg.com/package/openai)
+[`next-auth`](https://yarnpkg.com/package/next-auth)
 [`react`](https://yarnpkg.com/package/react)
 [`react-dom`](https://yarnpkg.com/package/react-dom)
 [`react-icons`](https://yarnpkg.com/package/react-icons)
 [`swr`](https://yarnpkg.com/package/swr)
-[`typescript`](https://yarnpkg.com/package/typescript)
+[`zod`](https://yarnpkg.com/package/zod)
 
 ### Development
 
@@ -37,6 +37,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 [`postcss`](https://yarnpkg.com/package/postcss)
 [`prettier`](https://yarnpkg.com/package/prettier)
 [`tailwindcss`](https://yarnpkg.com/package/tailwindcss)
+[`typescript`](https://yarnpkg.com/package/typescript)
 
 [Go to List of Dependencies](https://github.com/KenTandrian/ai-image-generator/network/dependencies)
 
