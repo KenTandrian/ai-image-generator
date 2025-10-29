@@ -22,9 +22,6 @@ updates:
       trpc:
         patterns:
           - "@trpc/*"
-      typescript-eslint:
-        patterns:
-          - "@typescript-eslint/*"
 
   # Maintain dependencies for Cloud Functions
   - package-ecosystem: npm
