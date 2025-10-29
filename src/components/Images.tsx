@@ -1,9 +1,9 @@
 "use client";
 
-import fetchImages from "@/services/fetchImages";
-import { cn } from "@/utils/classname";
 import { TbHistory, TbLoader2, TbRefresh, TbStar } from "react-icons/tb";
 import useSWR from "swr";
+import fetchImages from "@/services/fetchImages";
+import { cn } from "@/utils/classname";
 import AIImage from "./Image";
 
 const Images = () => {
@@ -20,9 +20,10 @@ const Images = () => {
   return (
     <div className="max-w-screen-3xl mx-auto mb-12">
       <button
+        className="fixed right-4 bottom-4 z-20 flex items-center rounded-md bg-violet-400/90 px-4 py-2 font-medium text-white transition-colors hover:bg-violet-500 focus:ring-2 focus:ring-violet-400 focus:outline-none disabled:cursor-not-allowed md:right-8 md:bottom-8"
         disabled={loading}
         onClick={() => refreshImages(images)}
-        className="fixed right-4 bottom-4 z-20 flex items-center rounded-md bg-violet-400/90 px-4 py-2 font-medium text-white transition-colors hover:bg-violet-500 focus:ring-2 focus:ring-violet-400 focus:outline-none disabled:cursor-not-allowed md:right-8 md:bottom-8"
+        type="button"
       >
         <TbRefresh className={cn("mr-2", loading && "animate-spin")} />
         {loading ? "Refreshing..." : "Refresh Images"}

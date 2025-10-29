@@ -1,8 +1,8 @@
-import { TRPC_TOKEN } from "@/common";
-import { TRPCError, initTRPC } from "@trpc/server";
+import { initTRPC, TRPCError } from "@trpc/server";
 import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import { geolocation, ipAddress } from "@vercel/functions";
 import type { NextRequest } from "next/server";
+import { TRPC_TOKEN } from "@/common";
 
 export async function createContext(opts: FetchCreateContextFnOptions) {
   const { headers } = opts.req as NextRequest;
@@ -34,6 +34,5 @@ export class APIResp {
   constructor(message: string, success: boolean) {
     this.message = message;
     this.success = success;
-    return this;
   }
 }

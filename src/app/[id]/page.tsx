@@ -1,11 +1,11 @@
-import { findModel } from "@/data/imagen-models";
-import { callableFn } from "@/services/firebase";
-import type { ImageType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { CircleFlag } from "react-circle-flags";
 import { FcGoogle } from "react-icons/fc";
 import { LuChevronLeft } from "react-icons/lu";
+import { findModel } from "@/data/imagen-models";
+import { callableFn } from "@/services/firebase";
+import type { ImageType } from "@/types";
 
 async function fetchData(path: string) {
   const fn = callableFn<{ path: string }, ImageType>("getImage");

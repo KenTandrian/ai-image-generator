@@ -1,6 +1,6 @@
-import { VERSION } from "@/common";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { VERSION } from "@/common";
 import AuthButton from "./AuthButton";
 import VertexAILogo from "./VertexAILogo";
 

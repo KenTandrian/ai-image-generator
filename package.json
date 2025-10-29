@@ -7,9 +7,10 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier . --check --ignore-unknown",
-    "format:write": "prettier . --write --ignore-unknown"
+    "lint": "biome check",
+    "lint:fix": "biome check --write",
+    "format": "biome format .",
+    "format:write": "biome format --write ."
   },
   "dependencies": {
     "@bprogress/next": "3.2.12",

@@ -1,5 +1,5 @@
-import { PROVIDERS, type AIProvider } from "@/data/ai-providers";
 import { useCallback, useState } from "react";
+import { type AIProvider, PROVIDERS } from "@/data/ai-providers";
 
 function Selector({
   onChange,

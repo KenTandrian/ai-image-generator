@@ -1,9 +1,9 @@
+import { Plus_Jakarta_Sans } from "next/font/google";
 import ClientProvider from "@/components/ClientProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { auth } from "@/utils/auth";
 import { cn } from "@/utils/classname";
-import { Plus_Jakarta_Sans } from "next/font/google";
 
 import "@/styles/globals.css";
 

@@ -1,9 +1,9 @@
-import type { ImageType } from "@/types";
-import { cn } from "@/utils/classname";
-import { relative } from "@/utils/date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import { CircleFlag } from "react-circle-flags";
+import type { ImageType } from "@/types";
+import { cn } from "@/utils/classname";
+import { relative } from "@/utils/date-fns";
 
 export default function AIImage({
   image,

@@ -1,5 +1,9 @@
 "use client";
 
+import { TRPCClientError } from "@trpc/client";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import useSWR from "swr";
 import useModelSelector from "@/components/ModelSelector";
 import useProviderSelector from "@/components/ProviderSelector";
 import { getProviderName } from "@/data/ai-providers";
@@ -7,10 +11,6 @@ import trpc from "@/server/client";
 import fetchImages from "@/services/fetchImages";
 import fetchSuggestion from "@/services/fetchSuggestion";
 import { cn } from "@/utils/classname";
-import { TRPCClientError } from "@trpc/client";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import useSWR from "swr";
 
 const PromptInput = () => {
   const { provider, ProviderSelector } = useProviderSelector();

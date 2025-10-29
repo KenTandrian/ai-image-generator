@@ -1,6 +1,6 @@
+import { z } from "zod";
 import { PROVIDERS } from "@/data/ai-providers";
 import { callableFn } from "@/services/firebase";
-import { z } from "zod";
 import { APIResp } from "../trpc";
 
 export const suggestionInput = z.object({
@@ -24,7 +24,9 @@ export async function suggestionFn(input: SuggestionPayload) {
   }
   return new APIResp(
     // Remove leading dot if present and trim the string
-    data.payload?.replace(/^\./, "").trim(),
+    data.payload
+      ?.replace(/^\./, "")
+      .trim(),
     true
   );
 }

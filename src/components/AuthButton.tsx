@@ -1,5 +1,5 @@
-import { auth, signIn, signOut } from "@/utils/auth";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { auth, signIn, signOut } from "@/utils/auth";
 
 const CLASSNAMES =
   "text-violet-500 transition-colors hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-500";

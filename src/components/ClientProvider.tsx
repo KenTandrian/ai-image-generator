@@ -3,7 +3,7 @@
 import { AppProgressProvider } from "@bprogress/next";
 import type { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
-import React from "react";
+import type React from "react";
 import { Toaster } from "react-hot-toast";
 
 export default function ClientProvider({

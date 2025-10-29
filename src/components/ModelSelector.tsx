@@ -1,7 +1,7 @@
-import { IMAGEN_MODELS, type ImagenModel } from "@/data/imagen-models";
 import { useSession } from "next-auth/react";
 import { useCallback, useState } from "react";
 import { AiOutlineExperiment } from "react-icons/ai";
+import { IMAGEN_MODELS, type ImagenModel } from "@/data/imagen-models";
 
 function Selector({
   onChange,
