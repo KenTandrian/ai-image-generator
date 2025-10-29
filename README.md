@@ -33,7 +33,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Development
 
-[`eslint`](https://yarnpkg.com/package/eslint)
+[`@biomejs/biome`](https://yarnpkg.com/package/@biomejs/biome)
 [`postcss`](https://yarnpkg.com/package/postcss)
 [`prettier`](https://yarnpkg.com/package/prettier)
 [`tailwindcss`](https://yarnpkg.com/package/tailwindcss)
