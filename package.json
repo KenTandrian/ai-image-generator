@@ -39,7 +39,6 @@
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "postcss": "8.5.6",
-    "prettier": "3.6.2",
     "tailwindcss": "4.1.16",
     "tailwindcss-debug-screens": "3.0.1",
     "typescript": "5.9.3"
