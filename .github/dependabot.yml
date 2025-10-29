@@ -15,10 +15,6 @@ updates:
       - javascript
       - dependencies
     groups:
-      nextjs:
-        patterns:
-          - "next"
-          - "eslint-config-next"
       react:
         patterns:
           - "react"
