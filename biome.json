@@ -45,7 +45,6 @@
   },
   "javascript": {
     "formatter": {
-      "arrowParentheses": "always",
       "quoteStyle": "double",
       "trailingCommas": "es5"
     }
