@@ -1317,10 +1317,10 @@ protobufjs@^7.2.5:
     "@types/node" ">=13.7.0"
     long "^5.0.0"
 
-react-circle-flags@0.0.23:
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/react-circle-flags/-/react-circle-flags-0.0.23.tgz#772f38fb4d863db06f8d1ed025a907cb13cf68a5"
-  integrity sha512-J35vkTnG4Iz7cgitq/UIw4/1i8aUWEkz2Z0MQTTWycWOHKezuey5+3BPAsXNr78gYMdjSBtZWmSzQc0oEeK4oQ==
+react-circle-flags@0.0.24:
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/react-circle-flags/-/react-circle-flags-0.0.24.tgz#0866dc4d143c17dc32ad7640a0fcadd905336019"
+  integrity sha512-TfdYtK+LEH2Qa+g92m0RSFaLMfSivoYZzWk5UzL4mkyaDberNBF/28BuRRFEoKaO4nShHUjCKbkwVMeWhlFjCQ==
 
 react-dom@19.2.0:
   version "19.2.0"
