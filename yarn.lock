@@ -956,10 +956,10 @@
   dependencies:
     csstype "^3.0.2"
 
-"@vercel/functions@3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.1.4.tgz#006fc8005aa373912feb5f9823295eebbadd5546"
-  integrity sha512-1dEfZkb7qxsA+ilo+1uBUCEgr7e90vHcimpDYkUB84DM051wQ5amJDk9x+cnaI29paZb5XukXwGl8yk3Udb/DQ==
+"@vercel/functions@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.3.0.tgz#108bf826bdcecc5f6297df037fc974bcfd80b4d8"
+  integrity sha512-u5UrM2BX7gdMMXaJph3ZxgjAczv5/3oCG4H37BcnDDiXO7hJnN9C7pNX1v4mSmMLQ22n44C2bqN0d87lxfxYXQ==
   dependencies:
     "@vercel/oidc" "3.0.3"
 
