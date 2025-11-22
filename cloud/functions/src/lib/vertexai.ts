@@ -31,9 +31,20 @@ export default class VertexAIService {
       model: model.id,
       prompt: prompt,
     });
-    const result = response.generatedImages?.[0]?.image;
+
+    // Check if image generation failed
+    const generatedImage = response.generatedImages?.[0];
+    if (!generatedImage?.image?.imageBytes) {
+      if (generatedImage?.raiFilteredReason) {
+        throw new Error(
+          "Generated images violated Google's Responsible AI practices. Try rephrasing the prompt."
+        );
+      } else {
+        throw new Error("Image generation failed");
+      }
+    }
     return {
-      bytes: result?.imageBytes ?? "",
+      bytes: generatedImage.image.imageBytes,
       model: model.id,
     };
   }
