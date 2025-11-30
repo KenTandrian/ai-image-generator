@@ -983,10 +983,10 @@
   dependencies:
     csstype "^3.2.2"
 
-"@vercel/functions@3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.3.3.tgz#363c122105a276cb159dafd265b9035cb1bcfffb"
-  integrity sha512-Gf+Nc/h7YjTpIhVk9UqGqKUcOIlnuSTqEKr7aApEeYjPUeqr/C4UddU6FyCyrFM0tnefKcOXVA6m7op+1JSZBg==
+"@vercel/functions@3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.3.4.tgz#dc8f544ececddf23fb990477f5a0d8c27fa292c8"
+  integrity sha512-IoP8Xfr1QeCm+Dv5od3bfPiw/VgLKsA7IBd/88M/Wr421HdbH4b6bW5z8CTxiz1QRpalrPFZcLdMdxu+2hAjZg==
   dependencies:
     "@vercel/oidc" "3.0.5"
 
