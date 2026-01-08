@@ -2,7 +2,7 @@ import OpenAI from "openai";
 
 /** OpenAI Service */
 export default class OpenAIService {
-  private openai: OpenAI;
+  private readonly openai: OpenAI;
 
   /** Initialize OpenAI Service */
   constructor() {

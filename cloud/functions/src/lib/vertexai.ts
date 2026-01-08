@@ -3,10 +3,10 @@ import { IMAGEN_MODELS } from "../constants";
 
 /** Google Cloud Vertex AI Service */
 export default class VertexAIService {
-  private client: GoogleGenAI;
-  private defaultImagen = IMAGEN_MODELS[0];
-  private location = "us-central1";
-  private project = process.env.GCLOUD_PROJECT;
+  private readonly client: GoogleGenAI;
+  private readonly defaultImagen = IMAGEN_MODELS[0];
+  private readonly location = "us-central1";
+  private readonly project = process.env.GCLOUD_PROJECT;
 
   /** Initialize Vertex AI Service */
   constructor() {
