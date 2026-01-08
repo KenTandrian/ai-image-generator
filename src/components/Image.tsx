@@ -8,10 +8,10 @@ import { relative } from "@/utils/date-fns";
 export default function AIImage({
   image,
   isFirst,
-}: {
+}: Readonly<{
   image: ImageType;
   isFirst: boolean;
-}) {
+}>) {
   const href = encodeURIComponent(image.name);
   return (
     <Link

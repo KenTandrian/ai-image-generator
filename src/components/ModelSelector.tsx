@@ -6,10 +6,10 @@ import { IMAGEN_MODELS, type ImagenModel } from "@/data/imagen-models";
 function Selector({
   onChange,
   model,
-}: {
+}: Readonly<{
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   model: ImagenModel;
-}) {
+}>) {
   const { data: session } = useSession();
   const isLoggedIn = !!session?.user;
 

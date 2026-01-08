@@ -9,10 +9,10 @@ import { Toaster } from "react-hot-toast";
 export default function ClientProvider({
   children,
   session,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   session: Session | null;
-}) {
+}>) {
   return (
     <SessionProvider session={session}>
       <Toaster position="bottom-center" />

@@ -4,10 +4,10 @@ import { type AIProvider, PROVIDERS } from "@/data/ai-providers";
 function Selector({
   onChange,
   provider,
-}: {
+}: Readonly<{
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   provider: AIProvider;
-}) {
+}>) {
   return (
     <div className="flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 sm:flex-row dark:border-zinc-700">
       <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
