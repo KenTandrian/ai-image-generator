@@ -19,11 +19,7 @@ const pjs = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
   const session = await auth();
   return (
     <html

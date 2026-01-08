@@ -13,11 +13,7 @@ async function fetchData(path: string) {
   return resp.data;
 }
 
-type PageProps = {
-  params: Promise<{ id: string }>;
-};
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps<"/[id]">) {
   const { id } = await params;
   const imgName = decodeURIComponent(id);
 
