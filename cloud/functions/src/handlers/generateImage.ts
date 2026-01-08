@@ -38,7 +38,7 @@ export const generateImage = onCall<RequestData>(
         metadata.model
       );
 
-      const timeStamp = new Date().getTime();
+      const timeStamp = Date.now();
       const fileName = `${timeStamp}-${randomUUID()}.png`;
       await storeImage(PROJECT_NAME, IMAGE_FOLDER_NAME, imgBuffer, fileName, {
         ...metadata,
