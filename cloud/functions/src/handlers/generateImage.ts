@@ -1,5 +1,5 @@
 import axios from "axios";
-import { randomUUID } from "crypto";
+import { randomUUID } from "node:crypto";
 import { logger as log } from "firebase-functions/v2";
 import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
