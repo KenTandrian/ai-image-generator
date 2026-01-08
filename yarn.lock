@@ -968,17 +968,17 @@
   dependencies:
     csstype "^3.2.2"
 
-"@vercel/functions@3.3.4":
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.3.4.tgz#dc8f544ececddf23fb990477f5a0d8c27fa292c8"
-  integrity sha512-IoP8Xfr1QeCm+Dv5od3bfPiw/VgLKsA7IBd/88M/Wr421HdbH4b6bW5z8CTxiz1QRpalrPFZcLdMdxu+2hAjZg==
+"@vercel/functions@3.3.5":
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.3.5.tgz#beb0af7516153bff173e9ceca69797022db9d561"
+  integrity sha512-GKgC1sAbc0hL8bmzStkbM1FQRdzzYl2vm7L8SqUSnILoEcsAEJFY2prrEHvuhlKXtKqHo3P9WbHlg0QxuazDPA==
   dependencies:
-    "@vercel/oidc" "3.0.5"
+    "@vercel/oidc" "3.1.0"
 
-"@vercel/oidc@3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.0.5.tgz#bd8db7ee777255c686443413492db4d98ef49657"
-  integrity sha512-fnYhv671l+eTTp48gB4zEsTW/YtRgRPnkI2nT7x6qw5rkI1Lq2hTmQIpHPgyThI0znLK+vX2n9XxKdXZ7BUbbw==
+"@vercel/oidc@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.1.0.tgz#066caee449b84079f33c7445fc862464fe10ec32"
+  integrity sha512-Fw28YZpRnA3cAHHDlkt7xQHiJ0fcL+NRcIqsocZQUSmbzeIKRpwttJjik5ZGanXP+vlA4SbTg+AbA3bP363l+w==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
