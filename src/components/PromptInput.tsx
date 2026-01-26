@@ -56,11 +56,11 @@ const PromptInput = () => {
 
     try {
       const data = await trpc.generateImage.mutate({ prompt: p, model });
-      if (!data.success) {
-        toast.error(data.message, { id: notification });
-      } else {
+      if (data.success) {
         toast.success("Your AI Art has been generated!", { id: notification });
         refreshImages();
+      } else {
+        toast.error(data.message, { id: notification });
       }
     } catch (err) {
       if (err instanceof TRPCClientError) {
