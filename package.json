@@ -19,7 +19,7 @@
     "@vercel/functions": "3.3.6",
     "clsx": "2.1.1",
     "firebase": "12.8.0",
-    "javascript-time-ago": "2.5.12",
+    "javascript-time-ago": "2.6.2",
     "next": "16.1.5",
     "next-auth": "5.0.0-beta.30",
     "react": "19.2.4",
