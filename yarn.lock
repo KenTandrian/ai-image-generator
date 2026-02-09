@@ -968,10 +968,10 @@
   dependencies:
     csstype "^3.2.2"
 
-"@vercel/functions@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.4.0.tgz#231d608af16cd25a94346b2f5f6d36b53fd0eb0f"
-  integrity sha512-lKWDWEhFcpt/zL3ueWqII8W5BY73MC5WUuZyudditbbya6mP8jCLQEuXBxJetpEKgnEn+5xCyK962rw4v1RSVA==
+"@vercel/functions@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.4.1.tgz#7fd0113a1b3dc21738b9d8159a8dab76b9fcfa41"
+  integrity sha512-+wqs1fscC1l2NZYL8Ahxe/vba4YzcuhxTV99Kf8sNwNeATaxQ9rbR6BILksoGDmm99YiD0wc0hBJcYxVNwiNaw==
   dependencies:
     "@vercel/oidc" "3.1.0"
 
