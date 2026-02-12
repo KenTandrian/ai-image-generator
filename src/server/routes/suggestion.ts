@@ -24,9 +24,7 @@ export async function suggestionFn(input: SuggestionPayload) {
   }
   return new APIResp(
     // Remove leading dot if present and trim the string
-    data.payload
-      ?.replace(/^\./, "")
-      .trim(),
+    data.payload?.replace(/^\./, "").trim(),
     true
   );
 }
