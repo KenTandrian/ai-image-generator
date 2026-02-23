@@ -18,59 +18,59 @@
     preact "10.24.3"
     preact-render-to-string "6.5.11"
 
-"@biomejs/biome@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/biome/-/biome-2.4.1.tgz#b1f679bd3d4fd5b871f09bddc2b435b312c93a7d"
-  integrity sha512-8c5DZQl1hfpLRlTZ21W5Ef2R314E4UJUEtkMbo303ElTVe6fYtapwldv7tZlgwm+9YP0Mhk7dUSTkOY8nQ2/2w==
+"@biomejs/biome@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/biome/-/biome-2.4.4.tgz#009d1751d061946b320e663e5894af60310f355a"
+  integrity sha512-tigwWS5KfJf0cABVd52NVaXyAVv4qpUXOWJ1rxFL8xF1RVoeS2q/LK+FHgYoKMclJCuRoCWAPy1IXaN9/mS61Q==
   optionalDependencies:
-    "@biomejs/cli-darwin-arm64" "2.4.1"
-    "@biomejs/cli-darwin-x64" "2.4.1"
-    "@biomejs/cli-linux-arm64" "2.4.1"
-    "@biomejs/cli-linux-arm64-musl" "2.4.1"
-    "@biomejs/cli-linux-x64" "2.4.1"
-    "@biomejs/cli-linux-x64-musl" "2.4.1"
-    "@biomejs/cli-win32-arm64" "2.4.1"
-    "@biomejs/cli-win32-x64" "2.4.1"
+    "@biomejs/cli-darwin-arm64" "2.4.4"
+    "@biomejs/cli-darwin-x64" "2.4.4"
+    "@biomejs/cli-linux-arm64" "2.4.4"
+    "@biomejs/cli-linux-arm64-musl" "2.4.4"
+    "@biomejs/cli-linux-x64" "2.4.4"
+    "@biomejs/cli-linux-x64-musl" "2.4.4"
+    "@biomejs/cli-win32-arm64" "2.4.4"
+    "@biomejs/cli-win32-x64" "2.4.4"
 
-"@biomejs/cli-darwin-arm64@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-2.4.1.tgz#5864f3f27683361b2ac39ab65633d12347996fc8"
-  integrity sha512-wKiX2znbgFRaivRplSbu53hiREp1ohlGRuWqOL90IPetLi5E32tkiMYu8uSLXVzDgbIVM58WsesPaczIVtJkOQ==
+"@biomejs/cli-darwin-arm64@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-2.4.4.tgz#a8af5254fcc9dda28a1da26125427df083a13579"
+  integrity sha512-jZ+Xc6qvD6tTH5jM6eKX44dcbyNqJHssfl2nnwT6vma6B1sj7ZLTGIk6N5QwVBs5xGN52r3trk5fgd3sQ9We9A==
 
-"@biomejs/cli-darwin-x64@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-x64/-/cli-darwin-x64-2.4.1.tgz#a9b09ce26def3e2e0ea89ce06078caafba25c0ae"
-  integrity sha512-rxLYVg3skeXh9K0om7JdkKcCdvtqrF9ECZ7dsmLuYObboK7DZ1J0z6xc2NGKSXw+cEQo3ie6NQgWBcdGJ16yQg==
+"@biomejs/cli-darwin-x64@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-x64/-/cli-darwin-x64-2.4.4.tgz#6de17d5bb3afaf3275bc602fb7e61fefe31dab84"
+  integrity sha512-Dh1a/+W+SUCXhEdL7TiX3ArPTFCQKJTI1mGncZNWfO+6suk+gYA4lNyJcBB+pwvF49uw0pEbUS49BgYOY4hzUg==
 
-"@biomejs/cli-linux-arm64-musl@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64-musl/-/cli-linux-arm64-musl-2.4.1.tgz#adb8925dd648fb11c5b2f98790e71a9ff37b6dd5"
-  integrity sha512-Brwh/QL3wfX5UyZcyEamS1Q+EF8Q7ud+MS5mq/9BWX2ArfxQlgsqlukwK92xrGpXWcspXkSG9U0CoxvCZZkTKQ==
+"@biomejs/cli-linux-arm64-musl@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64-musl/-/cli-linux-arm64-musl-2.4.4.tgz#4c55afe87d555782f46e729212acd4e0411b1703"
+  integrity sha512-+sPAXq3bxmFwhVFJnSwkSF5Rw2ZAJMH3MF6C9IveAEOdSpgajPhoQhbbAK12SehN9j2QrHpk4J/cHsa/HqWaYQ==
 
-"@biomejs/cli-linux-arm64@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64/-/cli-linux-arm64-2.4.1.tgz#ca7cd165de812d6a90ac139e5aca10e716440a1a"
-  integrity sha512-nlGO5KzoEKhGj2i3QXyyNCeFk8SVwyes0wo0/X9w943darnlAHfi8MYYunPf8lsz5C0JaH6pJYB6D9HnDwUPQA==
+"@biomejs/cli-linux-arm64@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64/-/cli-linux-arm64-2.4.4.tgz#2c8848461bd5195d3e887b0c9fc9c1b441c727ec"
+  integrity sha512-V/NFfbWhsUU6w+m5WYbBenlEAz8eYnSqRMDMAW3K+3v0tYVkNyZn8VU0XPxk/lOqNXLSCCrV7FmV/u3SjCBShg==
 
-"@biomejs/cli-linux-x64-musl@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64-musl/-/cli-linux-x64-musl-2.4.1.tgz#dbba219e8e09fe99cb11972389817e72c193bc60"
-  integrity sha512-kz1QpA+PXouNyWw2VzeoMlzMn99hlyOC/El2uSy+DS8gcb6tOsKEeZ5e2onnFIfZKe9AeKMFbTowDNLXwjwGjw==
+"@biomejs/cli-linux-x64-musl@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64-musl/-/cli-linux-x64-musl-2.4.4.tgz#f40336d8c1534887c7ef4198b2b4772aca702ee8"
+  integrity sha512-gGvFTGpOIQDb5CQ2VC0n9Z2UEqlP46c4aNgHmAMytYieTGEcfqhfCFnhs6xjt0S3igE6q5GLuIXtdQt3Izok+g==
 
-"@biomejs/cli-linux-x64@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64/-/cli-linux-x64-2.4.1.tgz#f0bd10c365a8027744ab0842726c4d0998bad636"
-  integrity sha512-Rmhm/mQ/3pejy1WtWLKurV1fN6zvCrqKz/ART2ZzgqY4ozL07uys5R9jA0A+yLjA79JTkcpIe85ygXv0FnSPRg==
+"@biomejs/cli-linux-x64@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64/-/cli-linux-x64-2.4.4.tgz#397cadb0ec1e76a993d21ee424bcf2cf7976243e"
+  integrity sha512-R4+ZCDtG9kHArasyBO+UBD6jr/FcFCTH8QkNTOCu0pRJzCWyWC4EtZa2AmUZB5h3e0jD7bRV2KvrENcf8rndBg==
 
-"@biomejs/cli-win32-arm64@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-arm64/-/cli-win32-arm64-2.4.1.tgz#25d5ebc3089687381d43508482b646df0862bf4a"
-  integrity sha512-e+PrlbQ/tez7W9EAzzCGUH1ovq31kR5r8sfCDzasrmoADLnDafet8pA8LdXnt0GwkeOem5Hz6WHCVZPRmaXiXw==
+"@biomejs/cli-win32-arm64@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-arm64/-/cli-win32-arm64-2.4.4.tgz#7d767c15ce20ee39bc1430c2057ccd0208cf12fe"
+  integrity sha512-trzCqM7x+Gn832zZHgr28JoYagQNX4CZkUZhMUac2YxvvyDRLJDrb5m9IA7CaZLlX6lTQmADVfLEKP1et1Ma4Q==
 
-"@biomejs/cli-win32-x64@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-x64/-/cli-win32-x64-2.4.1.tgz#08fa4535edbb84c1fdf2fbf661b4f3a27196b05d"
-  integrity sha512-kfjOCzvaHC7olg8pmEuSsYzHntxdipkAGzr5nFiaEU2EPDWRE/myqUBaFDl9pHqEc8yEtQFiXF945PlTSkuOTw==
+"@biomejs/cli-win32-x64@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-x64/-/cli-win32-x64-2.4.4.tgz#998e87083ff9657a24b4b2f6afcb803a2e820000"
+  integrity sha512-gnOHKVPFAAPrpoPt2t+Q6FZ7RPry/FDV3GcpU53P3PtLNnQjBmKyN2Vh/JtqXet+H4pme8CC76rScwdjDcT1/A==
 
 "@bprogress/core@^1.3.4":
   version "1.3.4"
