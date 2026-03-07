@@ -1137,12 +1137,12 @@ is-fullwidth-code-point@^3.0.0:
   resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
   integrity sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
 
-javascript-time-ago@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/javascript-time-ago/-/javascript-time-ago-2.6.2.tgz#b66ada9080440c472e53845d7912e9d2e7088045"
-  integrity sha512-gagMB4fetS1M1ZHaxQ9kX2amORXa5Los5PGh8NZzWSKrytz43KnpJlaPFTXbg/R7iPMN7U/6MoevgxqJ0QQ5lA==
+javascript-time-ago@2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/javascript-time-ago/-/javascript-time-ago-2.6.4.tgz#3149de049ffe3c374eb5a357cd9aaa911aa98fb9"
+  integrity sha512-7K/Z37LuwVaxxjutUDd1pXpznufPcox0b1UYu00ksAMMlV6IsxIvduwL3kgfPxuBVF8jVj7nhrKMPDslMq94aQ==
   dependencies:
-    relative-time-format "^1.1.11"
+    relative-time-format "^1.1.12"
 
 jiti@^2.6.1:
   version "2.6.1"
@@ -1365,7 +1365,7 @@ react@19.2.4:
   resolved "https://registry.yarnpkg.com/react/-/react-19.2.4.tgz#438e57baa19b77cb23aab516cf635cd0579ee09a"
   integrity sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==
 
-relative-time-format@^1.1.11:
+relative-time-format@^1.1.12:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/relative-time-format/-/relative-time-format-1.1.12.tgz#2236c98c48047664bbff0643283dd4f317d26079"
   integrity sha512-qaZBjmRIuXLfuLnzgqpFdBPa5W0euSX1tMnoMUHGPphLwJmrt8xbNiOIHrlvYOD6oNJ0M5owPCZyPibI8de5pQ==
