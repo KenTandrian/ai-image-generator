@@ -92,15 +92,7 @@
   dependencies:
     "@bprogress/core" "^1.3.4"
 
-"@emnapi/core@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.7.1.tgz#3a79a02dbc84f45884a1806ebb98e5746bdfaac4"
-  integrity sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==
-  dependencies:
-    "@emnapi/wasi-threads" "1.1.0"
-    tslib "^2.4.0"
-
-"@emnapi/core@^1.8.1":
+"@emnapi/core@^1.7.1", "@emnapi/core@^1.8.1":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.8.1.tgz#fd9efe721a616288345ffee17a1f26ac5dd01349"
   integrity sha512-AvT9QFpxK0Zd8J0jopedNm+w/2fIzvtPKPjqyw9jwvBaReTTqPBk9Hixaz7KbjimP+QNz605/XnjFcDAL2pqBg==
@@ -108,14 +100,7 @@
     "@emnapi/wasi-threads" "1.1.0"
     tslib "^2.4.0"
 
-"@emnapi/runtime@^1.7.0", "@emnapi/runtime@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.7.1.tgz#a73784e23f5d57287369c808197288b52276b791"
-  integrity sha512-PVtJr5CmLwYAU9PZDMITZoR5iAOShYREoR45EyyLrbntV50mdePTgUn4AmOw90Ifcj+x2kRjdzr1HP3RrNiHGA==
-  dependencies:
-    tslib "^2.4.0"
-
-"@emnapi/runtime@^1.8.1":
+"@emnapi/runtime@^1.7.0", "@emnapi/runtime@^1.7.1", "@emnapi/runtime@^1.8.1":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.8.1.tgz#550fa7e3c0d49c5fb175a116e8cd70614f9a22a5"
   integrity sha512-mehfKSMWjjNol8659Z8KxEMrdSJDDot5SXMq00dM8BN4o+CLNXQ0xH2V7EchNHV4RmbZLmmPdEaXZc5H2FXmDg==
@@ -539,9 +524,9 @@
     yargs "^17.7.2"
 
 "@img/colour@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@img/colour/-/colour-1.0.0.tgz#d2fabb223455a793bf3bf9c70de3d28526aa8311"
-  integrity sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@img/colour/-/colour-1.1.0.tgz#b0c2c2fa661adf75effd6b4964497cd80010bb9d"
+  integrity sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==
 
 "@img/sharp-darwin-arm64@0.34.5":
   version "0.34.5"
@@ -1008,14 +993,14 @@ ansi-styles@^4.0.0:
     color-convert "^2.0.1"
 
 baseline-browser-mapping@^2.8.3:
-  version "2.9.11"
-  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.9.11.tgz#53724708c8db5f97206517ecfe362dbe5181deea"
-  integrity sha512-Sg0xJUNDU1sJNGdfGWhVHX0kkZ+HWcvmVymJbj6NSgZZmW/8S9Y2HQ5euytnIgakgxN6papOAWiwDo1ctFDcoQ==
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.10.0.tgz#5b09935025bf8a80e29130251e337c6a7fc8cbb9"
+  integrity sha512-lIyg0szRfYbiy67j9KN8IyeD7q7hcmqnJ1ddWmNt19ItGpNN64mnllmxUNFIOdOm6by97jlL6wfpTTJrmnjWAA==
 
 caniuse-lite@^1.0.30001579:
-  version "1.0.30001762"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001762.tgz#e4dbfeda63d33258cdde93e53af2023a13ba27d4"
-  integrity sha512-PxZwGNvH7Ak8WX5iXzoK1KPZttBXNPuaOvI2ZYU7NrlM+d9Ov+TUvlLOBNGzVXAntMSMMlJPd+jY6ovrVjSmUw==
+  version "1.0.30001777"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001777.tgz#028f21e4b2718d138b55e692583e6810ccf60691"
+  integrity sha512-tmN+fJxroPndC74efCdp12j+0rk0RHwV5Jwa1zWaFVyw2ZxAuPeG8ZgWC3Wz7uSjT3qMRQ5XHZ4COgQmsCMJAQ==
 
 client-only@0.0.1:
   version "0.0.1"
@@ -1165,9 +1150,9 @@ jiti@^2.6.1:
   integrity sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==
 
 jose@^6.0.6:
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-6.1.3.tgz#8453d7be88af7bb7d64a0481d6a35a0145ba3ea5"
-  integrity sha512-0TpaTfihd4QMNwrz/ob2Bp7X04yuxJkjRGi4aKmOqwhov54i6u79oCv7T+C7lo70MKH6BesI3vscD1yb/yzKXQ==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-6.2.0.tgz#a26cd03737fc7d7c803522747e47332826682646"
+  integrity sha512-xsfE1TcSCbUdo6U07tR0mvhg0flGxU8tPLbF03mirl2ukGQENhUg4ubGYQnhVH0b5stLlPM+WOqDkEl1R1y5sQ==
 
 lightningcss-android-arm64@1.31.1:
   version "1.31.1"
@@ -1295,9 +1280,9 @@ next@16.1.6:
     sharp "^0.34.4"
 
 oauth4webapi@^3.3.0:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/oauth4webapi/-/oauth4webapi-3.8.3.tgz#8a3e36b88a52db5e619907f031bff3770b2ed1a4"
-  integrity sha512-pQ5BsX3QRTgnt5HxgHwgunIRaDXBdkT23tf8dfzmtTIL2LTpdmxgbpbBm0VgFWAIDlezQvQCTgnVIUmHupXHxw==
+  version "3.8.5"
+  resolved "https://registry.yarnpkg.com/oauth4webapi/-/oauth4webapi-3.8.5.tgz#4aa8a73f5c4644daf674a7c40497be910db99d3f"
+  integrity sha512-A8jmyUckVhRJj5lspguklcl90Ydqk61H3dcU0oLhH3Yv13KpAliKTt5hknpGGPZSSfOwGyraNEFmofDYH+1kSg==
 
 picocolors@^1.0.0, picocolors@^1.1.1:
   version "1.1.1"
@@ -1381,9 +1366,9 @@ react@19.2.4:
   integrity sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==
 
 relative-time-format@^1.1.11:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/relative-time-format/-/relative-time-format-1.1.11.tgz#b193d5192434e7c1c6a53e362f811c68a4f18c45"
-  integrity sha512-TH+oV/w77hjaB9xCzoFYJ/Icmr/12+02IAoCI/YGS2UBTbjCbBjHGEBxGnVy4EJvOR1qadGzyFRI6hGaJJG93Q==
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/relative-time-format/-/relative-time-format-1.1.12.tgz#2236c98c48047664bbff0643283dd4f317d26079"
+  integrity sha512-qaZBjmRIuXLfuLnzgqpFdBPa5W0euSX1tMnoMUHGPphLwJmrt8xbNiOIHrlvYOD6oNJ0M5owPCZyPibI8de5pQ==
 
 require-directory@^2.1.1:
   version "2.1.1"
@@ -1401,9 +1386,9 @@ scheduler@^0.27.0:
   integrity sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==
 
 semver@^7.7.3:
-  version "7.7.3"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.3.tgz#4b5f4143d007633a8dc671cd0a6ef9147b8bb946"
-  integrity sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.4.tgz#28464e36060e991fa7a11d0279d2d3f3b57a7e8a"
+  integrity sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==
 
 sharp@0.34.5, sharp@^0.34.4:
   version "0.34.5"
