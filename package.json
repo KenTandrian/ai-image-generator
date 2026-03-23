@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@bprogress/next": "3.2.12",
-    "@trpc/client": "11.13.4",
-    "@trpc/server": "11.13.4",
+    "@trpc/client": "11.15.0",
+    "@trpc/server": "11.15.0",
     "@vercel/functions": "3.4.3",
     "clsx": "2.1.1",
     "firebase": "12.11.0",
