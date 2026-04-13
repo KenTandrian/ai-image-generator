@@ -14,7 +14,7 @@ export const getPromptSuggestion = onCall(OPTIONS, async ({ data }) => {
 
     let responseText = "";
     if (model) {
-      const vertexai = new VertexAIService();
+      const vertexai = new VertexAIService(model.location);
       responseText = await vertexai.suggestion({ modelId: model.id });
     } else {
       log.error("Invalid model", model);

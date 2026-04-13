@@ -5,11 +5,12 @@ import { IMAGEN_MODELS } from "../constants";
 export default class VertexAIService {
   private readonly client: GoogleGenAI;
   private readonly defaultImagen = IMAGEN_MODELS[0];
-  private readonly location = "us-central1";
+  private readonly location: string;
   private readonly project = process.env.GCLOUD_PROJECT;
 
   /** Initialize Vertex AI Service */
-  constructor() {
+  constructor(location = "us-central1") {
+    this.location = location;
     this.client = new GoogleGenAI({
       location: this.location,
       project: this.project,

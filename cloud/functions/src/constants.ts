@@ -1,4 +1,5 @@
 import type { GlobalOptions } from "firebase-functions/v2";
+import type { Model } from "./types";
 
 export const PROJECT_NAME = "ai-image-generator";
 export const IMAGE_FOLDER_NAME = "images";
@@ -14,4 +15,9 @@ export const IMAGEN_MODELS = [
   { id: "imagen-4.0-fast-generate-001", location: "us-central1" },
   { id: "imagen-4.0-generate-001", location: "us-central1" },
   { id: "imagen-4.0-ultra-generate-001", location: "us-central1" },
+] as const;
+
+export const SUGGESTION_MODELS: Model[] = [
+  { id: "gemini-2.5-flash-lite", location: "us-central1" },
+  { id: "gemini-3.1-flash-lite-preview", location: "global" },
 ] as const;
