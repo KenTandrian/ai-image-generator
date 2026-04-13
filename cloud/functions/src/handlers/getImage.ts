@@ -16,7 +16,7 @@ export const getImage = onCall(OPTIONS, async ({ data }) => {
     const [file] = await bucket
       .file(`${PROJECT_NAME}/${IMAGE_FOLDER_NAME}/${path}`)
       .get();
-    log.info("All images retrieved.");
+    log.info(`Image ${path} retrieved.`);
     return prepareImage(bucket)(file);
   } catch (err) {
     log.error(err);

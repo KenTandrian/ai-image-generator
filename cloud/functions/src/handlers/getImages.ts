@@ -22,7 +22,7 @@ export const getImages = onCall(OPTIONS, async () => {
     const [files] = await bucket.getFiles({
       prefix: `${PROJECT_NAME}/${IMAGE_FOLDER_NAME}`,
     });
-    log.info("All images retrieved.");
+    log.info(`${files.length} images retrieved.`);
 
     const sorted = files.sort(sortByTimeCreated);
     const imageUrls = sorted.slice(0, 27).map(prepareImage(bucket));
