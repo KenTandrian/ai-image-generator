@@ -16,7 +16,7 @@
     "@bprogress/next": "3.2.12",
     "@trpc/client": "11.17.0",
     "@trpc/server": "11.17.0",
-    "@vercel/functions": "3.4.3",
+    "@vercel/functions": "3.5.0",
     "clsx": "2.1.1",
     "firebase": "12.12.1",
     "javascript-time-ago": "2.6.4",
