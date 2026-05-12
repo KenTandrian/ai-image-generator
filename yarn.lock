@@ -1035,17 +1035,17 @@
     "@typescript-eslint/types" "8.59.2"
     eslint-visitor-keys "^5.0.0"
 
-"@vercel/functions@3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.5.0.tgz#de5a91f04713f53091f1b7dd55677a00c7a84cec"
-  integrity sha512-+RokZ+4gkYyOsKBuJ29cQ8iSZG123LLJbZfPry20kkTgrN9U0277La4feP4DnWVo3sGoYa4plCEKY9XKUYoX9g==
+"@vercel/functions@3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.5.1.tgz#008c45551eacec2ea595c76d260581bf100aaa69"
+  integrity sha512-ndh5v+uhWqGA8033oD0i0KHvqUHcLlLCOaLOw5L+xx5zVsWUSQcZPKEYk2nm51aisnKhcnTylxnOmhx+w4UCRA==
   dependencies:
-    "@vercel/oidc" "3.4.0"
+    "@vercel/oidc" "3.4.1"
 
-"@vercel/oidc@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.4.0.tgz#967cafb403830adbaaf4fe86f7fbeb9277d995d4"
-  integrity sha512-p0sKfHkfRmMaqqDwNL4tjnX9TgRrLMlEtUjIxfrEns8pOxz1R9ztqOVI+ehqiq93/2/HnfPe/UBZkfAZwnx0UA==
+"@vercel/oidc@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.4.1.tgz#7f7f0361da6e021273bbf5bf467f5c495488c91e"
+  integrity sha512-H6B+/ig/GoahccL3WZjiHayHw1H5KhvTJNceqYulwfK9kkz5iul2hTmYzcJ7tTCQzyd0dutuL9xYFZCyLUqsog==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -1597,11 +1597,6 @@ tailwindcss-debug-screens@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-3.0.1.tgz#accb286e305413a334629a8226f1af67bbc0301a"
   integrity sha512-ibUaLQGk4AvxnKzGyoLlj1kzBRADcQV65ELENcWxkXJArUCnitR/GZxxDPL9XnW96mzUEuhJqgFI7C43hKm6Vw==
-
-tailwindcss@4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.2.4.tgz#f7e3090edb22d56394db4d68e6464d2628dc2aa9"
-  integrity sha512-HhKppgO81FQof5m6TEnuBWCZGgfRAWbaeOaGT00KOy/Pf/j6oUihdvBpA7ltCeAvZpFhW3j0PTclkxsd4IXYDA==
 
 tailwindcss@4.3.0:
   version "4.3.0"
