@@ -19,5 +19,5 @@ export const IMAGEN_MODELS = [
 
 export const SUGGESTION_MODELS: Model[] = [
   { id: "gemini-2.5-flash-lite", location: "us-central1" },
-  { id: "gemini-3.1-flash-lite-preview", location: "global" },
+  { id: "gemini-3.1-flash-lite", location: "global" },
 ] as const;
