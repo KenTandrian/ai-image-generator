@@ -1035,17 +1035,17 @@
     "@typescript-eslint/types" "8.59.2"
     eslint-visitor-keys "^5.0.0"
 
-"@vercel/functions@3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.6.0.tgz#f9441294d1bfdfff49b530fa0b4667fa36963214"
-  integrity sha512-Xj68JYqqJwtqFWJN7EWmFN7MOiUjv5whjw48UEKqQbg8r7hRkhuJhncTU0ba3jJCh/wxEuLWckrtsKcrHQraxw==
+"@vercel/functions@3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.6.1.tgz#f14e469bd959dce061c69201ca556b80804b1ba4"
+  integrity sha512-xz+zZvj/XE6KDHZ8kYNO25Axpjng/kTJd/87SwONa6hzlq94K69OdqH1ZC/CehbtwWknpeyHqUHmpnfoaCbLZQ==
   dependencies:
-    "@vercel/oidc" "3.4.1"
+    "@vercel/oidc" "3.5.0"
 
-"@vercel/oidc@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.4.1.tgz#7f7f0361da6e021273bbf5bf467f5c495488c91e"
-  integrity sha512-H6B+/ig/GoahccL3WZjiHayHw1H5KhvTJNceqYulwfK9kkz5iul2hTmYzcJ7tTCQzyd0dutuL9xYFZCyLUqsog==
+"@vercel/oidc@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.5.0.tgz#246a75443d48a19cd73abb36adbea96b52593ecd"
+  integrity sha512-jo7GgeJx2YMkjg9A28pFM5p88n5SnSHvDeNlf9898bRWiG9jPxwedj/gn/2XTw4UOTyQ50uHlrTGSlf/XU5tgw==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
