@@ -16,7 +16,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/storage": "7.19.0",
+    "@google-cloud/storage": "7.21.0",
     "@google/genai": "2.8.0",
     "axios": "1.17.0",
     "firebase-admin": "13.10.0",
