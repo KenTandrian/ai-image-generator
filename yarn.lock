@@ -1213,13 +1213,12 @@
   dependencies:
     execa "5.1.1"
 
-"@vercel/functions@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.7.0.tgz#c87e9d7b3b31a26c0ad50bc3d382aed8bb3c50bc"
-  integrity sha512-Dzcs1CHRP0aV/dFHUJ8BEMcKjbsPZZoKyyCSCbHRev+Qlj96q1pKKTXcc9m9p7U/kJz7+Dl+GgPHUFGMEKYUOQ==
+"@vercel/functions@3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.7.1.tgz#2722df8eecd890cac23360e9875f24dd391673cd"
+  integrity sha512-7PsCL2Vz4MKz4t+Nxu8u4mu/t66y1xv9I0njb3EYoFoFCsXchOChT7YFgXZYFQiUXFEifBpnoLma4e+ep7cKKA==
   dependencies:
     "@vercel/oidc" "3.6.1"
-    ws "8.20.0"
 
 "@vercel/oidc@3.6.1":
   version "3.6.1"
@@ -1998,11 +1997,6 @@ wrap-ansi@^7.0.0:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
     strip-ansi "^6.0.0"
-
-ws@8.20.0:
-  version "8.20.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.20.0.tgz#4cd9532358eba60bc863aad1623dfb045a4d4af8"
-  integrity sha512-sAt8BhgNbzCtgGbt2OxmpuryO63ZoDk/sqaB/znQm94T4fCEsy/yV+7CdC1kJhOU9lboAEU7R3kquuycDoibVA==
 
 xdg-app-paths@5:
   version "5.5.1"
