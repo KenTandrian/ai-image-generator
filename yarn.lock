@@ -1102,15 +1102,15 @@
     postcss "8.5.15"
     tailwindcss "4.3.1"
 
-"@trpc/client@11.17.0":
-  version "11.17.0"
-  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-11.17.0.tgz#420308eb120269cd466507637416acfc29066cc1"
-  integrity sha512-KpJBFrbKTDeVCFv/3ckL1XBBH5Yssn8hethI/rUy7GIpTj+VzjtPjykDqJpzobuVOz+d26cXCSu1t4I6MYI5Zg==
+"@trpc/client@11.18.0":
+  version "11.18.0"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-11.18.0.tgz#8fc48fe709f5d41ca15343ac06e56b1fda3e484a"
+  integrity sha512-wOqeg3Fvl25V1ZisQhUD3K8G60ZJDlSGJNSyeXrLH24xAo5w6GSR2Kzb1cSNY9Y+IQ2YZvYGZstBU+V/ulo/ow==
 
-"@trpc/server@11.17.0":
-  version "11.17.0"
-  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-11.17.0.tgz#62e92adb65b59cad432d39d6c9f034a8d3fc8802"
-  integrity sha512-jbAOUe0PpUTCYqziyu+8vYXZdDXPudZgnEhWCQ2NjKnVEjfE93RqHTt1oycZJv/HNf51YlRXfEEwSIAbb161rw==
+"@trpc/server@11.18.0":
+  version "11.18.0"
+  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-11.18.0.tgz#171e10de17455fa2692618c005f64d496826f9fc"
+  integrity sha512-JAvXOuNTxgXjIDfQaOvDq1j66LMNfDJUH1IU7Slfn8EvRv2EkH6ehu3A7zpYhjO0syHHiYg77v2lG2JFJgvw7Q==
 
 "@tybys/wasm-util@^0.10.1", "@tybys/wasm-util@^0.10.2":
   version "0.10.2"
@@ -1919,11 +1919,6 @@ tailwindcss-debug-screens@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-3.0.1.tgz#accb286e305413a334629a8226f1af67bbc0301a"
   integrity sha512-ibUaLQGk4AvxnKzGyoLlj1kzBRADcQV65ELENcWxkXJArUCnitR/GZxxDPL9XnW96mzUEuhJqgFI7C43hKm6Vw==
-
-tailwindcss@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.3.0.tgz#0a874e044a859cf6de413f3a59e76a9bedf05264"
-  integrity sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==
 
 tailwindcss@4.3.1:
   version "4.3.1"
