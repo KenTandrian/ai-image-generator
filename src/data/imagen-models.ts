@@ -1,5 +1,5 @@
+import { BsOpenai } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { SiOpenai } from "react-icons/si";
 
 const MODEL_STATUS = {
   PUBLIC: "PUBLIC",
@@ -71,7 +71,7 @@ export const IMAGEN_MODELS: {
 
 const VENDOR_LOGOS = {
   Google: FcGoogle,
-  OpenAI: SiOpenai,
+  OpenAI: BsOpenai,
 };
 
 export type ImagenModel = (typeof IMAGEN_MODELS)[number]["value"];
