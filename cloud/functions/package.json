@@ -19,7 +19,7 @@
     "@google-cloud/storage": "7.21.0",
     "@google/genai": "2.10.0",
     "axios": "1.18.1",
-    "firebase-admin": "13.10.0",
+    "firebase-admin": "14.1.0",
     "firebase-functions": "7.2.5",
     "openai": "6.45.0"
   },
