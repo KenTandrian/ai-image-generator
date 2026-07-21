@@ -39,13 +39,13 @@ jobs:
       - name: Lint frontend
         if: steps.changes.outputs.frontend == 'true'
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-scripts
           yarn lint
 
       - name: Lint functions
         if: steps.changes.outputs.functions == 'true'
         working-directory: ./cloud/functions
         run: |
-          npm ci
+          npm ci --ignore-scripts
           npm run lint --max-warnings=0
           npm run build
