@@ -1,6 +1,6 @@
 import { logger as log } from "firebase-functions/v2";
 import { onCall, type HttpsOptions } from "firebase-functions/v2/https";
-import { GLOBAL_OPTIONS, SUGGESTION_MODELS } from "../constants";
+import { GLOBAL_OPTIONS } from "../constants";
 import VertexAIService from "../lib/vertexai";
 
 const OPTIONS: HttpsOptions = {
@@ -10,19 +10,17 @@ const OPTIONS: HttpsOptions = {
 
 export const getPromptSuggestion = onCall(OPTIONS, async ({ data }) => {
   try {
-    const model = SUGGESTION_MODELS.find(({ id }) => id === data.provider);
-
-    let responseText = "";
-    if (model) {
-      const vertexai = new VertexAIService(model.location);
-      responseText = await vertexai.suggestion({ modelId: model.id });
-    } else {
-      log.error("Invalid model", model);
-      return { error: true, payload: "Invalid model" };
-    }
+    const vertexai = new VertexAIService();
+    const responseText = await vertexai.suggestion({ modelId: data.provider });
     return { error: false, payload: responseText };
   } catch (err) {
     log.error(err);
-    return { error: true, payload: err };
+    return {
+      error: true,
+      payload:
+        err instanceof Error
+          ? err.message
+          : "Failed to generate prompt suggestion",
+    };
   }
 });

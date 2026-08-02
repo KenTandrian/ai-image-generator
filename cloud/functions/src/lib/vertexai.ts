@@ -1,18 +1,14 @@
 import { GoogleGenAI, type Part } from "@google/genai";
-import { IMAGEN_MODELS } from "../constants";
+import { IMAGEN_MODELS, SUGGESTION_MODELS } from "../constants";
 
 /** Google Cloud Vertex AI Service */
 export default class VertexAIService {
-  private readonly client: GoogleGenAI;
-  private readonly defaultImagen = IMAGEN_MODELS[0];
-  private readonly location: string;
   private readonly project = process.env.GCLOUD_PROJECT;
 
-  /** Initialize Vertex AI Service */
-  constructor(location = "us-central1") {
-    this.location = location;
-    this.client = new GoogleGenAI({
-      location: this.location,
+  /** Create a Google GenAI client for a specific location */
+  private getClient(location: string) {
+    return new GoogleGenAI({
+      location,
       project: this.project,
       vertexai: true,
     });
@@ -20,11 +16,14 @@ export default class VertexAIService {
 
   /** Generate image */
   async imagen({ prompt, modelId }: { prompt: string; modelId: string }) {
-    // Validate Imagen model resource ID
-    const model =
-      IMAGEN_MODELS.find((m) => m.id === modelId) ?? this.defaultImagen;
+    const model = IMAGEN_MODELS.find((m) => m.id === modelId);
+    if (!model) {
+      throw new Error(`Invalid image generation model ID: ${modelId}`);
+    }
 
-    const response = await this.client.models.generateContent({
+    const client = this.getClient(model.location);
+
+    const response = await client.models.generateContent({
       contents: prompt,
       config: {
         responseModalities: ["IMAGE"],
@@ -47,17 +46,24 @@ export default class VertexAIService {
   }
 
   async suggestion({ modelId }: { modelId: string }) {
+    const model = SUGGESTION_MODELS.find((m) => m.id === modelId);
+    if (!model) {
+      throw new Error(`Invalid suggestion model ID: ${modelId}`);
+    }
+
+    const client = this.getClient(model.location);
+
     const context =
-      "You are going to chat with Google Imagen, an AI that generates images from text prompts. Always start the prompt with a capital letter.";
+      "You are going to chat with Google Gemini Image, an AI that generates images from text prompts. Always start the prompt with a capital letter.";
     const example =
-      "For example, if you are asked to 'Write a random text prompt under 50 words for DALL·E to generate an image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white, etc.', the response could be 'Create a modern, oil painting of a futuristic city skyline at night, with a high-tech transportation system and neon lights illuminating the bustling streets below'";
+      "For example, if you are asked to 'Write a random text prompt under 50 words for Gemini Image to generate an image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white, etc.', the response could be 'Create a modern, oil painting of a futuristic city skyline at night, with a high-tech transportation system and neon lights illuminating the bustling streets below'";
     const q =
-      "Now, please write one sentence of a random text prompt under 50 words for DALL·E to generate an image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white, etc.";
+      "Now, please write one sentence of a random text prompt under 50 words for Gemini Image to generate an image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white, etc.";
     const textPart: Part = {
       text: [context, example, q].join(" "),
     };
 
-    const response = await this.client.models.generateContent({
+    const response = await client.models.generateContent({
       contents: [{ role: "user", parts: [textPart] }],
       config: {
         maxOutputTokens: 256,
@@ -65,7 +71,7 @@ export default class VertexAIService {
         topK: 40,
         topP: 0.95,
       },
-      model: modelId,
+      model: model.id,
     });
     return response.text ?? "";
   }
