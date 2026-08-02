@@ -32,8 +32,8 @@ export const generateImage = onCall<RequestData>(
       const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
       log.info({ prompt, model: metadata.model, location: metadata.geo?.city });
 
-      // DALL·E is replaced by Imagen due to billing changes
-      const { imgBuffer, model } = await generateWithImagen(
+      // DALL·E is replaced by Google Gemini due to billing changes
+      const { imgBuffer, model } = await generateWithGemini(
         prompt,
         metadata.model
       );
@@ -89,12 +89,12 @@ export async function generateWithDalle(prompt: string) {
 }
 
 /**
- * Generate image with Google Imagen
+ * Generate image with Google Gemini Image
  * @param {string} prompt Prompt
- * @param {string} modelId Imagen model resource ID
+ * @param {string} modelId Model resource ID
  * @return {Buffer} Buffer of the generated image
  */
-export async function generateWithImagen(prompt: string, modelId: string) {
+export async function generateWithGemini(prompt: string, modelId: string) {
   const vertexai = new VertexAIService();
   const resp = await vertexai.imagen({ prompt, modelId });
   if (!resp) throw new Error("Image generation failed");

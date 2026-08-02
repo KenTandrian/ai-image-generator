@@ -24,30 +24,26 @@ export default class VertexAIService {
     const model =
       IMAGEN_MODELS.find((m) => m.id === modelId) ?? this.defaultImagen;
 
-    // Generate image
-    const response = await this.client.models.generateImages({
+    const response = await this.client.models.generateContent({
+      contents: prompt,
       config: {
-        numberOfImages: 1,
+        responseModalities: ["IMAGE"],
       },
       model: model.id,
-      prompt: prompt,
     });
 
-    // Check if image generation failed
-    const generatedImage = response.generatedImages?.[0];
-    if (!generatedImage?.image?.imageBytes) {
-      if (generatedImage?.raiFilteredReason) {
-        throw new Error(
-          "Generated images violated Google's Responsible AI practices. Try rephrasing the prompt."
-        );
-      } else {
-        throw new Error("Image generation failed");
+    for (const candidate of response.candidates ?? []) {
+      for (const part of candidate.content?.parts ?? []) {
+        if (part.inlineData?.data) {
+          return {
+            bytes: part.inlineData.data,
+            model: model.id,
+          };
+        }
       }
     }
-    return {
-      bytes: generatedImage.image.imageBytes,
-      model: model.id,
-    };
+
+    throw new Error("Image generation failed");
   }
 
   async suggestion({ modelId }: { modelId: string }) {
