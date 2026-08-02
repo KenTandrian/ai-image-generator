@@ -10,6 +10,9 @@ export const GLOBAL_OPTIONS: GlobalOptions = {
 };
 
 export const IMAGEN_MODELS = [
+  { id: "gemini-3.1-flash-lite-image", location: "global" },
+  { id: "gemini-3.1-flash-image", location: "global" },
+  { id: "gemini-3-pro-image", location: "global" },
   { id: "imagen-4.0-fast-generate-001", location: "us-central1" },
   { id: "imagen-4.0-generate-001", location: "us-central1" },
   { id: "imagen-4.0-ultra-generate-001", location: "us-central1" },

@@ -15,6 +15,24 @@ export const IMAGEN_MODELS: {
   status: (typeof MODEL_STATUS)[keyof typeof MODEL_STATUS];
 }[] = [
   {
+    name: "Nano Banana 2 Lite",
+    value: "gemini-3.1-flash-lite-image",
+    vendor: "Google",
+    status: MODEL_STATUS.PUBLIC,
+  },
+  {
+    name: "Nano Banana 2",
+    value: "gemini-3.1-flash-image",
+    vendor: "Google",
+    status: MODEL_STATUS.PRIVATE,
+  },
+  {
+    name: "Nano Banana Pro",
+    value: "gemini-3-pro-image",
+    vendor: "Google",
+    status: MODEL_STATUS.PRIVATE,
+  },
+  {
     name: "Imagen 4 Fast",
     value: "imagen-4.0-fast-generate-001",
     aliases: ["imagen-4.0-fast-generate-preview-06-06"],

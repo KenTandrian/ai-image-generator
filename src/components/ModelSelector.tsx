@@ -53,7 +53,7 @@ function Selector({
 
 export default function useModelSelector() {
   const [model, setModel] = useState<ImagenModel>(
-    "imagen-4.0-fast-generate-001"
+    "gemini-3.1-flash-lite-image"
   );
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
