@@ -50,21 +50,22 @@ const PromptInput = () => {
     revalidateOnFocus: false,
   });
 
-  const submitPrompt = async (useSuggestion?: boolean) => {
-    const inputPrompt = input;
-    setInput("");
-
-    const p = useSuggestion ? suggestion : inputPrompt;
-    if (!p) {
+  async function submitPrompt() {
+    const inputPrompt = input.trim();
+    if (!inputPrompt) {
       toast.error("Prompt is empty!");
       return;
     }
+    setInput("");
 
-    const notifPrompt = p.slice(0, 50);
+    const notifPrompt = inputPrompt.slice(0, 50);
     const notification = toast.loading(`AI is creating: ${notifPrompt}...`);
 
     try {
-      const data = await trpc.generateImage.mutate({ prompt: p, model });
+      const data = await trpc.generateImage.mutate({
+        prompt: inputPrompt,
+        model,
+      });
       if (data.success) {
         toast.success("Your AI Art has been generated!", { id: notification });
         refreshImages();
@@ -78,7 +79,7 @@ const PromptInput = () => {
         toast.error("Something went wrong!", { id: notification });
       }
     }
-  };
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -107,33 +108,33 @@ const PromptInput = () => {
           </div>
 
           <div className="flex grow justify-between sm:justify-end items-center gap-2">
-            {suggestion && (
-              <Button
-                type="button"
-                onClick={() => submitPrompt(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-violet-500/20 px-3 py-1.5 text-xs font-medium text-violet-300 transition-colors hover:bg-violet-500/30"
-              >
-                <SparklesIcon className="size-3.5" />
-                Use Suggestion
-              </Button>
+            {!input && suggestion && (
+              <div className="flex items-center gap-1.5">
+                <Button
+                  type="button"
+                  onClick={() => setInput(suggestion)}
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-violet-500/20 px-3 py-1.5 text-xs font-medium text-violet-300 transition-colors hover:bg-violet-500/30"
+                >
+                  <SparklesIcon className="size-3.5" />
+                  Use Suggestion
+                </Button>
+                <TooltipIconButton
+                  tooltip="New Suggestion"
+                  side="top"
+                  type="button"
+                  onClick={() => mutate()}
+                  variant="secondary"
+                  size="icon"
+                  className="size-8 rounded-full text-zinc-400 hover:text-zinc-100"
+                  aria-label="New Suggestion"
+                >
+                  <RefreshCwIcon
+                    className={cn("size-4", loading && "animate-spin")}
+                  />
+                </TooltipIconButton>
+              </div>
             )}
-            <div className="flex items-center gap-2">
-              <TooltipIconButton
-                tooltip="New Suggestion"
-                side="top"
-                type="button"
-                onClick={() => mutate()}
-                variant="ghost"
-                size="icon"
-                className="size-7 rounded-full text-zinc-400 hover:text-zinc-100"
-                aria-label="New Suggestion"
-              >
-                <RefreshCwIcon
-                  className={cn("size-4", loading && "animate-spin")}
-                />
-              </TooltipIconButton>
-              <ComposerSend disabled={!input && !suggestion} />
-            </div>
+            <ComposerSend disabled={!input} />
           </div>
         </ComposerAction>
       </ComposerRoot>
