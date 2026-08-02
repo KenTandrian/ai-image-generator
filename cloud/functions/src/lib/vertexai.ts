@@ -26,6 +26,9 @@ export default class VertexAIService {
     const response = await client.models.generateContent({
       contents: prompt,
       config: {
+        imageConfig: {
+          aspectRatio: "1:1",
+        },
         responseModalities: ["IMAGE"],
       },
       model: model.id,
