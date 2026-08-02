@@ -12,7 +12,7 @@ export const ComposerRoot: FC<ComponentPropsWithoutRef<"div">> = ({
 }) => (
   <div
     className={cn(
-      "relative flex w-full flex-col gap-2 rounded-2xl border border-border bg-background p-3.5 shadow-lg backdrop-blur-md transition-all focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/20 dark:border-border dark:bg-background dark:shadow-none",
+      "relative flex w-full flex-col gap-2 rounded-2xl border border-border/50 bg-background p-3.5 shadow-lg backdrop-blur-md transition-all focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 dark:bg-muted/50 dark:shadow-none",
       className
     )}
     {...props}
