@@ -15,19 +15,6 @@ export const IMAGEN_MODELS: {
   status: (typeof MODEL_STATUS)[keyof typeof MODEL_STATUS];
 }[] = [
   {
-    name: "Imagen 3 Fast",
-    value: "imagen-3.0-fast-generate-001",
-    vendor: "Google",
-    status: MODEL_STATUS.PUBLIC,
-  },
-  {
-    name: "Imagen 3",
-    value: "imagen-3.0-generate-002",
-    aliases: ["imagen-3.0-generate-001"],
-    vendor: "Google",
-    status: MODEL_STATUS.PRIVATE,
-  },
-  {
     name: "Imagen 4 Fast",
     value: "imagen-4.0-fast-generate-001",
     aliases: ["imagen-4.0-fast-generate-preview-06-06"],
@@ -55,6 +42,19 @@ export const IMAGEN_MODELS: {
     status: MODEL_STATUS.PRIVATE,
   },
   // Deprecated models
+  {
+    name: "Imagen 3 Fast",
+    value: "imagen-3.0-fast-generate-001",
+    vendor: "Google",
+    status: MODEL_STATUS.DEPRECATED,
+  },
+  {
+    name: "Imagen 3",
+    value: "imagen-3.0-generate-002",
+    aliases: ["imagen-3.0-generate-001"],
+    vendor: "Google",
+    status: MODEL_STATUS.DEPRECATED,
+  },
   {
     name: "Imagen 2",
     value: "imagegeneration@006",

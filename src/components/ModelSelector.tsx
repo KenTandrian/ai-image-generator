@@ -53,7 +53,7 @@ function Selector({
 
 export default function useModelSelector() {
   const [model, setModel] = useState<ImagenModel>(
-    "imagen-3.0-fast-generate-001"
+    "imagen-4.0-fast-generate-001"
   );
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
