@@ -20,7 +20,7 @@
     "@google/genai": "2.14.0",
     "axios": "1.18.1",
     "firebase-admin": "14.2.0",
-    "firebase-functions": "7.3.0",
+    "firebase-functions": "7.3.2",
     "openai": "6.49.0"
   },
   "devDependencies": {
