@@ -32,12 +32,13 @@ export const IMAGEN_MODELS: {
     vendor: "Google",
     status: MODEL_STATUS.PRIVATE,
   },
+  // Deprecated models
   {
     name: "Imagen 4 Fast",
     value: "imagen-4.0-fast-generate-001",
     aliases: ["imagen-4.0-fast-generate-preview-06-06"],
     vendor: "Google",
-    status: MODEL_STATUS.PUBLIC,
+    status: MODEL_STATUS.DEPRECATED,
   },
   {
     name: "Imagen 4",
@@ -47,7 +48,7 @@ export const IMAGEN_MODELS: {
       "imagen-4.0-generate-preview-05-20",
     ],
     vendor: "Google",
-    status: MODEL_STATUS.PRIVATE,
+    status: MODEL_STATUS.DEPRECATED,
   },
   {
     name: "Imagen 4 Ultra",
@@ -57,9 +58,8 @@ export const IMAGEN_MODELS: {
       "imagen-4.0-ultra-generate-exp-05-20",
     ],
     vendor: "Google",
-    status: MODEL_STATUS.PRIVATE,
+    status: MODEL_STATUS.DEPRECATED,
   },
-  // Deprecated models
   {
     name: "Imagen 3 Fast",
     value: "imagen-3.0-fast-generate-001",
