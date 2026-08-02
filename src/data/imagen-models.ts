@@ -24,7 +24,7 @@ export const IMAGEN_MODELS: {
     name: "Nano Banana 2",
     value: "gemini-3.1-flash-image",
     vendor: "Google",
-    status: MODEL_STATUS.PRIVATE,
+    status: MODEL_STATUS.PUBLIC,
   },
   {
     name: "Nano Banana Pro",
