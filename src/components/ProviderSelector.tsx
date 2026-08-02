@@ -1,54 +1,35 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import {
+  type ModelOption,
+  ModelSelector,
+} from "@/components/ui/model-selector";
 import { type AIProvider, PROVIDERS } from "@/data/ai-providers";
-
-function Selector({
-  onChange,
-  provider,
-}: Readonly<{
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  provider: AIProvider;
-}>) {
-  return (
-    <div className="flex flex-col items-center justify-between rounded border border-gray-200 px-4 py-2 sm:flex-row dark:border-zinc-700">
-      <h3 className="font-medium text-zinc-900 dark:text-zinc-200">
-        Prompt Generator
-      </h3>
-
-      <div className="flex gap-4">
-        {PROVIDERS.map((p, i) => (
-          <div className="flex items-center" key={i}>
-            <input
-              id={p.value}
-              type="radio"
-              value={p.value}
-              name="provider"
-              className="h-4 w-4 border-zinc-300 bg-zinc-100 text-violet-600 accent-violet-600 dark:border-zinc-600 dark:bg-zinc-700"
-              onChange={onChange}
-              checked={p.value === provider}
-            />
-            <label
-              htmlFor={p.value}
-              className="ml-2 text-sm text-zinc-900 dark:text-zinc-300"
-            >
-              {p.name}
-            </label>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function useProviderSelector() {
   const [provider, setProvider] = useState<AIProvider>(PROVIDERS[0].value);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setProvider(event.target.value as AIProvider);
-  };
+  const providerOptions = useMemo<ModelOption[]>(() => {
+    return PROVIDERS.map((p) => ({
+      id: p.value,
+      name: p.name,
+      description: p.value,
+      icon: <FcGoogle className="size-3.5" />,
+    }));
+  }, []);
 
   const ProviderSelector = useCallback(
-    () => <Selector onChange={onChange} provider={provider} />,
-    [provider]
+    () => (
+      <ModelSelector
+        models={providerOptions}
+        value={provider}
+        onValueChange={(val) => setProvider(val as AIProvider)}
+        searchable
+        variant="outline"
+        size="sm"
+      />
+    ),
+    [provider, providerOptions]
   );
 
   return { provider, ProviderSelector };
