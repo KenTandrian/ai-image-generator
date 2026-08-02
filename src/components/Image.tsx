@@ -17,7 +17,7 @@ export default function AIImage({
     <Link
       href={href}
       className={cn(
-        "group relative transition-transform duration-200 ease-in-out hover:scale-[102%]",
+        "group relative block aspect-square overflow-hidden rounded-lg transition-transform duration-200 ease-in-out hover:scale-[102%]",
         isFirst && "col-span-2 row-span-2"
       )}
     >
@@ -27,7 +27,7 @@ export default function AIImage({
           : null}
         {image.metadata.geo?.country && (
           <CircleFlag
-            className="inline-block h-3 w-3"
+            className="inline-block size-3"
             countryCode={image.metadata.geo.country.toLowerCase()}
           />
         )}
@@ -35,7 +35,7 @@ export default function AIImage({
           <span className="truncate">{image.metadata.geo?.city}</span>
         )}
       </div>
-      <div className="absolute bottom-0 left-0 z-10 flex h-[70px] w-full items-start justify-start rounded-tr-2xl rounded-b-md opacity-0 transition-opacity duration-200 group-hover:opacity-80 sm:h-[100px] dark:bg-gradient-to-tr dark:from-violet-950 dark:to-black/80">
+      <div className="absolute bottom-0 left-0 z-10 flex h-17.5 w-full items-start justify-start rounded-tr-2xl rounded-b-md opacity-0 transition-opacity duration-200 group-hover:opacity-80 sm:h-25 dark:bg-linear-to-tr dark:from-violet-950 dark:to-black/80">
         <p
           className="xs:text-base m-4 line-clamp-2 text-left text-sm font-light text-ellipsis sm:m-5 sm:text-lg dark:text-white"
           title={image.metadata.prompt}
@@ -48,7 +48,7 @@ export default function AIImage({
         alt={image.name}
         height={800}
         width={800}
-        className="-z-10 w-full rounded-lg shadow-2xl drop-shadow-lg"
+        className="-z-10 h-full w-full object-cover rounded-lg shadow-2xl drop-shadow-lg"
         placeholder="blur"
         blurDataURL="/placeholder.jpg"
       />
