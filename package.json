@@ -20,6 +20,7 @@
     "@vercel/functions": "3.7.6",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
+    "cmdk": "1.1.1",
     "firebase": "12.16.0",
     "javascript-time-ago": "2.6.4",
     "lucide-react": "1.28.0",
