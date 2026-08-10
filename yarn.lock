@@ -1174,10 +1174,10 @@
   dependencies:
     execa "5.1.1"
 
-"@vercel/functions@3.7.7":
-  version "3.7.7"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.7.7.tgz#a10d4ab7ce17f13878e4d563285d92cfe166d619"
-  integrity sha512-oy0FzkuXmUIzyRR2pYastP4xH0m9VTK3yP2Vj77eRcxcbX+f4o6x3RMx4RuwJ4j4pjx9USd/h79R/pKbSZV80Q==
+"@vercel/functions@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.8.0.tgz#0f029f3c9510b58115a31a3579698bf1fc942c84"
+  integrity sha512-2vvvf544KWqZBR6ZqqpnpKV9DRT6pb69YgSa0BMZ619L/HO0hblHGkpoqlmTE/L0R28op46vgk9EDAT3D932Vw==
   dependencies:
     "@vercel/oidc" "3.8.2"
 
