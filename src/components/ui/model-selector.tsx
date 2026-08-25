@@ -176,7 +176,7 @@ function ModelSelectorRoot({
   defaultOpen,
   onOpenChange,
   children,
-}: ModelSelectorRootProps) {
+}: Readonly<ModelSelectorRootProps>) {
   const [value, setValue] = useControllableState({
     prop: valueProp,
     defaultProp: defaultValue ?? models[0]?.id,
@@ -299,10 +299,10 @@ export type ModelSelectorValueProps = {
 function ModelIcon({
   children,
   className,
-}: {
+}: Readonly<{
   children: ReactNode;
   className?: string;
-}) {
+}>) {
   return (
     <span
       className={cn(
@@ -319,7 +319,7 @@ function ModelSelectorValue({
   placeholder = "Select model",
   showEffort = true,
   className,
-}: ModelSelectorValueProps) {
+}: Readonly<ModelSelectorValueProps>) {
   const { selectedModel, efforts, effort } = useModelSelectorContext();
 
   if (!selectedModel) {
