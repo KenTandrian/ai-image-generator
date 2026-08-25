@@ -1,9 +1,9 @@
 import pluginJs from "@eslint/js";
 import google from "eslint-config-google";
-import * as importPlugin from "eslint-plugin-import";
+import { flatConfigs as importConfigs } from "eslint-plugin-import-x";
 import pluginPrettier from "eslint-plugin-prettier/recommended";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import { configs as tsConfigs } from "typescript-eslint";
 
 // Temporary workaround for jsdoc rules
 delete google.rules["require-jsdoc"];
@@ -14,18 +14,18 @@ export default [
   { files: ["**/*.{js,ts}"] },
   { languageOptions: { globals: globals.node } },
   pluginJs.configs.recommended,
-  importPlugin.flatConfigs?.errors,
-  importPlugin.flatConfigs?.warnings,
-  importPlugin.flatConfigs?.typescript,
+  importConfigs.errors,
+  importConfigs.warnings,
+  importConfigs.typescript,
   google,
-  ...tseslint.configs.recommended,
+  ...tsConfigs.recommended,
   pluginPrettier,
   {
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-import-type-side-effects": "error",
       quotes: ["error", "double"],
-      "import/no-unresolved": 0,
+      "import-x/no-unresolved": 0,
       indent: ["error", 2],
       "object-curly-spacing": ["error", "always"],
       "prettier/prettier": ["error"],
