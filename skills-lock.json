@@ -11,7 +11,7 @@
       "source": "google-gemini/gemini-skills",
       "sourceType": "github",
       "skillPath": "skills/gemini-interactions-api/SKILL.md",
-      "computedHash": "c1cfc541b446af2fb7db0ea0ed01e7f8670c848eaa9516233cd0ed47d4dc4e68"
+      "computedHash": "3b1bccd4f131f749a3d0d19b0e734941fdaf799b7bb0689086ce10e1c3ebf380"
     }
   }
 }
