@@ -5,6 +5,8 @@ import type { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import type React from "react";
 import { Toaster } from "react-hot-toast";
+import { AppSidebar } from "@/components/layout/app-sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 export default function ClientProvider({
   children,
@@ -21,7 +23,10 @@ export default function ClientProvider({
         height="3px"
         options={{ showSpinner: false }}
       >
-        {children}
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarInset>{children}</SidebarInset>
+        </SidebarProvider>
       </AppProgressProvider>
     </SessionProvider>
   );
