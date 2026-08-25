@@ -2,6 +2,7 @@ import pluginJs from "@eslint/js";
 import google from "eslint-config-google";
 import { flatConfigs as importConfigs } from "eslint-plugin-import-x";
 import pluginPrettier from "eslint-plugin-prettier/recommended";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 import { configs as tsConfigs } from "typescript-eslint";
 
@@ -9,8 +10,8 @@ import { configs as tsConfigs } from "typescript-eslint";
 delete google.rules["require-jsdoc"];
 delete google.rules["valid-jsdoc"];
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
+  { ignores: ["lib/**/*", "node_modules/"] },
   { files: ["**/*.{js,ts}"] },
   { languageOptions: { globals: globals.node } },
   pluginJs.configs.recommended,
@@ -31,7 +32,4 @@ export default [
       "prettier/prettier": ["error"],
     },
   },
-  {
-    ignores: ["lib/**/*", "node_modules/"],
-  },
-];
+]);
