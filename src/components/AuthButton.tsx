@@ -15,7 +15,7 @@ export default async function AuthButton() {
         if (isLoggedIn) await signOut();
         else await signIn();
       }}
-      className="h-5"
+      className="flex items-center"
     >
       <button type="submit">
         {isLoggedIn ? (
