@@ -31,7 +31,7 @@
     "react-dom": "19.2.8",
     "react-hot-toast": "2.6.0",
     "react-icons": "5.7.0",
-    "sharp": "0.35.3",
+    "sharp": "0.35.4",
     "swr": "2.5.1",
     "tailwind-merge": "3.6.0",
     "zod": "4.4.3"
