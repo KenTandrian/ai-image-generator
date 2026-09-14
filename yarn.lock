@@ -1153,10 +1153,10 @@
   dependencies:
     csstype "^3.2.2"
 
-"@vercel/cli-config@0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@vercel/cli-config/-/cli-config-0.2.5.tgz#c0a1d5a2ba174d168dbd7ae244a5cebc086386f7"
-  integrity sha512-WniFxgznIPZ3h1USCLxArTyvR2a3/lvZW5mSSkuI2r8rQWEzUV8qnKXJEOFrVnVWe2YDxeCVMgZoxIH4kHA92Q==
+"@vercel/cli-config@0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@vercel/cli-config/-/cli-config-0.2.6.tgz#2ab47f4cff8f09a83dc372a5eb593b83c5012c20"
+  integrity sha512-2AsKCf6gE/Eniq09ARm1RK9rQMV5pcAHU7BFcR9MISO+4/RsjjkaYbQN6G85/xi9pYZ5CJNXvYn4TI6p1jKBcg==
   dependencies:
     xdg-app-paths "5"
     zod "4.1.11"
@@ -1168,19 +1168,19 @@
   dependencies:
     execa "5.1.1"
 
-"@vercel/functions@3.9.6":
-  version "3.9.6"
-  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.9.6.tgz#151d8ca06ca1ed050092e5de4274dbba408241d4"
-  integrity sha512-00NG7F+VItu1UygM0IL6QqmGrzUAeHMCUNMq89bcsbnBqoE3Gpya9yn3g+TBGDbAFjuaojJCzLNYUVFt+reSnQ==
+"@vercel/functions@3.9.7":
+  version "3.9.7"
+  resolved "https://registry.yarnpkg.com/@vercel/functions/-/functions-3.9.7.tgz#02d951c420a40bb71ff7cdcb3da6e9bec9362fd2"
+  integrity sha512-ICLzHbVZs10igkVMW/ovEMIXFa5ctpEjTa+VWRCOQbIqg9ALZcQcRjcfDuQZ/g2XtPS08EvHjzm538YJU9WsXA==
   dependencies:
-    "@vercel/oidc" "3.8.6"
+    "@vercel/oidc" "3.8.7"
 
-"@vercel/oidc@3.8.6":
-  version "3.8.6"
-  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.8.6.tgz#368ad1bc769cb705e668a48481777e9ac3b84131"
-  integrity sha512-0gAPrFB1eVCLBVDDG1PUxs+G5OS97260GK2TEcUB2TeEeWM+17P4U9xC7ASp6f9rv/pu8tBceH5cmRV0MpUhGA==
+"@vercel/oidc@3.8.7":
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/@vercel/oidc/-/oidc-3.8.7.tgz#5c15dbac02d34169d9cf8102e0b5781ecadebd17"
+  integrity sha512-fRu59npOu+1vsV570tiLKskfuRyOJ1MqceAkXbTIfWPnM+c9ve1tSK81oj4umKKirymlGUss3V60Lm5I38rKDw==
   dependencies:
-    "@vercel/cli-config" "0.2.5"
+    "@vercel/cli-config" "0.2.6"
     "@vercel/cli-exec" "1.0.1"
     jose "^5.9.6"
 
