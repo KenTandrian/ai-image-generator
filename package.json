@@ -34,7 +34,7 @@
     "sharp": "0.35.4",
     "swr": "2.5.1",
     "tailwind-merge": "3.7.0",
-    "zod": "4.5.4"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
