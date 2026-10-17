@@ -44,6 +44,7 @@
     "postcss": "8.5.29",
     "tailwindcss": "4.3.3",
     "tailwindcss-debug-screens": "3.0.1",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
   }
 }
