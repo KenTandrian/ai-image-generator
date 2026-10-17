@@ -42,6 +42,10 @@ jobs:
           yarn install --frozen-lockfile --ignore-scripts
           yarn lint
 
+      - name: Test frontend
+        if: steps.changes.outputs.frontend == 'true'
+        run: yarn test
+
       - name: Lint functions
         if: steps.changes.outputs.functions == 'true'
         working-directory: ./cloud/functions

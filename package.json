@@ -10,7 +10,8 @@
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "format": "biome format .",
-    "format:write": "biome format --write ."
+    "format:write": "biome format --write .",
+    "test": "vitest"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",
