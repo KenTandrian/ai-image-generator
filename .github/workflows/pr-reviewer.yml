@@ -1,6 +1,8 @@
-name: Pull Request Reviewer
+name: PR Auto-Reviewer
 
-on: pull_request_target
+on:
+  pull_request_target:
+    paths: ["package.json", "yarn.lock"]
 
 permissions:
   pull-requests: write
