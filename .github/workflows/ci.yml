@@ -1,4 +1,4 @@
-name: Lint and Build Apps
+name: Continuous Integration
 on:
   pull_request:
     branches: ["main"]
@@ -8,8 +8,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Run lint and build
+  ci:
     runs-on: ubuntu-latest
 
     steps:

@@ -1,9 +1,8 @@
-name: Lockfile Maintenance (Cloud)
+name: Lockfile Maintenance (Functions)
 on: workflow_dispatch
 
 jobs:
-  run:
-    name: Run workflow
+  update:
     uses: KenTandrian/workflows/.github/workflows/lockfile.yml@main
     permissions:
       contents: write

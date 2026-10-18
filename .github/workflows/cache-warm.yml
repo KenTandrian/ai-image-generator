@@ -1,4 +1,4 @@
-name: Cache Node.js Dependencies
+name: Warm Caches
 on:
   push:
     branches: ["main"]
@@ -10,8 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  cache-yarn:
-    name: Cache frontend dependencies
+  cache-frontend:
     runs-on: ubuntu-latest
     steps:
       - name: 🛎️ Checkout repository
@@ -37,8 +36,7 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install --frozen-lockfile --ignore-scripts
 
-  cache-npm:
-    name: Cache backend dependencies
+  cache-functions:
     runs-on: ubuntu-latest
     steps:
       - name: 🛎️ Checkout repository

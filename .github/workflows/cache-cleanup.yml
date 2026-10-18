@@ -1,10 +1,10 @@
-name: Cleanup Old Cache
+name: Cleanup Caches
 on:
   workflow_run:
     workflows:
-      - "Cache Node.js Dependencies"
-      - "Lockfile Maintenance"
-      - "Lockfile Maintenance (Cloud)"
+      - "Warm Caches"
+      - "Lockfile Maintenance (Frontend)"
+      - "Lockfile Maintenance (Functions)"
     branches: [main]
     types: [completed]
   workflow_dispatch:
@@ -14,15 +14,13 @@ permissions:
   contents: read
 
 jobs:
-  cleanup-yarn:
-    name: Cleanup frontend cache
+  cleanup-frontend:
     uses: KenTandrian/workflows/.github/workflows/cleanup.yml@main
     with:
       name: Yarn
       pattern: node-cache-Linux-yarn-
 
-  cleanup-npm:
-    name: Cleanup backend cache
+  cleanup-functions:
     uses: KenTandrian/workflows/.github/workflows/cleanup.yml@main
     with:
       name: NPM
