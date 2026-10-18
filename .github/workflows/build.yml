@@ -33,6 +33,21 @@ jobs:
             functions:
               - "cloud/functions/**"
 
+      # ── Frontend (Only runs if frontend files changed) ───────────
+      - name: Get Yarn cache directory
+        if: steps.changes.outputs.frontend == 'true'
+        id: yarn-cache-dir
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Restore Frontend Cache (Yarn)
+        if: steps.changes.outputs.frontend == 'true'
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: node-cache-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: node-cache-${{ runner.os }}-yarn-
+
       - name: Lint frontend
         if: steps.changes.outputs.frontend == 'true'
         run: |
@@ -42,6 +57,15 @@ jobs:
       - name: Test frontend
         if: steps.changes.outputs.frontend == 'true'
         run: yarn test
+
+      # ── Backend (Only runs if cloud/functions files changed) ─────
+      - name: Restore Backend Cache (NPM)
+        if: steps.changes.outputs.functions == 'true'
+        uses: actions/cache/restore@v6
+        with:
+          path: ~/.npm
+          key: node-cache-${{ runner.os }}-npm-${{ hashFiles('cloud/functions/package-lock.json') }}
+          restore-keys: node-cache-${{ runner.os }}-npm-
 
       - name: Lint functions
         if: steps.changes.outputs.functions == 'true'
