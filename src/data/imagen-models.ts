@@ -7,13 +7,22 @@ const MODEL_STATUS = {
   DEPRECATED: "DEPRECATED",
 } as const;
 
-export const IMAGEN_MODELS: {
+const VENDOR_LOGOS = {
+  Google: FcGoogle,
+  OpenAI: BsOpenai,
+};
+
+export type ModelStatus = (typeof MODEL_STATUS)[keyof typeof MODEL_STATUS];
+
+export type ModelDefinition = {
   name: string;
   value: string;
-  aliases?: string[];
+  aliases?: readonly string[];
   vendor: keyof typeof VENDOR_LOGOS;
-  status: (typeof MODEL_STATUS)[keyof typeof MODEL_STATUS];
-}[] = [
+  status: ModelStatus;
+};
+
+export const IMAGEN_MODELS = [
   {
     name: "Nano Banana 2 Lite",
     value: "gemini-3.1-flash-lite-image",
@@ -85,22 +94,19 @@ export const IMAGEN_MODELS: {
     vendor: "OpenAI",
     status: MODEL_STATUS.DEPRECATED,
   },
-] as const;
-
-const VENDOR_LOGOS = {
-  Google: FcGoogle,
-  OpenAI: BsOpenai,
-};
+] as const satisfies readonly ModelDefinition[];
 
 export type ImagenModel = (typeof IMAGEN_MODELS)[number]["value"];
 
-export function getModelName(model: ImagenModel) {
+export function getModelName(model: string) {
   return IMAGEN_MODELS.find((p) => p.value === model)?.name;
 }
 
-export function findModel(model: ImagenModel) {
+export function findModel(model: string) {
   const m = IMAGEN_MODELS.find(
-    (p) => p.value === model || p.aliases?.includes(model)
+    (p) =>
+      p.value === model ||
+      (p.aliases as readonly string[] | undefined)?.includes(model)
   );
   if (m) return { ...m, logo: VENDOR_LOGOS[m?.vendor] };
 }
