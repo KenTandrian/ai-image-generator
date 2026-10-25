@@ -4,6 +4,7 @@ import {
   getModelName,
   IMAGEN_MODELS,
   type ImagenModel,
+  type ModelDefinition,
 } from "./imagen-models";
 
 describe("imagen-models lookup logic", () => {
@@ -47,9 +48,9 @@ describe("imagen-models lookup logic", () => {
     });
 
     it("correctly resolves the parent model when queried by an alias", () => {
-      const modelWithAlias = IMAGEN_MODELS.find(
-        (m) => m.aliases && m.aliases.length > 0
-      );
+      const modelWithAlias = (
+        IMAGEN_MODELS as readonly ModelDefinition[]
+      ).find((m) => m.aliases && m.aliases.length > 0);
       expect(modelWithAlias).toBeDefined();
 
       if (modelWithAlias?.aliases?.[0]) {

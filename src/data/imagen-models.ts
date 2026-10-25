@@ -103,10 +103,8 @@ export function getModelName(model: string) {
 }
 
 export function findModel(model: string) {
-  const m = IMAGEN_MODELS.find(
-    (p) =>
-      p.value === model ||
-      (p.aliases as readonly string[] | undefined)?.includes(model)
+  const m = (IMAGEN_MODELS as readonly ModelDefinition[]).find(
+    (p) => p.value === model || p.aliases?.includes(model)
   );
-  if (m) return { ...m, logo: VENDOR_LOGOS[m?.vendor] };
+  if (m) return { ...m, logo: VENDOR_LOGOS[m.vendor] };
 }
