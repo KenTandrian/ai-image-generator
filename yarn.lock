@@ -1776,10 +1776,10 @@ long@^5.0.0, long@^5.3.2:
   resolved "https://registry.yarnpkg.com/long/-/long-5.3.2.tgz#1d84463095999262d7d7b7f8bfd4a8cc55167f83"
   integrity sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==
 
-lucide-react@1.58.0:
-  version "1.58.0"
-  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-1.58.0.tgz#21b74da96eb9021d2b960b9223362a581e7c4e76"
-  integrity sha512-hXaFNm6mk6QVtBnDGBn1YAs8j2tGUk0A4s/CpclIcczfxeXiW1rdOLVo6zCsoIih9XXsGvDODQerl749a2n7bA==
+lucide-react@1.65.0:
+  version "1.65.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-1.65.0.tgz#4ffc266698c29885f4f7c05674ca65e68edd28e4"
+  integrity sha512-roSdtzudEY39i2hn5LLjA8toYfhF2z4S10WSqZF4ubXpHlOmNTvaxMxZLdJfQDi6pEifQWX+cRmYihKSsvAxfA==
 
 magic-string@^0.30.21:
   version "0.30.21"
