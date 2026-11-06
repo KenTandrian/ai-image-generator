@@ -1689,10 +1689,10 @@ cmdk@1.1.1:
     "@radix-ui/react-id" "^1.1.0"
     "@radix-ui/react-primitive" "^2.0.2"
 
-cn@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/cn/-/cn-0.5.1.tgz#48507d2a8c2d0e721cce1b0f61a7cb071bd7a218"
-  integrity sha512-SA06SpzSWXRNrt/EQWnRpck9jEVDfVJonw8ZewiNR6pOC4U0SQ81tWaQ9/PKNPh/lWvjuY4CMlxpc8tJViiX6Q==
+cn@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/cn/-/cn-0.5.2.tgz#6c9f691f28c13872fb73f784b47ac12980b0b80c"
+  integrity sha512-wm10E6iuJ37rALOw3D+3cfaXXZSLNMh2uxpQn3dNICqfJM59yXqgbA9/9Iiz155j5kYNLdK6WreNdW3NQtx3OQ==
 
 color-convert@^2.0.1:
   version "2.0.1"
