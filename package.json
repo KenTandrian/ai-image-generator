@@ -19,8 +19,8 @@
   "dependencies": {
     "@base-ui/react": "1.9.0",
     "@bprogress/next": "3.2.12",
-    "@trpc/client": "11.22.1",
-    "@trpc/server": "11.22.1",
+    "@trpc/client": "11.23.0",
+    "@trpc/server": "11.23.0",
     "@vercel/functions": "3.10.3",
     "class-variance-authority": "0.7.1",
     "cmdk": "1.1.1",
