@@ -21,7 +21,7 @@
     "@bprogress/next": "3.2.12",
     "@trpc/client": "11.25.0",
     "@trpc/server": "11.25.0",
-    "@vercel/functions": "3.10.6",
+    "@vercel/functions": "3.11.0",
     "class-variance-authority": "0.7.1",
     "cmdk": "1.1.1",
     "cn": "0.5.2",
