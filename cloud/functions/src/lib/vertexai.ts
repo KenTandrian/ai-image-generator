@@ -1,5 +1,69 @@
-import { GoogleGenAI, type Part } from "@google/genai";
+import {
+  FinishReason,
+  GoogleGenAI,
+  HarmBlockThreshold,
+  HarmCategory,
+  type Part,
+  type SafetySetting,
+} from "@google/genai";
 import { IMAGEN_MODELS, SUGGESTION_MODELS } from "../constants";
+
+const SAFETY_SETTINGS: SafetySetting[] = [
+  {
+    category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+];
+
+const IMAGE_SAFETY_SETTINGS: SafetySetting[] = [
+  ...SAFETY_SETTINGS,
+  {
+    category: HarmCategory.HARM_CATEGORY_IMAGE_SEXUALLY_EXPLICIT,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_IMAGE_HATE,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_IMAGE_HARASSMENT,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_IMAGE_DANGEROUS_CONTENT,
+    threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+  },
+];
+
+const SAFETY_FINISH_REASONS = new Set<FinishReason>([
+  FinishReason.SAFETY,
+  FinishReason.PROHIBITED_CONTENT,
+  FinishReason.BLOCKLIST,
+  FinishReason.SPII,
+  FinishReason.IMAGE_SAFETY,
+  FinishReason.IMAGE_PROHIBITED_CONTENT,
+  FinishReason.NO_IMAGE,
+]);
+
+/** Error thrown when a prompt or generated image is blocked by safety filters */
+export class SafetyBlockError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "SafetyBlockError";
+  }
+}
 
 /** Google Cloud Vertex AI Service */
 export default class VertexAIService {
@@ -30,9 +94,16 @@ export default class VertexAIService {
           aspectRatio: "1:1",
         },
         responseModalities: ["IMAGE"],
+        safetySettings: IMAGE_SAFETY_SETTINGS,
       },
       model: model.id,
     });
+
+    if (response.promptFeedback?.blockReason) {
+      throw new SafetyBlockError(
+        `Prompt blocked: ${response.promptFeedback.blockReason}`
+      );
+    }
 
     for (const candidate of response.candidates ?? []) {
       for (const part of candidate.content?.parts ?? []) {
@@ -43,6 +114,15 @@ export default class VertexAIService {
           };
         }
       }
+    }
+
+    const blockedCandidate = response.candidates?.find(
+      (c) => c.finishReason && SAFETY_FINISH_REASONS.has(c.finishReason)
+    );
+    if (blockedCandidate) {
+      throw new SafetyBlockError(
+        `Image generation blocked: ${blockedCandidate.finishReason}`
+      );
     }
 
     throw new Error("Image generation failed");
@@ -70,6 +150,7 @@ export default class VertexAIService {
       contents: [{ role: "user", parts: [textPart] }],
       config: {
         maxOutputTokens: 256,
+        safetySettings: SAFETY_SETTINGS,
         temperature: 1.6,
         topK: 40,
         topP: 0.95,

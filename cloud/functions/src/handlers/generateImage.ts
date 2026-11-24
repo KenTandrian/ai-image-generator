@@ -5,7 +5,7 @@ import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
 import OpenAIService from "../lib/openai";
 import { storeImage } from "../lib/storeImage";
-import VertexAIService from "../lib/vertexai";
+import VertexAIService, { SafetyBlockError } from "../lib/vertexai";
 import type { ImageMeta } from "../types";
 
 type RequestData = {
@@ -51,7 +51,10 @@ export const generateImage = onCall<RequestData>(
     } catch (err) {
       log.error(err);
       if (err instanceof Error) {
-        if ((err as PredictionError).details === RESPONSIBLE_AI_ERR) {
+        if (
+          err instanceof SafetyBlockError ||
+          (err as PredictionError).details === RESPONSIBLE_AI_ERR
+        ) {
           return { error: { message: RESPONSIBLE_AI_MSG } };
         }
         return { error: { message: err.message } };
