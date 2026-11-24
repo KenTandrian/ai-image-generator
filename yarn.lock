@@ -2440,11 +2440,6 @@ tailwindcss-debug-screens@3.0.1:
   resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-3.0.1.tgz#accb286e305413a334629a8226f1af67bbc0301a"
   integrity sha512-ibUaLQGk4AvxnKzGyoLlj1kzBRADcQV65ELENcWxkXJArUCnitR/GZxxDPL9XnW96mzUEuhJqgFI7C43hKm6Vw==
 
-tailwindcss@4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.3.4.tgz#90b4ec3c85b548edf3edad1783875810c452e443"
-  integrity sha512-PCJZTFFdG+sL3gvnP1Do9o6GbkvH2q0p04xSs3f7cSvmAeK+sttG+/7ncK1fdRwKFfC7n+wDDJaOMBSefkI9ow==
-
 tailwindcss@4.3.5:
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.3.5.tgz#91ac1f2486f3dff8747aebd0a687abd5955035b8"
