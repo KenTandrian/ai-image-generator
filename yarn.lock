@@ -1547,15 +1547,15 @@
     postcss "^8.5.25"
     tailwindcss "4.3.5"
 
-"@trpc/client@11.29.5":
-  version "11.29.5"
-  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-11.29.5.tgz#5f4560c2e078a59e33afd9056f9e96a5ae1f79a0"
-  integrity sha512-EGebaRjt/rDHt7gJ6nv262nLRPalzwSyI/dEMYtA+PBEy/HxhoVUW3bQqyE34cozJNj2HAgB+TqXVe76pWGk+Q==
+"@trpc/client@11.29.7":
+  version "11.29.7"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-11.29.7.tgz#5f97b07c9cb67d4914bb9002a61abfaa239afdd2"
+  integrity sha512-cW/8uDPDBEzSBdEoV0fLb6JL5U/YTOZRktLI7/bJJVsb9dz+qhYJST6YJEaI8yM6oz4MfnpCKf7Sk609zvjNxA==
 
-"@trpc/server@11.29.5":
-  version "11.29.5"
-  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-11.29.5.tgz#6308935db14512a413e34dd2228dc6f665c84ff8"
-  integrity sha512-8ET3fqBo4byVkjLNU047NFwmT3JQIjZCVpdJwanb6Tpv7b5P3M9pjN7JofqGyDQZaDR5XLkWX2hWrsIpjtt5wA==
+"@trpc/server@11.29.7":
+  version "11.29.7"
+  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-11.29.7.tgz#34fca269b49d0b2e2dbf5b40a31baa7891d96095"
+  integrity sha512-9chUuB0abOfVkCm87lFQ3PTUJzPlErlf5HOBzvwtiGl7B0YdPBul1O597NTzjUcF1XDTsRqdnQfrz7BeptzSXQ==
 
 "@tybys/wasm-util@^0.10.3":
   version "0.10.3"
