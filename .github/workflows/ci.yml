@@ -71,5 +71,5 @@ jobs:
         working-directory: ./cloud/functions
         run: |
           npm ci --ignore-scripts
-          npm run lint --max-warnings=0
+          npm run lint -- --max-warnings=0
           npm run build
