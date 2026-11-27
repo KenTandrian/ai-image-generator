@@ -1,9 +1,7 @@
-import axios from "axios";
 import { randomUUID } from "node:crypto";
 import { logger as log } from "firebase-functions/v2";
 import { onCall } from "firebase-functions/v2/https";
 import { GLOBAL_OPTIONS, IMAGE_FOLDER_NAME, PROJECT_NAME } from "../constants";
-import OpenAIService from "../lib/openai";
 import { storeImage } from "../lib/storeImage";
 import VertexAIService, { SafetyBlockError } from "../lib/vertexai";
 import type { ImageMeta } from "../types";
@@ -32,7 +30,6 @@ export const generateImage = onCall<RequestData>(
       const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, "");
       log.info({ prompt, model: metadata.model, location: metadata.geo?.city });
 
-      // DALL·E is replaced by Google Gemini due to billing changes
       const { imgBuffer, model } = await generateWithGemini(
         prompt,
         metadata.model
@@ -66,30 +63,6 @@ export const generateImage = onCall<RequestData>(
     }
   }
 );
-
-/**
- * Generate image with DALL·E 2.0
- * @param {string} prompt Prompt
- * @return {Buffer} Buffer of the generated image
- */
-export async function generateWithDalle(prompt: string) {
-  const openai = new OpenAIService();
-  const resp = await openai.images.generate({
-    prompt,
-    n: 1,
-    size: "1024x1024",
-  });
-  log.info("Image generated!");
-
-  const imageUrl = resp.data?.[0].url ?? "";
-  const res = await axios.get<Buffer>(imageUrl, {
-    responseType: "arraybuffer",
-  });
-  const arrayBuffer = res.data;
-  log.info("Image file fetched!");
-
-  return arrayBuffer;
-}
 
 /**
  * Generate image with Google Gemini Image
