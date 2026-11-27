@@ -72,9 +72,9 @@ export default class VertexAIService {
   /** Create a Google GenAI client for a specific location */
   private getClient(location: string) {
     return new GoogleGenAI({
+      enterprise: true,
       location,
       project: this.project,
-      vertexai: true,
     });
   }
 
